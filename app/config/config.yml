@@ -6,7 +6,8 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
+    app_webmaster: Chrisentem
 
 framework:
     #esi: ~
@@ -35,7 +36,11 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-
+    globals:
+        webmaster: '%app_webmaster%'        
+    form_themes:
+        - 'bootstrap_4_layout.html.twig'
+        
 # Doctrine Configuration
 doctrine:
     dbal:
