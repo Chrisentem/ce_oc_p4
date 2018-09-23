@@ -220,3 +220,4 @@ class EntryTicket
         return $this->discounted;
     }
 }
+
