@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as AppAssert;
 
 /**
  * Purchase
@@ -68,6 +69,7 @@ class Purchase
      *
      * @ORM\Column(name="date_visit", type="date")
      * @Assert\Date()
+     * @appAssert\Dateavailable()
      */
     private $dateOfVisit;
 
