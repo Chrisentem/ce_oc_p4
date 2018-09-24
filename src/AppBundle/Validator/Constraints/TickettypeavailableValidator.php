@@ -5,7 +5,19 @@ namespace AppBundle\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
+use Symfony\Component\HttpFoundation\RequestStack;
+
 class TickettypeavailableValidator extends ConstraintValidator {
+
+    /**
+     * @var RequestStack
+     */
+    private $requestStack;
+
+    public function __construct(RequestStack $requestStack)
+    {
+      $this->requestStack = $requestStack;
+    }
 
   
     public function validate($value, Constraint $constraint)
@@ -26,10 +38,22 @@ class TickettypeavailableValidator extends ConstraintValidator {
 		
         $today = new \Datetime('now');
         $nowtime = $today->format('H');
-		
+
+        $request = $this->requestStack->getCurrentRequest();
+        // get dateOfVisit as array
+        $chosenDate = $request->request->get('appbundle_purchase')['dateOfVisit'];
+        
+        $todayDMY = $today->format('d-n-Y');
+        $chosenDateDMY = implode('-', $chosenDate);
+        
+        // var_dump($chosenDateDMY); string(9) "24-9-2018"
+        // var_dump($todayDMY);
+        
 		// No full-day ticket after 2pm
-		if ($type == 'fullday' && $nowtime > 14) {
-			return true;
+		if ($todayDMY == $chosenDateDMY) {
+            if ($type == 'fullday' && $nowtime > 14) {
+            return true;
+            }
 		}
 		
 		return false;

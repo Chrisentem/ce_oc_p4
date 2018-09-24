@@ -17,7 +17,6 @@ class DateavailableValidator extends ConstraintValidator {
         }
 			  
 		if ($this->isUnavailable($value)) {
-			// C'est cette ligne qui déclenche l'erreur pour le formulaire, avec en argument le message
 			$this->context->addViolation($constraint->message);
 		}
 
