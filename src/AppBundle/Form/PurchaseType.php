@@ -23,11 +23,11 @@ class PurchaseType extends AbstractType
                 'years' => range(date('Y'), date('Y')+1),
             )
         )
-        ->add('visitType', ChoiceType::class, array(
+        ->add('ticketType', ChoiceType::class, array(
             'label' => 'Ticket Type',
             'choices'  => array(
-                'full-day' => true,
-                'half-day' => false,
+                'full-day' => 'fullday',
+                'half-day' => 'halfday',
             ))
         )
         ->add('numberOfTickets', ChoiceType::class, array(

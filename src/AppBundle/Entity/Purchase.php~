@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as AppAssert;
 
 /**
  * Purchase
@@ -14,6 +15,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Purchase
 {
+
+    const STATUS_0 = "initialized";
+    const STATUS_1 = "confirmed";
+    const STATUS_2 = "paid";
+    const STATUS_3 = "sent";
+
     /**
      * Constructor
      */
@@ -21,6 +28,8 @@ class Purchase
     {
       $this->date = new \Datetime();
       $this->tickets   = new ArrayCollection();
+      $this->email = "";
+      $this->status = self::STATUS_0;
     }
 
     /**
@@ -44,6 +53,7 @@ class Purchase
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * 
      * @Assert\Email()
      */
     private $email;
@@ -60,6 +70,7 @@ class Purchase
      *
      * @ORM\Column(name="date_visit", type="date")
      * @Assert\Date()
+     * @AppAssert\Dateavailable()
      */
     private $dateOfVisit;
 
@@ -73,13 +84,19 @@ class Purchase
 
     /**
      * @var int
+     * @Assert\Range(
+     * min = 1,
+     * max = 6,
+     * )
      */
     private $numberOfTickets;
 
     /**
      * @var string
+     * @ORM\Column(name="ticket_type", type="string", length=10)
+     * @AppAssert\Tickettypeavailable()
      */
-    private $visitType;
+    private $ticketType;
 
 
     /**
@@ -220,24 +237,6 @@ class Purchase
     public function getTickets()
     {
         return $this->tickets;
-    }
-
-    /**
-     * Get visitType
-     */
-    public function getVisitType()
-    {
-        return $this->visitType;
-    }
-
-    /**
-     * Set visitType
-     */
-    public function setVisitType($visitType)
-    {
-        $this->visitType = $visitType;
-
-        return $this;
     }
 
     /**

@@ -92,8 +92,10 @@ class Purchase
 
     /**
      * @var string
+     * @ORM\Column(name="ticket_type", type="string", length=10)
+     * @AppAssert\Tickettypeavailable()
      */
-    private $visitType;
+    private $ticketType;
 
 
     /**
@@ -237,21 +239,27 @@ class Purchase
     }
 
     /**
-     * Get visitType
+     * Set ticketType
+     *
+     * @param string $ticketType
+     *
+     * @return Purchase
      */
-    public function getVisitType()
+    public function setTicketType($ticketType)
     {
-        return $this->visitType;
+        $this->ticketType = $ticketType;
+
+        return $this;
     }
 
     /**
-     * Set visitType
+     * Get ticketType
+     *
+     * @return string
      */
-    public function setVisitType($visitType)
+    public function getTicketType()
     {
-        $this->visitType = $visitType;
-
-        return $this;
+        return $this->ticketType;
     }
 
     /**
