@@ -12,14 +12,23 @@ use AppBundle\Validator\Constraints as AppAssert;
  *
  * @ORM\Table(name="purchase")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseRepository")
+ * @AppAssert\NotAvailableTicketType()
+ * @AppAssert\NotTuesday()
+ * @AppAssert\NotSunday()
+ * @AppAssert\NotPastDate()
+ * @AppAssert\NotHoliday()
  */
 class Purchase
 {
+    const STATUS_INITIALIZED = 0;
+    const STATUS_CONFIRMED = 1;
+    const STATUS_PAID = 2;
+    const STATUS_SENT = 3;
 
-    const STATUS_0 = "initialized";
-    const STATUS_1 = "confirmed";
-    const STATUS_2 = "paid";
-    const STATUS_3 = "sent";
+    const MAX_PURCHASE_TICKETS = 6;
+
+    const FULL_DAY_TICKET_TYPE = 0;
+    const HALF_DAY_TICKET_TYPE = 1;
 
     /**
      * Constructor
@@ -28,8 +37,7 @@ class Purchase
     {
       $this->date = new \Datetime();
       $this->tickets   = new ArrayCollection();
-      $this->email = "";
-      $this->status = self::STATUS_0;
+      $this->status = self::STATUS_INITIALIZED;
     }
 
     /**
@@ -53,6 +61,7 @@ class Purchase
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * 
      * @Assert\Email()
      */
     private $email;
@@ -69,13 +78,12 @@ class Purchase
      *
      * @ORM\Column(name="date_visit", type="date")
      * @Assert\Date()
-     * @appAssert\Dateavailable()
      */
     private $dateOfVisit;
 
     /**
      * 
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="Purchase")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase")
      * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid()
      */
@@ -85,7 +93,7 @@ class Purchase
      * @var int
      * @Assert\Range(
      * min = 1,
-     * max = 6,
+     * max = Purchase::MAX_PURCHASE_TICKETS,
      * )
      */
     private $numberOfTickets;
@@ -93,7 +101,6 @@ class Purchase
     /**
      * @var string
      * @ORM\Column(name="ticket_type", type="string", length=10)
-     * @AppAssert\Tickettypeavailable()
      */
     private $ticketType;
 
@@ -265,7 +272,7 @@ class Purchase
     /**
      * Get numberOfTickets
      */
-    public function getnumberOfTickets()
+    public function getNumberOfTickets()
     {
         return $this->numberOfTickets;
     }
@@ -273,10 +280,11 @@ class Purchase
     /**
      * Set numberOfTickets
      */
-    public function setnumberOfTickets($numberOfTickets)
+    public function setNumberOfTickets($numberOfTickets)
     {
         $this->numberOfTickets = $numberOfTickets;
 
         return $this;
     }
+
 }

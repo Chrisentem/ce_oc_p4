@@ -76,7 +76,7 @@ class Purchase
 
     /**
      * 
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="Purchase")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase")
      * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid()
      */
@@ -240,6 +240,30 @@ class Purchase
     }
 
     /**
+     * Set ticketType
+     *
+     * @param string $ticketType
+     *
+     * @return Purchase
+     */
+    public function setTicketType($ticketType)
+    {
+        $this->ticketType = $ticketType;
+
+        return $this;
+    }
+
+    /**
+     * Get ticketType
+     *
+     * @return string
+     */
+    public function getTicketType()
+    {
+        return $this->ticketType;
+    }
+
+    /**
      * Get numberOfTickets
      */
     public function getnumberOfTickets()
@@ -256,4 +280,5 @@ class Purchase
 
         return $this;
     }
+
 }
