@@ -4,43 +4,36 @@ namespace AppBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
+use AppBundle\Entity\Purchase;
 
-class DateavailableValidator extends ConstraintValidator {
+class NotPastDateValidator extends ConstraintValidator {
 
   
     public function validate($value, Constraint $constraint)
     {
 		// custom constraints should ignore null and empty values to allow
         // other constraints (NotBlank, NotNull, etc.) take care of that
-		if (null === $value || '' === $value) {
+		if (!$value instanceof Purchase) {
             return;
         }
 			  
 		if ($this->isUnavailable($value)) {
-			$this->context->addViolation($constraint->message);
+			$this->context->buildViolation($constraint->message)->atPath('dateOfVisit')->addViolation();
 		}
-
     }
 	
-	public function isUnavailable($date) {
-		
-		// closed days constraint
-		$closedDays = ['01-05', '01-11', '25-12'];
-		$chosenDateDM = $date->format('d-m');
-		
-		// Passed day constraint
+	private function isUnavailable(Purchase $purchase) {
+		// As Purchase class constraint we have access to Purchase getters
+        $chosenDate = $purchase->getDateOfVisit();
+
         $today = new \Datetime('now');
         $todayYMD = $today->format('Y-m-d');
-		$chosenDateYMD = $date->format('Y-m-d');
-		
-		// closed on Tuesday constraint
-		$chosenDateD = $date->format('D');
-		
-		
-		if (in_array($chosenDateDM, $closedDays) || $chosenDateYMD < $todayYMD || $chosenDateD == "Tue") {
+		$chosenDateYMD = $chosenDate->format('Y-m-d');
+        
+        // Past date constraint
+		if ($chosenDateYMD < $todayYMD) {
 			return true;
 		}
-		
 		return false;
     }
 }
