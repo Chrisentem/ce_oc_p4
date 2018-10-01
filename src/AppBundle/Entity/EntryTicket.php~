@@ -65,6 +65,11 @@ class EntryTicket
      */
     private $discounted;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Purchase", inversedBy="tickets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $purchase;
 
     /**
      * Get id
@@ -220,4 +225,3 @@ class EntryTicket
         return $this->discounted;
     }
 }
-

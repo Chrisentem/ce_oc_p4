@@ -65,6 +65,11 @@ class EntryTicket
      */
     private $discounted;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Purchase", inversedBy="tickets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $purchase;
 
     /**
      * Get id
@@ -218,5 +223,29 @@ class EntryTicket
     public function getDiscounted()
     {
         return $this->discounted;
+    }
+
+    /**
+     * Set purchase
+     *
+     * @param \AppBundle\Entity\Purchase $purchase
+     *
+     * @return EntryTicket
+     */
+    public function setPurchase(\AppBundle\Entity\Purchase $purchase)
+    {
+        $this->purchase = $purchase;
+
+        return $this;
+    }
+
+    /**
+     * Get purchase
+     *
+     * @return \AppBundle\Entity\Purchase
+     */
+    public function getPurchase()
+    {
+        return $this->purchase;
     }
 }
