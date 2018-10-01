@@ -26,21 +26,14 @@ class PurchaseType extends AbstractType
         ->add('ticketType', ChoiceType::class, array(
             'label' => 'Ticket Type',
             'choices'  => array(
-                'full-day' => 'fullday',
-                'half-day' => 'halfday',
+                'full-day' => 0,
+                'half-day' => 1,
             ))
         )
         ->add('numberOfTickets', ChoiceType::class, array(
             'label' => 'Qty',
             'required' => true,
-            'choices' => array(
-                '1' => '1',
-                '2' => '2',
-                '3' => '3',
-                '4' => '4',
-                '5' => '5',
-                '6' => '6',
-            ),
+            'choices' => array_combine(range(1,6),range(1,6)),
             )
         );
     }
