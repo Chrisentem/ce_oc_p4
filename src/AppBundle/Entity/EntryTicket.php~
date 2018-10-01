@@ -26,6 +26,7 @@ class EntryTicket
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $firstname;
 
@@ -33,6 +34,7 @@ class EntryTicket
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $lastname;
 
@@ -40,6 +42,7 @@ class EntryTicket
      * @var string
      *
      * @ORM\Column(name="country", type="string", length=255)
+     * 
      */
     private $country;
 
