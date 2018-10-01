@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use Doctrine\ORM\QueryBuilder;
+
 /**
  * PurchaseRepository
  *
@@ -10,4 +12,11 @@ namespace AppBundle\Repository;
  */
 class PurchaseRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function ticketsSoldOnChosenDate($date)
+	{
+		$qb = $this->createQueryBuilder('purchase');
+        $qb->select('COUNT(purchase.tickets)')
+            ->where('purchase.date = :date')
+            ->setParameter('date', $date);
+	}
 }
