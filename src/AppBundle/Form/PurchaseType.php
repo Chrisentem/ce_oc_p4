@@ -44,7 +44,8 @@ class PurchaseType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Purchase'
+            'data_class' => Purchase::class,            
+            'validation_groups' => array('step1'),
         ));
     }
 

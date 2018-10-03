@@ -26,7 +26,7 @@ class EntryTicket
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=255)
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"step2"})
      */
     private $firstname;
 
@@ -34,7 +34,7 @@ class EntryTicket
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=255)
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"step2"})
      */
     private $lastname;
 
@@ -50,7 +50,7 @@ class EntryTicket
      * @var \DateTime
      *
      * @ORM\Column(name="birthdate", type="date")
-     * @Assert\Date()
+     * @Assert\Date(groups={"step2"})
      */
     private $birthdate;
 

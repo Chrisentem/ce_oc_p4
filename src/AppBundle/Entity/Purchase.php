@@ -12,11 +12,11 @@ use AppBundle\Validator\Constraints as AppAssert;
  *
  * @ORM\Table(name="purchase")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseRepository")
- * @AppAssert\NotAvailableTicketType()
- * @AppAssert\NotTuesday()
- * @AppAssert\NotSunday()
- * @AppAssert\NotPastDate()
- * @AppAssert\NotHoliday()
+ * @AppAssert\NotAvailableTicketType(groups={"step1"})
+ * @AppAssert\NotTuesday(groups={"step1"})
+ * @AppAssert\NotSunday(groups={"step1"})
+ * @AppAssert\NotPastDate(groups={"step1"})
+ * @AppAssert\NotHoliday(groups={"step1"})
  */
 class Purchase
 {
@@ -53,7 +53,7 @@ class Purchase
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
-     * @Assert\DateTime()
+     * @Assert\DateTime(groups={"step1"})
      */
     private $date;
 
@@ -62,7 +62,7 @@ class Purchase
      *
      * @ORM\Column(name="email", type="string", length=255)
      * 
-     * @Assert\Email()
+     * @Assert\Email(groups={"step3"})
      */
     private $email;
 
@@ -77,7 +77,7 @@ class Purchase
      * @var \Date
      *
      * @ORM\Column(name="date_visit", type="date")
-     * @Assert\Date()
+     * @Assert\Date(groups={"step1"})
      */
     private $dateOfVisit;
 
@@ -85,7 +85,7 @@ class Purchase
      * 
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\Valid()
+     * @Assert\Valid(groups={"step2"})
      */
     private $tickets;
 
