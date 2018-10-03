@@ -251,4 +251,14 @@ class EntryTicket
     {
         return $this->purchase;
     }
+
+    /**
+     * Get visitor age from Birthdate
+     * 
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->getBirthdate()->diff($this->getPurchase()->getDateOfVisit())->y;
+    } 
 }

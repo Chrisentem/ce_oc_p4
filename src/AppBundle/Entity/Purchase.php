@@ -74,7 +74,7 @@ class Purchase
     private $status;
 
     /**
-     * @var \Date
+     * @var \DateTime
      *
      * @ORM\Column(name="date_visit", type="date")
      * @Assert\Date(groups={"step1"})
@@ -104,6 +104,34 @@ class Purchase
      */
     private $ticketType;
 
+    /**
+     * @var int
+     */
+    private $total;
+
+    /**
+     * Get total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }    
+
+    /**
+     * Set total
+     *
+     * @param int $total
+     *
+     * @return Purchase
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+
+        return $this;
+    }    
 
     /**
      * Get id
@@ -221,6 +249,7 @@ class Purchase
     public function addTicket(\AppBundle\Entity\EntryTicket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setPurchase($this);
 
         return $this;
     }

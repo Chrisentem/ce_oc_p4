@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div id="header" class="jumbotron">
+            <h1>Billetterie du Louvre</h1>
+        </div>
+        <div class="row">
+            <div id="content" class="col-md-6">
+                <h3>Récapitulatif</h3>
+                <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Birthday</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for visitor in visitors %}
+                    <tr>
+                        <td>{{ visitor.firstname }}</td>
+                        <td>{{ visitor.lastname }}</td>
+                        <td>{{ visitor.birthdate|date("m/d/Y") }}</td>
+                        <td>{{ visitor.price }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="bg-info">
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">TOTAL</th>
+                        <th scope="col">{{ totalPrice }}</th>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>        
+        <div class="row">
+            <div id="content" class="col-md-6">
+                <h3>Confirmation</h3>
+                    <div class="well">
+                    {{ form_start(form) }}
+                    {{ form_rest(form)}}
+                    <button type="submit" class="btn btn-primary">Je commande</button>
+                    {{ form_end(form)}}
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+</style>
+{% endblock %}

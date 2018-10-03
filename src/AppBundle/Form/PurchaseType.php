@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use AppBundle\Entity\Purchase;
 
 class PurchaseType extends AbstractType
 {
@@ -19,7 +20,6 @@ class PurchaseType extends AbstractType
         ->add('dateOfVisit', DateType::class, array(
                 'label' => 'Date of visit',
                 'widget' => 'choice',
-                'data' => new \DateTime(),
                 'years' => range(date('Y'), date('Y')+1),
             )
         )
@@ -33,7 +33,7 @@ class PurchaseType extends AbstractType
         ->add('numberOfTickets', ChoiceType::class, array(
             'label' => 'Qty',
             'required' => true,
-            'choices' => array_combine(range(1,6),range(1,6)),
+            'choices' => array_combine(range(1,Purchase::MAX_PURCHASE_TICKETS),range(1,Purchase::MAX_PURCHASE_TICKETS)),
             )
         );
     }
