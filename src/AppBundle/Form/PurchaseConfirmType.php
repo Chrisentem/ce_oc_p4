@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use AppBundle\Entity\Purchase;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -17,11 +18,14 @@ class PurchaseConfirmType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-        ->add('email', EmailType::class, array(
-            'label' => 'Email Address',
-            )
-        );
+        $builder->add('email', RepeatedType::class, array(
+            'type' => EmailType::class,
+            'invalid_message' => 'The email fields must match.',
+            'options' => array('attr' => array('class' => 'email-field')),
+            'required' => true,
+            'first_options'  => array('label' => 'Email address'),
+            'second_options' => array('label' => 'Repeat Email address'),
+        ));
     }
     
     /**
