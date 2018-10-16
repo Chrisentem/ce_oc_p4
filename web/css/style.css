@@ -3,3 +3,18 @@
 .form-control {
     width: auto !important;
 }
+/** CGV **/
+
+#cgv .row.body .columns table td.num {
+    padding: 0 0.500em 0 0;
+}
+#cgv .row.body .columns table td.num {
+    vertical-align: baseline;
+}
+#cgv .row.body .columns table td.spacer {
+    line-height: 0.5;
+}
+.backtop {
+    padding-top: 10px;
+    text-align: right;
+}

@@ -108,5 +108,14 @@ class DefaultController extends Controller
                 ]);    
         }
         return $this->redirectToRoute('homepage');
+    /**
+     * @Route("/cgv", name="cgv")
+     */
+    public function cgvAction() {
+
+        return $this->render('default/cgv.html.twig');
+    }
+
+    /**
     }
 }
