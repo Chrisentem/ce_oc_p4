@@ -34,6 +34,9 @@ services:
         arguments:
             $stripePrivateKey: '%stripe_secret_key%'
 
+    AppBundle\Manager\PurchaseManager:
+        arguments:
+            $em: "@doctrine.orm.entity_manager"
 
     Stripe\Stripe: ~
 
