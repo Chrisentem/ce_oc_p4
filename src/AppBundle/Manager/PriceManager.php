@@ -6,7 +6,7 @@ use AppBundle\Entity\Purchase;
 use AppBundle\Entity\EntryTicket;
 
 
-Class PriceManager {
+class PriceManager {
 
     const PRICE_BABY = 0;
     const PRICE_CHILDREN = 8;
@@ -20,8 +20,12 @@ Class PriceManager {
 
     const HALF_DAY_COEFF = 0.5;
 
-    private function getPriceFromAge(int $age) {
-
+    /**
+     * @param $age
+     * @return int
+     */
+    private function getPriceFromAge($age)
+    {
         if ($age < self::LEVEL_BABY) {
             $price = self::PRICE_BABY;
         }
@@ -38,34 +42,38 @@ Class PriceManager {
 
     }
 
-    public function computeTicketPrice(EntryTicket $ticket) {
-
+    /**
+     * @param EntryTicket $ticket
+     */
+    public function computeTicketPrice(EntryTicket $ticket)
+    {
         $basePrice = $this->getPriceFromAge($ticket->getAge());
         $discount = $ticket->getDiscounted();
         $ticketType = $ticket->getPurchase()->getTicketType();
 
-
         if ($discount == true) {
-
-            $price = self::PRICE_REDUCED;
+            if ($ticketType == Purchase::HALF_DAY_TICKET_TYPE) {
+                $price = self::PRICE_REDUCED * self::HALF_DAY_COEFF;
+            } else {
+                $price = self::PRICE_REDUCED;
+            }
         }
         elseif ($ticketType == Purchase::HALF_DAY_TICKET_TYPE) {
-
             $price = $basePrice * self::HALF_DAY_COEFF;
         }
-        elseif($discount == true && $ticketType == Purchase::HALF_DAY_TICKET_TYPE) {
-
-            $price = self::PRICE_REDUCED * self::HALF_DAY_COEFF;
+        else {
+            $price = $basePrice;
         }
-        $price = $basePrice;
 
         $ticket->setPrice($price);
         // return $price;
-
     }
 
-    public function computePurchasePrice(Purchase $purchase){
-        //boucle sur les tickets avec à l'interieur appel de la methode computeTicketPrice
+    /**
+     * @param Purchase $purchase
+     */
+    public function computePurchasePrice(Purchase $purchase)
+    {
         $tickets = $purchase->getTickets();
 
         $prices = [];
@@ -74,7 +82,6 @@ Class PriceManager {
             $this->computeTicketPrice($ticket);
             array_push($prices, $ticket->getPrice());
         }
-
         $purchase->setTotal(array_sum($prices));
     }
 
