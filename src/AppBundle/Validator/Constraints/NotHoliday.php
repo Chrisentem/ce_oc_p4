@@ -11,6 +11,9 @@ class NotHoliday extends Constraint {
 
     public $message = "Le musée est fermé les jours fériés, veuillez choisir une autre date !";
 
+    /**
+     * @return array|string
+     */
     public function getTargets()
     {
         return self::CLASS_CONSTRAINT;

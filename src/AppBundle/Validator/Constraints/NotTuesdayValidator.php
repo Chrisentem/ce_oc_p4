@@ -8,7 +8,11 @@ use AppBundle\Entity\Purchase;
 
 class NotTuesdayValidator extends ConstraintValidator {
 
-  
+
+    /**
+     * @param $value
+     * @param Constraint $constraint
+     */
     public function validate($value, Constraint $constraint)
     {
 		// custom constraints should ignore null and empty values to allow
@@ -21,14 +25,18 @@ class NotTuesdayValidator extends ConstraintValidator {
 			$this->context->buildViolation($constraint->message)->atPath('dateOfVisit')->addViolation();
 		}
     }
-	
-	private function isUnavailable(Purchase $purchase) {
+
+    /**
+     * @param Purchase $purchase
+     * @return bool
+     */
+    private function isUnavailable(Purchase $purchase) {
 		// As Purchase class constraint we have access to Purchase getters
         $chosenDate = $purchase->getDateOfVisit();
 
 		$chosenDateD = $chosenDate->format('D');
 		
-		// Closed on Tuedsday constraint
+		// Closed on Tuesday constraint
 		if ($chosenDateD == "Tue") {
 			return true;
 		}

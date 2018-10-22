@@ -4,12 +4,14 @@ namespace AppBundle\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-
-use Symfony\Component\HttpFoundation\RequestStack;
 use AppBundle\Entity\Purchase;
 
 class NotAvailableTicketTypeValidator extends ConstraintValidator {
 
+    /**
+     * @param mixed $value
+     * @param Constraint $constraint
+     */
     public function validate($value, Constraint $constraint)
     {
 		// custom constraints should ignore null and empty values to allow
@@ -22,8 +24,12 @@ class NotAvailableTicketTypeValidator extends ConstraintValidator {
             $this->context->buildViolation($constraint->message)->atPath('ticketType')->addViolation();
 		}
     }
-	
-	private function isUnavailable(Purchase $purchase) {
+
+    /**
+     * @param Purchase $purchase
+     * @return bool
+     */
+    private function isUnavailable(Purchase $purchase) {
 		
         $today = new \Datetime('now');
         $nowtime = $today->format('H');

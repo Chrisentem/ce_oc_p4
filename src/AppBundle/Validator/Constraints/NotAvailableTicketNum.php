@@ -11,6 +11,9 @@ class NotAvailableTicketNum extends Constraint {
 
     public $message = "Il n'y a plus assez de billets disponibles pour cette date";
 
+    /**
+     * @return array|string
+     */
     public function getTargets()
     {
         return self::CLASS_CONSTRAINT;

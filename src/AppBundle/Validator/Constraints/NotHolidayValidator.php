@@ -8,7 +8,11 @@ use AppBundle\Entity\Purchase;
 
 class NotHolidayValidator extends ConstraintValidator {
 
-  
+
+    /**
+     * @param $value
+     * @param Constraint $constraint
+     */
     public function validate($value, Constraint $constraint)
     {
 		// custom constraints should ignore null and empty values to allow
@@ -22,8 +26,12 @@ class NotHolidayValidator extends ConstraintValidator {
 		}
 
     }
-	
-	public function isUnavailable(Purchase $purchase) {
+
+    /**
+     * @param Purchase $purchase
+     * @return bool
+     */
+    public function isUnavailable(Purchase $purchase) {
 		// As Purchase class constraint we have access to Purchase getters
 		$chosenDate = $purchase->getDateOfVisit();
 		$year = $chosenDate->format('Y');
@@ -38,9 +46,13 @@ class NotHolidayValidator extends ConstraintValidator {
 		
 		return false;
 	}
-	
 
-	private function getHolidaysList($year = null) {
+
+    /**
+     * @param null $year
+     * @return array
+     */
+    private function getHolidaysList($year = null) {
 
 		if ($year === null)
 		{

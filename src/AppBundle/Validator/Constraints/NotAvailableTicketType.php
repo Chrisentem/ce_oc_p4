@@ -11,6 +11,9 @@ class NotAvailableTicketType extends Constraint {
 
     public $message = "Ce type de billet n'est plus disponible après 14h, veuillez choisir demi-journée.";
 
+    /**
+     * @return array|string
+     */
     public function getTargets()
     {
         return self::CLASS_CONSTRAINT;
