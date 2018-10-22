@@ -4,8 +4,10 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\EntryTicket;
 use AppBundle\Entity\Purchase;
+use AppBundle\Service\dataConverter;
 use AppBundle\Service\Payment;
 use Doctrine\ORM\EntityManager;
+use Swift_Image;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
@@ -159,17 +161,23 @@ class PurchaseManager
      */
     public function sendDigitalTicket()
     {
-        $message = \Swift_Message::newInstance()
-            ->setContentType('text/html')
+        $message = \Swift_Message::newInstance();
+        // Embed logo
+        $cid = $message->embed(Swift_Image::fromPath('img/logo-louvre-2018.jpg'));
+
+        $htmlContent = $this->environment->render('default/digitalTicket.html.twig', [
+            'purchase' => $this->currentPurchase,
+            'totalPrice' => $this->currentPurchase->getTotal(),
+            'logo' => $cid,
+        ]);
+        $textContent = DataConverter::stripHTML($htmlContent);
+
+        $message = $message->setContentType('text/html')
             ->setSubject("Vos entrées pour le Musée du Louvre")
             ->setFrom('chrisentemdev-484d0d@inbox.mailtrap.io')
             ->setTo($this->currentPurchase->getEmail())
-            ->setBody($this->environment->render('default/digitalTicket.html.twig', [
-                'purchase' => $this->currentPurchase,
-                'totalPrice' => $this->currentPurchase->getTotal(),
-                ]))
-            ->addPart('Voici votre billet digital à utiliser lors de votre visite au Musée du Louvre le '
-                . $this->currentPurchase->getDateOfVisit()->format('d-m-Y'), 'text/plain');
+            ->setBody($htmlContent)
+            ->addPart($textContent, 'text/plain');
 
         $this->mailer->send($message);
 
