@@ -4,7 +4,7 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\EntryTicket;
 use AppBundle\Entity\Purchase;
-use AppBundle\Service\dataConverter;
+use AppBundle\Service\DataConverter;
 use AppBundle\Service\Payment;
 use Doctrine\ORM\EntityManager;
 use Swift_Image;
@@ -96,7 +96,7 @@ class PurchaseManager
                 $this->currentPurchase->removeTicket($this->currentPurchase->getTickets()->last());
             }
         }
-        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_2) {
+        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_1) {
             $this->currentPurchase->setStatus(Purchase::STATUS_STEP_2);
         }
         return $this->currentPurchase;
@@ -107,7 +107,7 @@ class PurchaseManager
     public function generatePrices()
     {
         $this->priceManager->computePurchasePrice($this->currentPurchase);
-        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_3) {
+        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_2) {
             $this->currentPurchase->setStatus(Purchase::STATUS_STEP_3);
         }
     }
@@ -140,7 +140,7 @@ class PurchaseManager
      */
     public function confirmPurchase()
     {
-        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_4) {
+        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_3) {
             $this->currentPurchase->setStatus(Purchase::STATUS_STEP_4);
         }
     }
