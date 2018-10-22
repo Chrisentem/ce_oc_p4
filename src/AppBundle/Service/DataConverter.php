@@ -8,7 +8,7 @@
 
 namespace AppBundle\Service;
 
-class dataConverter
+class DataConverter
 {
     /**
      * From https://stackoverflow.com/questions/1930297/html-to-plain-text-for-email/23988241#23988241
