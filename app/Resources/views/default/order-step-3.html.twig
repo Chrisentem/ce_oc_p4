@@ -1,56 +1,51 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}
+    Achat étape 3 - {{ parent() }}
+{% endblock %}
+        {% block breadcrumb %}
+            {% include 'default/_breadcrumb.html.twig' %}
+        {% endblock %}
 {% block body %}
-    <div class="container">
-        <div id="header" class="jumbotron">
-            <h1>Billetterie du Louvre</h1>
-        </div>
         <div class="row">
-            <div id="content" class="col-md-6">
+            <div id="content" class="col-xs-12 col-sm-6">
                 <h3>Récapitulatif</h3>
                 <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Birthday</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for visitor in visitors %}
-                    <tr>
-                        <td>{{ visitor.firstname }}</td>
-                        <td>{{ visitor.lastname }}</td>
-                        <td>{{ visitor.birthdate|date("m/d/Y") }}</td>
-                        <td>{{ visitor.price }}</td>
-                    </tr>
-                    {% endfor %}
-                    <tr class="bg-info">
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col">TOTAL</th>
-                        <th scope="col">{{ totalPrice }}</th>
-                    </tr>
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th scope="col">Firstname</th>
+                            <th scope="col">Lastname</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in purchase.tickets %}
+                        <tr>
+                            <td>{{ ticket.firstname }}</td>
+                            <td>{{ ticket.lastname }}</td>
+                            <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
+                            <td>{{ ticket.price }} &euro;</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>        
         <div class="row">
-            <div id="content" class="col-md-6">
+            <div id="content" class="col-xs-12 col-sm-6">
                 <h3>Confirmation</h3>
+                <p>Veuillez nous indiquer à quelle adresse email envoyer le billet électronique</p>
                     <div class="well">
                     {{ form_start(form) }}
+                        {{ form_row(form.email) }}
+                        {% autoescape false %}
+                        {{ form_row(form.agree, { 'label': 'J\'ai lu et j\'accèpte les conditions générales de vente' }) }}
+                        {% endautoescape %}
                     {{ form_rest(form)}}
-                    <button type="submit" class="btn btn-primary">Je commande</button>
+                    <a href="{{ path('order_step_2') }}" class="btn btn-primary">Retour</a>
+                    <button type="submit" class="btn btn-primary">Confirmer la commande</button>
                     {{ form_end(form)}}
                     </div>
             </div>
         </div>
-    </div>
-{% endblock %}
-
-{% block stylesheets %}
-<style>
-</style>
 {% endblock %}

@@ -13,6 +13,7 @@ class PurchaseManager
 {
 
     const SESSION_PURCHASE_KEY = 'purchase';
+    const BOOKING_CODE_LENGTH = 8;
     /**
      * @var \Swift_Mailer
      */
@@ -93,7 +94,9 @@ class PurchaseManager
                 $this->currentPurchase->removeTicket($this->currentPurchase->getTickets()->last());
             }
         }
-        $this->currentPurchase->setStatus(Purchase::STATUS_STEP_2);
+        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_2) {
+            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_2);
+        }
         return $this->currentPurchase;
     }
 
@@ -102,14 +105,16 @@ class PurchaseManager
     public function generatePrices()
     {
         $this->priceManager->computePurchasePrice($this->currentPurchase);
-        $this->currentPurchase->setStatus(Purchase::STATUS_STEP_3);
+        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_3) {
+            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_3);
+        }
     }
 
     /**
-     * @return bool
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
+     * @throws \Exception
      */
     public function doPayment()
     {
@@ -126,6 +131,16 @@ class PurchaseManager
             return $purchase;
         }
         return false;
+    }
+
+    /**
+     *
+     */
+    public function confirmPurchase()
+    {
+        if ($this->currentPurchase->getStatus() < Purchase::STATUS_STEP_4) {
+            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_4);
+        }
     }
 
     /**

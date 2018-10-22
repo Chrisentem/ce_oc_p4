@@ -20,10 +20,10 @@ use AppBundle\Validator\Constraints as AppAssert;
  */
 class Purchase
 {
-    const STATUS_INITIALIZED = 0;
-    const STATUS_CONFIRMED = 1;
-    const STATUS_PAID = 2;
-    const STATUS_SENT = 3;
+    const STATUS_STEP_1 = 1;
+    const STATUS_STEP_2 = 2;
+    const STATUS_STEP_3 = 3;
+    const STATUS_STEP_4 = 4;
 
     const MAX_PURCHASE_TICKETS = 6;
 
@@ -37,7 +37,7 @@ class Purchase
     {
       $this->date = new \Datetime();
       $this->tickets   = new ArrayCollection();
-      $this->status = self::STATUS_INITIALIZED;
+      $this->status = self::STATUS_STEP_1;
     }
 
     /**
@@ -67,9 +67,8 @@ class Purchase
     private $email;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="status", type="string", length=255)
      */
     private $status;
 
@@ -204,30 +203,6 @@ class Purchase
     }
 
     /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return Purchase
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
      * Set dateOfVisit
      *
      * @param \Datetime $dateOfVisit
@@ -320,6 +295,8 @@ class Purchase
 
     /**
      * Set numberOfTickets
+     * @param $numberOfTickets
+     * @return Purchase
      */
     public function setNumberOfTickets($numberOfTickets)
     {
@@ -329,7 +306,21 @@ class Purchase
     }
 
     /**
+     * @param int $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
     /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
     /**
      * @param mixed $agree
      */

@@ -1,22 +1,43 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+        {% block breadcrumb %}
+            {% include 'default/_breadcrumb.html.twig' %}
+        {% endblock %}
 {% block body %}
-    <div class="container">
-        <div id="header" class="jumbotron">
-            <h1>Billetterie du Louvre</h1>
+        <div class="row">
+            <div id="content" class="col-md-6">
+                <h3>Acheter des billets</h3>
+                <div class="well">
+                    {{ form_start(form) }}
+                    {{ form_row(form.dateOfVisit) }}
+                    {{ form_row(form.ticketType) }}
+                    {{ form_row(form.numberOfTickets) }}
+                    <button type="submit" class="btn btn-primary">étape suivante</button>
+                    {{ form_end(form)}}
+                </div>
+            </div>
+            <div id="infos" class="col-md-6">
+                <h3>Infos</h3>
+                <p>Le musée du Louvre est ouvert tous les jours, sauf les dimanches et les jours fériés, de 9h à 18h, jusqu'à 21h45 les mercredis et vendredis, à l’exception des jours fériés. La fermeture des salles débute à 17h30 et à 21h30 les mercredis et vendredis. </p>
+                <p>Le billet acheté en ligne est horodaté et nominatif, un document d’identité peut être demandé. Il est valable exclusivement pour la prestation, la date et à compter de l'heure mentionnée. Il ne constitue pas un coupe file mais permet un accès à la pyramide du Louvre dans la demi-heure de l'horaire indiqué. En cas de non-respect de ce créneau horaire, le porteur du billet print@home est soumis aux mêmes conditions d'accès et d'attente que les visiteurs sans billet.</p>
+            </div>
         </div>
+        <hr>
         <div class="row">
             <div id="infos" class="col-md-12">
                 <h3>Les tarifs</h3>
                 <table class="table table-dark">
-                <thead>
+                    <thead>
                     <tr>
-                    <th scope="col">Tarifs</th>
-                    <th scope="col">Conditions</th>
-                    <th scope="col">Prix</th>
+                        <th scope="col">Tarifs</th>
+                        <th scope="col">Conditions</th>
+                        <th scope="col">Prix</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
                         <th scope="row">"normal"</th>
                         <td>à partir de 12 ans</td>
@@ -36,36 +57,9 @@
                         <th scope="row">"réduit"</th>
                         <td>sur présentation d'un justificatif (étudiant, employé du musée ou du Ministère de la Culture, militaire)</td>
                         <td>10 €</td>
-                    </tr>	
-                </tbody>
+                    </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-        <div class="row">
-            <div id="content" class="col-md-6">
-                <h3>Achat billets</h3>
-                <div class="well">
-                    {{ form_start(form) }}
-                    {{ form_row(form.dateOfVisit) }}
-                    {{ form_row(form.ticketType) }}
-                    {{ form_row(form.numberOfTickets) }}
-                    <button type="submit" class="btn btn-primary">étape suivante</button>
-                    {{ form_end(form)}}
-                </div>
-            </div>
-            <div id="infos" class="col-md-6">
-                <h3>Infos</h3>
-                <p>Le musée du Louvre est ouvert tous les jours, sauf les dimanches et les jours fériés, de 9h à 18h, jusqu'à 21h45 les mercredis et vendredis, à l’exception des jours fériés. La fermeture des salles débute à 17h30 et à 21h30 les mercredis et vendredis. </p>
-                <p>Le billet acheté en ligne est horodaté et nominatif, un document d’identité peut être demandé.
-Il est valable exclusivement pour la prestation, la date et à compter de l'heure mentionnée. Il ne constitue pas un coupe file mais permet un accès à la pyramide du Louvre dans la demi-heure de l'horaire indiqué. En cas de non-respect de ce créneau horaire, le porteur du billet print@home est soumis aux mêmes conditions d'accès et d'attente que les visiteurs sans billet.</p>
-            </div>
-        </div>
-
-    </div>
-{% endblock %}
-
-{% block stylesheets %}
-<style>
-
-</style>
 {% endblock %}

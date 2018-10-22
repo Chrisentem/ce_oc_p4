@@ -1,0 +1,29 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<div class="container">
+        <div class="btn-group btn-breadcrumb">
+                {% if purchase.status == 1 %}
+                    <a class="btn btn-primary" href="{{ path('homepage') }}"><i class="fa fa-home"></i> Achat de billets</a>
+                    <a class="btn btn-primary isDisabled" href="">Infos Visiteurs</a>
+                    <a class="btn btn-primary isDisabled" href="">Récapitulatif</a>
+                    <a class="btn btn-primary isDisabled" href="">Paiement</a>
+                {% elseif purchase.status == 2 %}
+                    <a class="btn btn-primary" href="{{ path('homepage') }}"><i class="fa fa-home"></i></a>
+                    <a class="btn btn-primary" href="{{ path('order_step_2') }}">Infos Visiteurs</a>
+                    <a class="btn btn-primary isDisabled" href="">Récapitulatif</a>
+                    <a class="btn btn-primary isDisabled" href="">Paiement</a>
+                {% elseif purchase.status == 3 %}
+                    <a class="btn btn-primary" href="{{ path('homepage') }}"><i class="fa fa-home"></i></a>
+                    <a class="btn btn-primary" href="{{ path('order_step_2') }}">Infos Visiteurs</a>
+                    <a class="btn btn-primary" href="{{ path('order_step_3') }}">Récapitulatif</a>
+                    <a class="btn btn-primary isDisabled" href="">Paiement</a>
+                {% elseif purchase.status == 4 %}
+                    <a class="btn btn-primary" href="{{ path('homepage') }}"><i class="fa fa-home"></i></a>
+                    <a class="btn btn-primary" href="{{ path('order_step_2') }}">Infos Visiteurs</a>
+                    <a class="btn btn-primary" href="{{ path('order_step_3') }}">Récapitulatif</a>
+                    <a class="btn btn-primary" href="{{ path('order_step_4') }}">Paiement</a>
+                {% endif %}
+        </div>
+</div>
+
+

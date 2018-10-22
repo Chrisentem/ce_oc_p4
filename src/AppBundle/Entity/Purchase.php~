@@ -12,14 +12,22 @@ use AppBundle\Validator\Constraints as AppAssert;
  *
  * @ORM\Table(name="purchase")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseRepository")
+ * @AppAssert\NotAvailableTicketType(groups={"step1"})
+ * @AppAssert\NotSunday(groups={"step1"})
+ * @AppAssert\NotPastDate(groups={"step1"})
+ * @AppAssert\NotHoliday(groups={"step1"})
  */
 class Purchase
 {
+    const STATUS_STEP_1 = 1;
+    const STATUS_STEP_2 = 2;
+    const STATUS_STEP_3 = 3;
+    const STATUS_STEP_4 = 4;
 
-    const STATUS_0 = "initialized";
-    const STATUS_1 = "confirmed";
-    const STATUS_2 = "paid";
-    const STATUS_3 = "sent";
+    const MAX_PURCHASE_TICKETS = 6;
+
+    const FULL_DAY_TICKET_TYPE = 0;
+    const HALF_DAY_TICKET_TYPE = 1;
 
     /**
      * Constructor
@@ -28,8 +36,7 @@ class Purchase
     {
       $this->date = new \Datetime();
       $this->tickets   = new ArrayCollection();
-      $this->email = "";
-      $this->status = self::STATUS_0;
+      $this->status = self::STATUS_STEP_1;
     }
 
     /**
@@ -45,7 +52,7 @@ class Purchase
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
-     * @Assert\DateTime()
+     * @Assert\DateTime(groups={"step1"})
      */
     private $date;
 
@@ -54,31 +61,41 @@ class Purchase
      *
      * @ORM\Column(name="email", type="string", length=255)
      * 
-     * @Assert\Email()
+     * @Assert\Email(groups={"step3"})
      */
     private $email;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="status", type="string", length=255)
      */
     private $status;
 
     /**
-     * @var \Date
+     * @var string
+     * @ORM\Column(name="booking_code", type="string", length=255)
+     */
+    private $bookingCode;
+
+    /**
+     * @var bool
+     * @Assert\IsTrue(groups={"step3"})
+     */
+    private $agree;
+
+    /**
+     * @var \DateTime
      *
      * @ORM\Column(name="date_visit", type="date")
-     * @Assert\Date()
-     * @AppAssert\Dateavailable()
+     * @Assert\Date(groups={"step1"})
      */
     private $dateOfVisit;
 
     /**
      * 
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\Valid()
+     * @Assert\Valid(groups={"step2"})
      */
     private $tickets;
 
@@ -86,7 +103,7 @@ class Purchase
      * @var int
      * @Assert\Range(
      * min = 1,
-     * max = 6,
+     * max = Purchase::MAX_PURCHASE_TICKETS,
      * )
      */
     private $numberOfTickets;
@@ -94,10 +111,37 @@ class Purchase
     /**
      * @var string
      * @ORM\Column(name="ticket_type", type="string", length=10)
-     * @AppAssert\Tickettypeavailable()
      */
     private $ticketType;
 
+    /**
+     * @var int
+     */
+    private $total;
+
+    /**
+     * Get total
+     *
+     * @return int
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }    
+
+    /**
+     * Set total
+     *
+     * @param int $total
+     *
+     * @return Purchase
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+
+        return $this;
+    }    
 
     /**
      * Get id
@@ -158,33 +202,9 @@ class Purchase
     }
 
     /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return Purchase
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
-     * Get status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
      * Set dateOfVisit
      *
-     * @param \Date $dateOfVisit
+     * @param \Datetime $dateOfVisit
      *
      * @return Purchase
      */
@@ -198,7 +218,7 @@ class Purchase
     /**
      * Get dateOfVisit
      *
-     * @return \Date
+     * @return \Datetime
      */
     public function getDateOfVisit()
     {
@@ -215,6 +235,7 @@ class Purchase
     public function addTicket(\AppBundle\Entity\EntryTicket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setPurchase($this);
 
         return $this;
     }
@@ -266,19 +287,69 @@ class Purchase
     /**
      * Get numberOfTickets
      */
-    public function getnumberOfTickets()
+    public function getNumberOfTickets()
     {
         return $this->numberOfTickets;
     }
 
     /**
      * Set numberOfTickets
+     * @param $numberOfTickets
+     * @return Purchase
      */
-    public function setnumberOfTickets($numberOfTickets)
+    public function setNumberOfTickets($numberOfTickets)
     {
         $this->numberOfTickets = $numberOfTickets;
 
         return $this;
+    }
+
+    /**
+     * @param int $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param mixed $agree
+     */
+    public function setAgree($agree)
+    {
+        $this->agree = $agree;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAgree()
+    {
+        return $this->agree;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBookingCode()
+    {
+        return $this->bookingCode;
+    }
+
+    /**
+     * @param string $bookingCode
+     */
+    public function setBookingCode($bookingCode)
+    {
+        $this->bookingCode = $bookingCode;
     }
 
 }
