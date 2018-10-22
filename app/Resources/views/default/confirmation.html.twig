@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Confirmation d'achat - {{ parent() }}
+{% endblock %}
+{% block breadcrumb %}
+{% endblock %}
+{% block body %}
+<div class="row">
+    <div id="content" class="col-lg-12">
+        <h3>Merci pour votre réservation !</h3>
+        <p>Un courriel de confirmation avec votre billet à été envoyé à {{ purchase.email }}</p>
+        <div class="jumbotron" role="alert">
+            <p>N° de réservation : {{ purchase.bookingCode }}</p>
+            <p>Montant réglé : {{ purchase.total }} €</p>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <a href="{{ path('homepage') }}" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+</div>
+{% endblock %}

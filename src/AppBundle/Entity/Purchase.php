@@ -13,7 +13,7 @@ use AppBundle\Validator\Constraints as AppAssert;
  * @ORM\Table(name="purchase")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseRepository")
  * @AppAssert\NotAvailableTicketType(groups={"step1"})
- * @AppAssert\NotTuesday(groups={"step1"})
+ * @AppAssert\NotAvailableTicketNum(groups={"step1"})
  * @AppAssert\NotSunday(groups={"step1"})
  * @AppAssert\NotPastDate(groups={"step1"})
  * @AppAssert\NotHoliday(groups={"step1"})
@@ -74,6 +74,18 @@ class Purchase
     private $status;
 
     /**
+     * @var string
+     * @ORM\Column(name="booking_code", type="string", length=255)
+     */
+    private $bookingCode;
+
+    /**
+     * @var bool
+     * @Assert\IsTrue(groups={"step3"})
+     */
+    private $agree;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_visit", type="date")
@@ -83,7 +95,7 @@ class Purchase
 
     /**
      * 
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\EntryTicket", mappedBy="purchase", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      * @Assert\Valid(groups={"step2"})
      */
@@ -218,7 +230,7 @@ class Purchase
     /**
      * Set dateOfVisit
      *
-     * @param \Date $dateOfVisit
+     * @param \Datetime $dateOfVisit
      *
      * @return Purchase
      */
@@ -232,7 +244,7 @@ class Purchase
     /**
      * Get dateOfVisit
      *
-     * @return \Date
+     * @return \Datetime
      */
     public function getDateOfVisit()
     {
@@ -246,7 +258,7 @@ class Purchase
      *
      * @return Purchase
      */
-    public function addTicket(\AppBundle\Entity\EntryTicket $ticket)
+    public function addTicket($ticket)
     {
         $this->tickets[] = $ticket;
         $ticket->setPurchase($this);
@@ -259,7 +271,7 @@ class Purchase
      *
      * @param \AppBundle\Entity\EntryTicket $ticket
      */
-    public function removeTicket(\AppBundle\Entity\EntryTicket $ticket)
+    public function removeTicket($ticket)
     {
         $this->tickets->removeElement($ticket);
     }
@@ -314,6 +326,40 @@ class Purchase
         $this->numberOfTickets = $numberOfTickets;
 
         return $this;
+    }
+
+    /**
+    /**
+    /**
+     * @param mixed $agree
+     */
+    public function setAgree($agree)
+    {
+        $this->agree = $agree;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAgree()
+    {
+        return $this->agree;
+    }
+
+    /**
+     * @return string
+     */
+    public function getBookingCode()
+    {
+        return $this->bookingCode;
+    }
+
+    /**
+     * @param string $bookingCode
+     */
+    public function setBookingCode($bookingCode)
+    {
+        $this->bookingCode = $bookingCode;
     }
 
 }

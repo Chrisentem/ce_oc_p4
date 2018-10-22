@@ -118,10 +118,12 @@ class PurchaseManager
         $description = 'Purchase payment for '.$email;
 
         if ($amount == 0 || $this->payment->applyPayment($amount, $description, $email)) {
+            $this->buildBookingCode(self::BOOKING_CODE_LENGTH);
+            $purchase = $this->getCurrentPurchase();
             $this->storePurchase();
             $this->sendDigitalTicket();
             $this->clearCurrentPurchase();
-            return true;
+            return $purchase;
         }
         return false;
     }
@@ -172,6 +174,17 @@ class PurchaseManager
     private function clearCurrentPurchase()
     {
         $this->session->clear();
+    }
+
+    /**
+     * @param int $length
+     * @return bool|string
+     */
+    private function buildBookingCode($length)
+    {
+        $code = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+        $this->currentPurchase->setBookingCode($code);
+        return $code;
     }
 
 }
