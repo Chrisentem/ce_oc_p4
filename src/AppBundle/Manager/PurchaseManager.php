@@ -4,10 +4,10 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\EntryTicket;
 use AppBundle\Entity\Purchase;
+use AppBundle\Exceptions\NoCurrentPurchaseException;
 use AppBundle\Service\DataConverter;
 use AppBundle\Service\Payment;
 use Doctrine\ORM\EntityManager;
-use Swift_Image;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
@@ -61,7 +61,6 @@ class PurchaseManager
         $this->environment = $environment;
         $this->session = $session;
         $this->em = $em;
-        $this->currentPurchase = $this->initPurchase();
         $this->payment = $payment;
         $this->priceManager = $priceManager;
     }
@@ -69,16 +68,17 @@ class PurchaseManager
     /**
      *
      */
-    private function initPurchase()
+    public function initPurchase()
     {
         // Check if object already in session
         if ($this->session->has(self::SESSION_PURCHASE_KEY) && $this->session->get(self::SESSION_PURCHASE_KEY) instanceof Purchase) {
-            return $this->session->get(self::SESSION_PURCHASE_KEY);
+            $purchase =  $this->session->get(self::SESSION_PURCHASE_KEY);
         } else {
             $purchase = new Purchase();
             $this->session->set(self::SESSION_PURCHASE_KEY, $purchase);
-            return $purchase;
         }
+        $this->currentPurchase = $purchase;
+        return $purchase;
     }
 
     /**
@@ -116,18 +116,29 @@ class PurchaseManager
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
-     * @throws \Exception
+     * @throws NoCurrentPurchaseException
      */
     public function doPayment()
     {
-        $amount = $this->currentPurchase->getTotal();
-        $email = $this->currentPurchase->getEmail();
+        $purchase = $this->getCurrentPurchase(Purchase::STATUS_STEP_4);
+        $amount = $purchase->getTotal();
+        $email = $purchase->getEmail();
         $description = 'Purchase payment for '.$email;
+//        $amount = $this->currentPurchase->getTotal();
+//        $email = $this->currentPurchase->getEmail();
+//        $description = 'Purchase payment for '.$email;
 
         if ($amount == 0 || $this->payment->applyPayment($amount, $description, $email)) {
             $this->buildBookingCode(self::BOOKING_CODE_LENGTH);
-            $purchase = $this->getCurrentPurchase();
-            $this->storePurchase();
+            $purchase = $this->getCurrentPurchase(Purchase::STATUS_STEP_4);
+            try{
+                $this->storePurchase();
+            }catch(\Exception $e){
+                // If purchase payment is successful we send the tickets anyway even if server fails storage
+                $this->sendDigitalTicket();
+                $this->clearCurrentPurchase();
+                // + send notice to staff with the purchase not stored
+            }
             $this->sendDigitalTicket();
             $this->clearCurrentPurchase();
             return $purchase;
@@ -146,7 +157,7 @@ class PurchaseManager
     }
 
     /**
-     * @throws \Exception
+     * @throws \Doctrine\ORM\OptimisticLockException
      */
     private function storePurchase()
     {
@@ -159,11 +170,11 @@ class PurchaseManager
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function sendDigitalTicket()
+    private function sendDigitalTicket()
     {
         $message = \Swift_Message::newInstance();
         // Embed logo
-        $cid = $message->embed(Swift_Image::fromPath('img/logo-louvre-2018.jpg'));
+        $cid = $message->embed(\Swift_Image::fromPath('img/logo-louvre-2018.jpg'));
 
         $htmlContent = $this->environment->render('default/digitalTicket.html.twig', [
             'purchase' => $this->currentPurchase,
@@ -180,14 +191,24 @@ class PurchaseManager
             ->addPart($textContent, 'text/plain');
 
         $this->mailer->send($message);
-
+        return true;
     }
 
     /**
+     * @param bool $status
      * @return Purchase
+     * @throws NoCurrentPurchaseException
      */
-    public function getCurrentPurchase()
+    public function getCurrentPurchase($status)
     {
+        if ($this->session->has(self::SESSION_PURCHASE_KEY) && $this->session->get(self::SESSION_PURCHASE_KEY) instanceof Purchase) {
+            $purchaseInSession = $this->session->get(self::SESSION_PURCHASE_KEY);
+            if ($purchaseInSession->getStatus() >= $status) {
+                $this->currentPurchase = $purchaseInSession;
+            }
+        }else{
+            throw new NoCurrentPurchaseException();
+        }
         return $this->currentPurchase;
     }
 

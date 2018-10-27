@@ -27,7 +27,7 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request, PurchaseManager $purchaseManager)
     {
-        $purchase = $purchaseManager->getCurrentPurchase();
+        $purchase = $purchaseManager->initPurchase();
         // Building form based on Purchase entity
         $form = $this->createform(PurchaseType::class, $purchase);
         $form->handleRequest($request);
@@ -47,23 +47,24 @@ class DefaultController extends Controller
      * @param Request $request
      * @param PurchaseManager $purchaseManager
      * @return RedirectResponse|Response
+     * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
      */
     public function fillTicketsAction(Request $request, PurchaseManager $purchaseManager)
     {
-        $purchase = $purchaseManager->getCurrentPurchase();
+        $purchase = $purchaseManager->getCurrentPurchase(Purchase::STATUS_STEP_2);
 
-            // Building form based on Purchase entity with multi ticket entries
-            $form = $this->createform(MultiTicketType::class, $purchase);
-            $form->handleRequest($request);
+        // Building form based on Purchase entity with multi ticket entries
+        $form = $this->createform(MultiTicketType::class, $purchase);
+        $form->handleRequest($request);
 
-            if ($form->isSubmitted() && $form->isValid()) {
-                $purchaseManager->generatePrices();
-                return $this->redirectToRoute('order_step_3');
-            }
-            return $this->render('default/order-step-2.html.twig', [
-                'form' => $form->createView(),
-                'purchase' => $purchase,
-            ]);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $purchaseManager->generatePrices();
+            return $this->redirectToRoute('order_step_3');
+        }
+        return $this->render('default/order-step-2.html.twig', [
+            'form' => $form->createView(),
+            'purchase' => $purchase,
+        ]);
     }
 
     /**
@@ -71,23 +72,24 @@ class DefaultController extends Controller
      * @param Request $request
      * @param PurchaseManager $purchaseManager
      * @return RedirectResponse|Response
+     * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
      */
     public function confirmAction(Request $request, PurchaseManager $purchaseManager)
     {
-        $purchase = $purchaseManager->getCurrentPurchase();
+        $purchase = $purchaseManager->getCurrentPurchase(Purchase::STATUS_STEP_3);
 
-            // Building form based on Purchase entity with multi ticket entries
-            $form = $this->createform(PurchaseConfirmType::class, $purchase);
-            $form->handleRequest($request);
-        
-            if ($form->isSubmitted() && $form->isValid()) {
-                $purchaseManager->confirmPurchase();
-                return $this->redirectToRoute('order_step_4');
-            }
-            return $this->render('default/order-step-3.html.twig', [
-                'form' => $form->createView(),
-                'purchase' => $purchase,
-                ]);
+        // Building form based on Purchase entity with multi ticket entries
+        $form = $this->createform(PurchaseConfirmType::class, $purchase);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $purchaseManager->confirmPurchase();
+            return $this->redirectToRoute('order_step_4');
+        }
+        return $this->render('default/order-step-3.html.twig', [
+            'form' => $form->createView(),
+            'purchase' => $purchase,
+        ]);
     }
 
     /**
@@ -95,6 +97,7 @@ class DefaultController extends Controller
      * @param Request $request
      * @param PurchaseManager $purchaseManager
      * @return Response
+     * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
      */
     public function checkoutAction(Request $request, PurchaseManager $purchaseManager)
     {
@@ -109,7 +112,7 @@ class DefaultController extends Controller
                 $this->addFlash('warning', 'Payment failed !');
             }
         }
-        $purchase = $purchaseManager->getCurrentPurchase();
+        $purchase = $purchaseManager->getCurrentPurchase(Purchase::STATUS_STEP_4);
         return $this->render('default/order-step-4.html.twig', [
             'purchase' => $purchase,
         ]);
