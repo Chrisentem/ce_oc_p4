@@ -176,9 +176,8 @@ class PurchaseManager
         // Embed logo
         $cid = $message->embed(\Swift_Image::fromPath('img/logo-louvre-2018.jpg'));
 
-        $htmlContent = $this->environment->render('default/digitalTicket.html.twig', [
+        $htmlContent = $this->environment->render('emails/digitalTicket.html.twig', [
             'purchase' => $this->currentPurchase,
-            'totalPrice' => $this->currentPurchase->getTotal(),
             'logo' => $cid,
         ]);
         $textContent = DataConverter::stripHTML($htmlContent);
