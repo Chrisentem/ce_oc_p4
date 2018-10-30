@@ -10,7 +10,7 @@ namespace AppBundle\Exceptions;
 
 
 
-class NoCurrentPurchaseException extends \Exception
+class NotAPurchaseException extends \Exception
 {
     /**
      * NotAPurchaseException constructor.

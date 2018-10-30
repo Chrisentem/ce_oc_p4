@@ -5,25 +5,27 @@ namespace AppBundle\Manager;
 use AppBundle\Entity\EntryTicket;
 use AppBundle\Entity\Purchase;
 use AppBundle\Exceptions\NoCurrentPurchaseException;
-use AppBundle\Service\DataConverter;
+use AppBundle\Exceptions\NoMatchingPurchaseFoundException;
+use AppBundle\Exceptions\NotAPurchaseException;
+use AppBundle\Service\MailSender;
 use AppBundle\Service\Payment;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-
+use Twig_Environment;
 
 class PurchaseManager
 {
-
     const SESSION_PURCHASE_KEY = 'purchase';
     const BOOKING_CODE_LENGTH = 8;
+
     /**
-     * @var \Swift_Mailer
+     * @var MailSender
      */
-    private $mailer;
+    private $mailSender;
     /**
-     * @var \Twig_Environment
+     * @var Twig_Environment
      */
-    private $environment;
+    private $twig;
     /**
      * @var SessionInterface
      */
@@ -45,20 +47,24 @@ class PurchaseManager
      */
     private $priceManager;
 
-
     /**
      * PurchaseManager constructor.
-     * @param \Swift_Mailer $mailer
-     * @param \Twig_Environment $environment
+     * @param MailSender $mailSender
+     * @param Twig_Environment $twig
      * @param SessionInterface $session
      * @param EntityManager $em
      * @param Payment $payment
      * @param PriceManager $priceManager
      */
-    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $environment, SessionInterface $session, EntityManager $em, Payment $payment, PriceManager $priceManager)
+    public function __construct(MailSender $mailSender,
+                                Twig_Environment $twig,
+                                SessionInterface $session,
+                                EntityManager $em,
+                                Payment $payment,
+                                PriceManager $priceManager)
     {
-        $this->mailer = $mailer;
-        $this->environment = $environment;
+        $this->mailSender = $mailSender;
+        $this->twig = $twig;
         $this->session = $session;
         $this->em = $em;
         $this->payment = $payment;
@@ -113,10 +119,13 @@ class PurchaseManager
     }
 
     /**
+     * @return Purchase|bool
+     * @throws NoCurrentPurchaseException
+     * @throws NoMatchingPurchaseFoundException
+     * @throws NotAPurchaseException
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
-     * @throws NoCurrentPurchaseException
      */
     public function doPayment()
     {
@@ -124,9 +133,6 @@ class PurchaseManager
         $amount = $purchase->getTotal();
         $email = $purchase->getEmail();
         $description = 'Purchase payment for '.$email;
-//        $amount = $this->currentPurchase->getTotal();
-//        $email = $this->currentPurchase->getEmail();
-//        $description = 'Purchase payment for '.$email;
 
         if ($amount == 0 || $this->payment->applyPayment($amount, $description, $email)) {
             $this->buildBookingCode(self::BOOKING_CODE_LENGTH);
@@ -134,11 +140,13 @@ class PurchaseManager
             try{
                 $this->storePurchase();
             }catch(\Exception $e){
-                // If purchase payment is successful we send the tickets anyway even if server fails storage
-                $this->sendDigitalTicket();
-                $this->clearCurrentPurchase();
-                // + send notice to staff with the purchase not stored
+                // Notify webmaster that storage failed
+                $this->mailSender->setMailBody(['purchase' => $purchase, 'error' => $e->getMessage()],
+                    'emails/purchaseFailureNotification.html.twig');
+                $this->mailSender->sendMail('webmaster@museedulouvre.fr', 'billetterie@museedulouvre.fr',
+                    'Online ticketing problem');
             }
+            // If purchase payment is successful we send the tickets anyway even if server fails storage
             $this->sendDigitalTicket();
             $this->clearCurrentPurchase();
             return $purchase;
@@ -157,6 +165,7 @@ class PurchaseManager
     }
 
     /**
+     * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      */
     private function storePurchase()
@@ -172,43 +181,36 @@ class PurchaseManager
      */
     private function sendDigitalTicket()
     {
-        $message = \Swift_Message::newInstance();
-        // Embed logo
-        $cid = $message->embed(\Swift_Image::fromPath('img/logo-louvre-2018.jpg'));
+        $cid = $this->mailSender->addEmbedImage('img/logo-louvre-2018.jpg');
+        // Generating content with twig template and data
+        $this->mailSender->setMailBody(['purchase' => $this->currentPurchase, 'logo' => $cid],
+            'emails/digitalTicket.html.twig');
 
-        $htmlContent = $this->environment->render('emails/digitalTicket.html.twig', [
-            'purchase' => $this->currentPurchase,
-            'logo' => $cid,
-        ]);
-        $textContent = DataConverter::stripHTML($htmlContent);
-
-        $message = $message->setContentType('text/html')
-            ->setSubject("Vos entrées pour le Musée du Louvre")
-            ->setFrom('chrisentemdev-484d0d@inbox.mailtrap.io')
-            ->setTo($this->currentPurchase->getEmail())
-            ->setBody($htmlContent)
-            ->addPart($textContent, 'text/plain');
-
-        $this->mailer->send($message);
-        return true;
+        $this->mailSender->sendMail($this->currentPurchase->getEmail(), 'billetterie@museedulouvre.fr',
+            'Vos entrées pour le Musée du Louvre');
     }
 
     /**
      * @param bool $status
      * @return Purchase
      * @throws NoCurrentPurchaseException
+     * @throws NoMatchingPurchaseFoundException
+     * @throws NotAPurchaseException
      */
     public function getCurrentPurchase($status)
     {
-        if ($this->session->has(self::SESSION_PURCHASE_KEY) && $this->session->get(self::SESSION_PURCHASE_KEY) instanceof Purchase) {
-            $purchaseInSession = $this->session->get(self::SESSION_PURCHASE_KEY);
-            if ($purchaseInSession->getStatus() >= $status) {
-                $this->currentPurchase = $purchaseInSession;
-            }
-        }else{
-            throw new NoCurrentPurchaseException();
+        if(!$this->session->has(self::SESSION_PURCHASE_KEY) ){
+            throw new NoCurrentPurchaseException('There\'s no Purchase in session !');
         }
-        return $this->currentPurchase;
+        $currentPurchase = $this->session->get(self::SESSION_PURCHASE_KEY);
+        if (!$currentPurchase  instanceof Purchase) {
+            throw new NotAPurchaseException('Purchase found is not a Purchase !');
+        }
+        if ($currentPurchase->getStatus() < $status) {
+            throw new NoMatchingPurchaseFoundException('Purchase found does not match requirement');
+        }
+        $this->currentPurchase = $currentPurchase;
+        return $currentPurchase;
     }
 
     /**
