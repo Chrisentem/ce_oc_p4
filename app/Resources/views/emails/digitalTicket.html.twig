@@ -41,10 +41,12 @@
                     <td>{{ ticket.lastname }}</td>
                     <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
                     <td>{{ ticket.price }} €</td>
-                    <td>{% if ticket.discounted == true %}
+                    <td>{% if ticket.discounted == true and ticket.price > 0 %}
                             Oui*
-                        {% else %}
+                        {% elseif ticket.price > 0 %}
                             Non
+                        {% else %}
+                            --
                         {% endif %}
                     </td>
                 </tr>

@@ -6,46 +6,67 @@
             {% include 'default/_breadcrumb.html.twig' %}
         {% endblock %}
 {% block body %}
+    <div id="content">
         <div class="row">
-            <div id="content" class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-6">
                 <h3>Récapitulatif</h3>
                 <table class="table table-dark">
                     <thead>
-                        <tr>
-                            <th scope="col">Firstname</th>
-                            <th scope="col">Lastname</th>
-                            <th scope="col">Birthday</th>
-                            <th scope="col">Price</th>
-                        </tr>
+                    <tr>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Birthday</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Reduced</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        {% for ticket in purchase.tickets %}
+                    {% for ticket in purchase.tickets %}
                         <tr>
                             <td>{{ ticket.firstname }}</td>
                             <td>{{ ticket.lastname }}</td>
                             <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
                             <td>{{ ticket.price }} &euro;</td>
+                            <td>{% if ticket.discounted == true and ticket.price > 0 %}
+                                    Oui*
+                                {% elseif ticket.price > 0 %}
+                                    Non
+                                {% else %}
+                                    --
+                                {% endif %}
+                            </td>
                         </tr>
-                        {% endfor %}
+                    {% endfor %}
                     </tbody>
                 </table>
             </div>
-        </div>        
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="alert alert-warning" role="alert">
+                    <ul>
+                        <li> N'oubliez pas votre carte d'identité ou votre passport le jour de la visite, afin de vérifier les informations fournies. </li>
+                        <li> *Si vous bénéficiez du tarif réduit, merci d'apporter votre justificatif. </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div id="content" class="col-xs-12 col-sm-6">
                 <h3>Confirmation</h3>
                 <p>Veuillez nous indiquer à quelle adresse email envoyer le billet électronique</p>
-                    <div class="well">
+                <div class="well">
                     {{ form_start(form) }}
-                        {{ form_row(form.email) }}
-                        {% autoescape false %}
+                    {{ form_row(form.email) }}
+                    {% autoescape false %}
                         {{ form_row(form.agree, { 'label': 'J\'ai lu et j\'accèpte les conditions générales de vente' }) }}
-                        {% endautoescape %}
+                    {% endautoescape %}
                     {{ form_rest(form)}}
                     <a href="{{ path('order_step_2') }}" class="btn btn-primary">Retour</a>
                     <button type="submit" class="btn btn-primary">Confirmer la commande</button>
                     {{ form_end(form)}}
-                    </div>
+                </div>
             </div>
         </div>
+    </div>
 {% endblock %}
