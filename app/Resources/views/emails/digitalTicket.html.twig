@@ -31,7 +31,7 @@
                 <th scope="col">Lastname</th>
                 <th scope="col">Birthday</th>
                 <th scope="col">Price</th>
-                <th scope="col">Reduced</th>
+                <th scope="col">Reduced*</th>
             </tr>
             </thead>
             <tbody>
@@ -42,7 +42,7 @@
                     <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
                     <td>{{ ticket.price }} €</td>
                     <td>{% if ticket.discounted == true and ticket.price > 0 %}
-                            Oui*
+                            Oui
                         {% elseif ticket.price > 0 %}
                             Non
                         {% else %}
