@@ -14,7 +14,8 @@
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.2.0",
+        "ext-calendar": "*",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
@@ -25,10 +26,10 @@
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
-        "twig/twig": "^1.0||^2.0",
-      "ext-calendar": "*"
+        "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
+        "phpunit/phpunit": "^6.0",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
         "symfony/var-dumper": "^3.4"
@@ -51,7 +52,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.5.9"
+            "php": "7.2.0"
         },
         "sort-packages": true
     },
