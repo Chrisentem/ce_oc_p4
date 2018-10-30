@@ -51,7 +51,7 @@ class PriceManager {
         $discount = $ticket->getDiscounted();
         $ticketType = $ticket->getPurchase()->getTicketType();
 
-        if ($discount == true) {
+        if ($discount == true && $basePrice > self::PRICE_BABY) {
             if ($ticketType == Purchase::HALF_DAY_TICKET_TYPE) {
                 $price = self::PRICE_REDUCED * self::HALF_DAY_COEFF;
             } else {
