@@ -33,7 +33,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $purchaseManager->generateTickets();
+            $purchaseManager->generateTickets($purchase);
             return $this->redirectToRoute('order_step_2');
         }
         return $this->render('default/index.html.twig', [
@@ -48,6 +48,8 @@ class DefaultController extends Controller
      * @param PurchaseManager $purchaseManager
      * @return RedirectResponse|Response
      * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
+     * @throws \AppBundle\Exceptions\NoMatchingPurchaseFoundException
+     * @throws \AppBundle\Exceptions\NotAPurchaseException
      */
     public function fillTicketsAction(Request $request, PurchaseManager $purchaseManager)
     {
@@ -58,7 +60,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $purchaseManager->generatePrices();
+            $purchaseManager->generatePrices($purchase);
             return $this->redirectToRoute('order_step_3');
         }
         return $this->render('default/order-step-2.html.twig', [
@@ -73,6 +75,8 @@ class DefaultController extends Controller
      * @param PurchaseManager $purchaseManager
      * @return RedirectResponse|Response
      * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
+     * @throws \AppBundle\Exceptions\NoMatchingPurchaseFoundException
+     * @throws \AppBundle\Exceptions\NotAPurchaseException
      */
     public function confirmAction(Request $request, PurchaseManager $purchaseManager)
     {
@@ -83,7 +87,7 @@ class DefaultController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $purchaseManager->confirmPurchase();
+            $purchaseManager->confirmPurchase($purchase);
             return $this->redirectToRoute('order_step_4');
         }
         return $this->render('default/order-step-3.html.twig', [
@@ -98,12 +102,16 @@ class DefaultController extends Controller
      * @param PurchaseManager $purchaseManager
      * @return Response
      * @throws \AppBundle\Exceptions\NoCurrentPurchaseException
+     * @throws \AppBundle\Exceptions\NoMatchingPurchaseFoundException
+     * @throws \AppBundle\Exceptions\NotAPurchaseException
      */
     public function checkoutAction(Request $request, PurchaseManager $purchaseManager)
     {
+        $purchase = $purchaseManager->getCurrentPurchase(Purchase::STATUS_STEP_4);
+
         if ($request->isMethod('POST')) {
             try {
-                $purchase = $purchaseManager->doPayment();
+                $purchaseManager->doPayment($purchase);
                 $this->addFlash('success', 'Order Complete !');
                 return $this->render('default/confirmation.html.twig', [
                     'purchase' => $purchase,
@@ -112,7 +120,6 @@ class DefaultController extends Controller
                 $this->addFlash('warning', 'Payment failed !');
             }
         }
-        $purchase = $purchaseManager->getCurrentPurchase(Purchase::STATUS_STEP_4);
         return $this->render('default/order-step-4.html.twig', [
             'purchase' => $purchase,
         ]);

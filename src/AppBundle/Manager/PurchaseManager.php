@@ -35,10 +35,6 @@ class PurchaseManager
      */
     private $em;
     /**
-     * @var Purchase
-     */
-    private $currentPurchase;
-    /**
      * @var Payment
      */
     private $payment;
@@ -83,71 +79,69 @@ class PurchaseManager
             $purchase = new Purchase();
             $this->session->set(self::SESSION_PURCHASE_KEY, $purchase);
         }
-        $this->currentPurchase = $purchase;
         return $purchase;
     }
 
     /**
      * Generate tickets from attribute's value numberOfTickets of $purchase
      *
+     * @param Purchase $purchase
      * @return Purchase
      */
-    public function generateTickets()
+    public function generateTickets(Purchase $purchase)
     {
-        while (count($this->currentPurchase->getTickets()) !== $this->currentPurchase->getNumberOfTickets()) {
-            if (count($this->currentPurchase->getTickets()) < $this->currentPurchase->getNumberOfTickets()) {
+        while (count($purchase->getTickets()) !== $purchase->getNumberOfTickets()) {
+            if (count($purchase->getTickets()) < $purchase->getNumberOfTickets()) {
                 $ticket = new EntryTicket;
-                $this->currentPurchase->addTicket($ticket);
+                $purchase->addTicket($ticket);
             } else {
-                $this->currentPurchase->removeTicket($this->currentPurchase->getTickets()->last());
+                $purchase->removeTicket($purchase->getTickets()->last());
             }
         }
-        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_1) {
-            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_2);
+        if ($purchase->getStatus() == Purchase::STATUS_STEP_1) {
+            $purchase->setStatus(Purchase::STATUS_STEP_2);
         }
-        return $this->currentPurchase;
+        return $purchase;
     }
 
     /**
+     * @param Purchase $purchase
      */
-    public function generatePrices()
+    public function generatePrices(Purchase $purchase)
     {
-        $this->priceManager->computePurchasePrice($this->currentPurchase);
-        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_2) {
-            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_3);
+        $this->priceManager->computePurchasePrice($purchase);
+        if ($purchase->getStatus() == Purchase::STATUS_STEP_2) {
+            $purchase->setStatus(Purchase::STATUS_STEP_3);
         }
     }
 
     /**
+     * @param Purchase $purchase
      * @return Purchase|bool
-     * @throws NoCurrentPurchaseException
-     * @throws NoMatchingPurchaseFoundException
-     * @throws NotAPurchaseException
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    public function doPayment()
+    public function doPayment(Purchase $purchase)
     {
-        $purchase = $this->getCurrentPurchase(Purchase::STATUS_STEP_4);
         $amount = $purchase->getTotal();
         $email = $purchase->getEmail();
-        $description = 'Purchase payment for '.$email;
+        $description = 'Purchase payment for ' . $email;
 
         if ($amount == 0 || $this->payment->applyPayment($amount, $description, $email)) {
-            $this->buildBookingCode(self::BOOKING_CODE_LENGTH);
-            $purchase = $this->getCurrentPurchase(Purchase::STATUS_STEP_4);
-            try{
-                $this->storePurchase();
-            }catch(\Exception $e){
+            $purchase->setBookingCode($this->buildBookingCode(self::BOOKING_CODE_LENGTH));
+            try {
+                $this->storePurchase($purchase);
+            } catch (\Exception $e) {
                 // Notify webmaster that storage failed
                 $this->mailSender->setMailBody(['purchase' => $purchase, 'error' => $e->getMessage()],
                     'emails/purchaseFailureNotification.html.twig');
-                $this->mailSender->sendMail('webmaster@museedulouvre.fr', 'billetterie@museedulouvre.fr',
+                $this->mailSender->sendMail('webmaster@museedulouvre.fr',
+                    'billetterie@museedulouvre.fr',
                     'Online ticketing problem');
             }
             // If purchase payment is successful we send the tickets anyway even if server fails storage
-            $this->sendDigitalTicket();
+            $this->sendDigitalTicket($purchase);
             $this->clearCurrentPurchase();
             return $purchase;
         }
@@ -155,38 +149,40 @@ class PurchaseManager
     }
 
     /**
-     *
+     * @param Purchase $purchase
      */
-    public function confirmPurchase()
+    public function confirmPurchase(Purchase $purchase)
     {
-        if ($this->currentPurchase->getStatus() == Purchase::STATUS_STEP_3) {
-            $this->currentPurchase->setStatus(Purchase::STATUS_STEP_4);
+        if ($purchase->getStatus() == Purchase::STATUS_STEP_3) {
+            $purchase->setStatus(Purchase::STATUS_STEP_4);
         }
     }
 
     /**
+     * @param Purchase $purchase
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      */
-    private function storePurchase()
+    private function storePurchase(Purchase $purchase)
     {
-        $this->em->persist($this->currentPurchase);
+        $this->em->persist($purchase);
         $this->em->flush();
     }
 
     /**
+     * @param Purchase $purchase
      * @throws \Twig_Error_Loader
      * @throws \Twig_Error_Runtime
      * @throws \Twig_Error_Syntax
      */
-    private function sendDigitalTicket()
+    private function sendDigitalTicket(Purchase $purchase)
     {
         $cid = $this->mailSender->addEmbedImage('img/logo-louvre-2018.jpg');
         // Generating content with twig template and data
-        $this->mailSender->setMailBody(['purchase' => $this->currentPurchase, 'logo' => $cid],
+        $this->mailSender->setMailBody(['purchase' => $purchase, 'logo' => $cid],
             'emails/digitalTicket.html.twig');
 
-        $this->mailSender->sendMail($this->currentPurchase->getEmail(), 'billetterie@museedulouvre.fr',
+        $this->mailSender->sendMail($purchase->getEmail(), 'billetterie@museedulouvre.fr',
             'Vos entrées pour le Musée du Louvre');
     }
 
@@ -209,7 +205,6 @@ class PurchaseManager
         if ($currentPurchase->getStatus() < $status) {
             throw new NoMatchingPurchaseFoundException('Purchase found does not match requirement');
         }
-        $this->currentPurchase = $currentPurchase;
         return $currentPurchase;
     }
 
@@ -228,7 +223,6 @@ class PurchaseManager
     private function buildBookingCode($length)
     {
         $code = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
-        $this->currentPurchase->setBookingCode($code);
         return $code;
     }
 
