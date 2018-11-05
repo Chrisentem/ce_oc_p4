@@ -11,7 +11,6 @@ use AppBundle\Service\MailSender;
 use AppBundle\Service\Payment;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Twig_Environment;
 
 class PurchaseManager
 {
@@ -22,10 +21,6 @@ class PurchaseManager
      * @var MailSender
      */
     private $mailSender;
-    /**
-     * @var Twig_Environment
-     */
-    private $twig;
     /**
      * @var SessionInterface
      */
@@ -46,21 +41,18 @@ class PurchaseManager
     /**
      * PurchaseManager constructor.
      * @param MailSender $mailSender
-     * @param Twig_Environment $twig
      * @param SessionInterface $session
      * @param EntityManager $em
      * @param Payment $payment
      * @param PriceManager $priceManager
      */
     public function __construct(MailSender $mailSender,
-                                Twig_Environment $twig,
                                 SessionInterface $session,
                                 EntityManager $em,
                                 Payment $payment,
                                 PriceManager $priceManager)
     {
         $this->mailSender = $mailSender;
-        $this->twig = $twig;
         $this->session = $session;
         $this->em = $em;
         $this->payment = $payment;
