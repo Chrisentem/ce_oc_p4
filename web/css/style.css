@@ -1,5 +1,13 @@
 /* Project CSS */
 
+/** Globals **/
+
+.centered-col
+{
+    float: none;
+    margin: 0 auto;
+}
+
 .form-control {
     width: auto !important;
 }
@@ -17,16 +25,20 @@
     margin-top: 10px;
 }
 
-#logo-home {
-    max-width: 30%;
-}
-
 #total-amount th {
     font-size: 1rem;
     text-transform: uppercase;
 }
 
 /** nav **/
+
+.navbar-brand {
+    max-width: 50%;
+}
+
+#logo-home {
+    max-width: 40%;
+}
 
 .navbar-expand-lg .navbar-collapse {
     justify-content: right;
