@@ -37,7 +37,8 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
-        webmaster: '%app_webmaster%'        
+        webmaster: '%app_webmaster%'
+        recaptcha_key: '%recaptcha_site_key%'
     form_themes:
         - 'bootstrap_4_layout.html.twig'
         

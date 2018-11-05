@@ -38,6 +38,14 @@ services:
         arguments:
             $em: "@doctrine.orm.entity_manager"
 
+    AppBundle\Manager\ContactEmailManager:
+        arguments:
+            $em: "@doctrine.orm.entity_manager"
+
     Stripe\Stripe: ~
 
     Stripe\Charge: ~
+
+    AppBundle\Service\ReCaptchaVerify:
+        arguments:
+            $reCaptchaSecretKey: '%recaptcha_secret_key%'

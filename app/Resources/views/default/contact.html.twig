@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% form_theme contactForm 'bootstrap_4_layout.html.twig' %}
+{% block title %}
+    Contact - {{ parent() }}
+{% endblock %}
+{% block breadcrumb %}
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div id="content" class="col-lg-12">
+            <h3>Formulaire de contact</h3>
+            <div class="well">
+                {{ form_start(contactForm) }}
+                {{ form_rest(contactForm)}}
+                {# Add the reCAPTCHA div to show in form #}
+                <div class="g-recaptcha" data-sitekey="{{ recaptcha_key }}"></div>
+                <a href="{{ path('homepage') }}" class="btn btn-primary">Retour à l'accueil</a>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+                {{ form_end(contactForm)}}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+{# Add reCAPTCHA api provided by website #}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}

@@ -16,6 +16,8 @@
     "require": {
         "php": ">=7.2.0",
         "ext-calendar": "*",
+        "ext-curl": "*",
+        "ext-json": "^1.6",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
