@@ -129,6 +129,6 @@ class ContactEmailManager
      */
     private function clearCurrentContactEmail()
     {
-        $this->session->clear();
+        $this->session->remove(self::SESSION_MAIL_KEY);
     }
 }

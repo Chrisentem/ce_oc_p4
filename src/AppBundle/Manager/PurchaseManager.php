@@ -205,7 +205,7 @@ class PurchaseManager
      */
     private function clearCurrentPurchase()
     {
-        $this->session->clear();
+        $this->session->remove(self::SESSION_PURCHASE_KEY);
     }
 
     /**
