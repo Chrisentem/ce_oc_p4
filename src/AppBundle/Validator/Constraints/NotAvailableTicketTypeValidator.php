@@ -32,7 +32,7 @@ class NotAvailableTicketTypeValidator extends ConstraintValidator {
     private function isUnavailable(Purchase $purchase) {
 		
         $today = new \Datetime('now');
-        $nowtime = $today->format('H');
+        $nowTime = $today->format('H');
         // As Purchase class constraint we have access to Purchase getters
         $chosenDate = $purchase->getDateOfVisit();
         $type = $purchase->getTicketType();
@@ -42,7 +42,7 @@ class NotAvailableTicketTypeValidator extends ConstraintValidator {
         
     	// No full-day ticket after 2pm
 		if ($todayDNY == $chosenDateDNY) {
-            if ($type == Purchase::FULL_DAY_TICKET_TYPE && $nowtime > 14) {
+            if ($type == Purchase::FULL_DAY_TICKET_TYPE && $nowTime > 14) {
             return true;
             }
 		}
