@@ -10,7 +10,6 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\ContactEmail;
 use AppBundle\Service\MailSender;
-use Exception;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManager;
@@ -56,13 +55,7 @@ class ContactEmailManager
 
     public function initContactEmail()
     {
-        // Check if object already in session
-        if ($this->session->has(self::SESSION_MAIL_KEY) && $this->session->get(self::SESSION_MAIL_KEY) instanceof ContactEmail) {
-            $email =  $this->session->get(self::SESSION_MAIL_KEY);
-        } else {
-            $email = new ContactEmail();
-            $this->session->set(self::SESSION_MAIL_KEY, $email);
-        }
+        $email = new ContactEmail();
         return $email;
     }
 
@@ -94,23 +87,6 @@ class ContactEmailManager
         $this->mailSender->sendMail('infos@museedulouvre.fr',
             $contactEmail->getEmail(),
             $contactEmail->getSubject());
-        $this->clearCurrentContactEmail();
-    }
-
-    /**
-     * @return mixed
-     * @throws Exception
-     */
-    public function getCurrentContactEmail()
-    {
-        if(!$this->session->has(self::SESSION_MAIL_KEY) ){
-            throw new Exception('There\'s no Contact Email in session !');
-        }
-        $currentContactEmail = $this->session->get(self::SESSION_MAIL_KEY);
-        if (!$currentContactEmail  instanceof ContactEmail) {
-            throw new Exception('Mail found is not a Contact Email !');
-        }
-        return $currentContactEmail;
     }
 
     /**
@@ -124,11 +100,4 @@ class ContactEmailManager
         $this->em->flush();
     }
 
-    /**
-     *
-     */
-    private function clearCurrentContactEmail()
-    {
-        $this->session->remove(self::SESSION_MAIL_KEY);
-    }
 }
