@@ -54,6 +54,7 @@ h4 {
 
 .navbar {
     padding: 0rem !important;
+    justify-content: right;
 }
 
 .jumbotron {
