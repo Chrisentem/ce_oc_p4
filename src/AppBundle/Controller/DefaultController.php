@@ -172,4 +172,12 @@ class DefaultController extends Controller
         return $this->render('default/contact.html.twig', ['contactForm' => $form->createView(),]);
     }
 
+    /**
+     * @Route("/legal-notice", name="legal_notice")
+     */
+    public function legalNoticeAction()
+    {
+        return $this->render('default/legal-notice.html.twig');
+    }
+
 }
