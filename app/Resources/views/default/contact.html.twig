@@ -7,7 +7,7 @@
 {% endblock %}
 {% block body %}
     <div class="row">
-        <div id="content" class="col-lg-12">
+        <div id="content" class="col-lg-6 col-md-12">
             <h3>Formulaire de contact</h3>
             <div class="well">
                 {{ form_start(contactForm) }}
@@ -17,6 +17,36 @@
                 <a href="{{ path('homepage') }}" class="btn btn-primary">Retour à l'accueil</a>
                 <button type="submit" class="btn btn-primary">Envoyer</button>
                 {{ form_end(contactForm)}}
+            </div>
+        </div>
+        <div id="content" class="col-lg-6 col-md-12">
+            <h3>Infos pratiques</h3>
+            <div class="well">
+                <h4>Musée du Louvre</h4>
+                <p>75058 Paris CEDEX 01<br>
+                    France</p>
+                <p>Téléphone :<br>
+                    + 33 (0)1 40 20 50 50</p>
+                <p>Horaires :<br>
+                    Ouvert tous les jours de 9 h à 18 h sauf le mardi<br>
+                    Nocturnes jusqu’à 21h45 h le mercredi et le vendredi</p>
+                <p>Fermetures :<br>
+                    Les 1er janvier, 1er mai et 25 décembre</p>
+                <h4>Informations générales</h4>
+                <p>Pour obtenir des informations sur le musée, les services à votre disposition et notre actualité, l’équipe du service de l’accueil est à votre disposition :<br>
+                    Banque d'information du musée :<br>
+                    Tél. : +33 (0)1 40 20 53 17<br>
+                    Tous les jours, sauf le mardi, de 9h à 18h45 (21h45 les mercredis et vendredis).<br>
+                    <br>
+                    N'hésitez pas à utiliser le formulaire de contact ci-contre</p>
+                <h4>Personnes handicapées</h4>
+                <p>Standard : +33 (0)1 40 20 50 50<br>
+                    Banque d'information : +33 (0)1 40 20 53 17<br>
+                    Ligne visiteurs handicapés : +33 (0)1 40 20 59 90<br>
+                    <br>
+                    N'hésitez pas à utiliser le formulaire de contact ci-contre</p>
+                <h4>Emploi</h4>
+                <p>Pour en savoir plus : <a href="#">Offres d'emploi</a></p>
             </div>
         </div>
     </div>
