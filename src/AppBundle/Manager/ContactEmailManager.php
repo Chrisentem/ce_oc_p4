@@ -11,7 +11,6 @@ namespace AppBundle\Manager;
 use AppBundle\Entity\ContactEmail;
 use AppBundle\Service\MailSender;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Doctrine\ORM\EntityManager;
 
 class ContactEmailManager
@@ -22,10 +21,6 @@ class ContactEmailManager
      * @var MailSender
      */
     private $mailSender;
-    /**
-     * @var SessionInterface
-     */
-    private $session;
     /**
      * @var EntityManager
      */
@@ -38,17 +33,14 @@ class ContactEmailManager
     /**
      * ContactMailManager constructor.
      * @param MailSender $mailSender
-     * @param SessionInterface $session
      * @param EntityManager $em
      * @param RequestStack $requestStack
      */
     public function __construct(MailSender $mailSender,
-                                SessionInterface $session,
                                 EntityManager $em,
                                 RequestStack $requestStack)
     {
         $this->mailSender = $mailSender;
-        $this->session = $session;
         $this->em = $em;
         $this->requestStack = $requestStack;
     }
