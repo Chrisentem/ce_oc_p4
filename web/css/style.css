@@ -2,6 +2,10 @@
 
 /** Globals **/
 
+h4 {
+    color: DarkGoldenRod;
+}
+
 .centered-col
 {
     float: none;
@@ -56,15 +60,28 @@
     padding: 1rem 1rem !important;
 }
 
+/** top banner **/
+
+#banner-home {
+    max-width: 100%;
+}
+
 /** CGV **/
 
-#cgv .row.body .columns table td.num {
+#cgv td.num {
     padding: 0 0.500em 0 0;
-}
-#cgv .row.body .columns table td.num {
     vertical-align: baseline;
+    color: DimGray;
 }
-#cgv .row.body .columns table td.spacer {
+
+.signature {
+    color: DarkGoldenRod;
+}
+
+#cgv table {
+    width: 100%;
+}
+#cgv td.spacer {
     line-height: 0.5;
 }
 .backtop {
@@ -84,6 +101,7 @@
     display: -moz-flex;
     display: -webkit-flex;
     display: flex;
+    background-color: dimgray;
     /*justify-content: center;*/
 }
 .bcrumb-wrap    {
@@ -98,6 +116,7 @@
     color: white;
     font-size: 1.5em;
     text-align: center;
+    flex-grow: 1;
 }
 .bcrumb-step-active {
     background: LightSeaGreen;
