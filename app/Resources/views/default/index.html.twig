@@ -15,7 +15,9 @@
                     {{ form_row(form.dateOfVisit) }}
                     {{ form_row(form.ticketType) }}
                     {{ form_row(form.numberOfTickets) }}
-                    <button type="submit" class="btn btn-primary">étape suivante</button>
+                    <div id="form-nav" class="form-button">
+                        <button type="submit" class="btn btn-primary">étape suivante <i class="fas fa-angle-double-right"></i></button>
+                    </div>
                     {{ form_end(form)}}
                 </div>
             </div>

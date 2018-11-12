@@ -12,10 +12,6 @@ h4 {
     margin: 0 auto;
 }
 
-.form-control {
-    width: auto !important;
-}
-
 #infos {
     font-size: small;
     text-align: justify;
@@ -36,6 +32,31 @@ h4 {
 #total-amount th {
     font-size: 1rem;
     text-transform: uppercase;
+}
+
+/** Form **/
+
+.form-control {
+    width: auto !important;
+}
+
+.form-button {
+    text-align: right;
+}
+
+#form-nav .fa, .fas {
+    font-weight: 900;
+    font-size: xx-large;
+    vertical-align: middle;
+    background-color: #1a1a1a;
+    color: white;
+    line-height: unset !important;
+    /*margin-left: 10px;*/
+}
+
+#form-nav .btn {
+    padding: 0.75rem 1rem 0.75rem 1.25rem;
+    margin-bottom: 10px;
 }
 
 /** nav **/
