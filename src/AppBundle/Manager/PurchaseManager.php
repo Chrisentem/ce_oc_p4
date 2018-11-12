@@ -170,8 +170,9 @@ class PurchaseManager
     private function sendDigitalTicket(Purchase $purchase)
     {
         $cid = $this->mailSender->addEmbedImage('img/logo-louvre-2018.jpg');
+        $cid0 = $this->mailSender->addEmbedImage('img/banner_louvre_190px.jpg');
         // Generating content with twig template and data
-        $this->mailSender->setMailBody(['purchase' => $purchase, 'logo' => $cid],
+        $this->mailSender->setMailBody(['purchase' => $purchase, 'logo' => $cid, 'banner' => $cid0],
             'emails/digitalTicket.html.twig');
 
         $this->mailSender->sendMail($purchase->getEmail(), 'billetterie@museedulouvre.fr',
