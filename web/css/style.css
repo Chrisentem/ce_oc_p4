@@ -3,7 +3,7 @@
 /** Globals **/
 
 h4 {
-    color: DarkGoldenRod;
+    color: Sienna;
 }
 
 .centered-col
@@ -32,6 +32,12 @@ h4 {
 #total-amount th {
     font-size: 1rem;
     text-transform: uppercase;
+}
+
+/** Table **/
+
+.thead-gold {
+    background-color: Sienna;
 }
 
 /** Form **/
@@ -101,7 +107,7 @@ h4 {
 }
 
 .signature {
-    color: DarkGoldenRod;
+    color: Sienna;
 }
 
 #cgv table {
