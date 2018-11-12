@@ -65,6 +65,19 @@ h4 {
     margin-bottom: 10px;
 }
 
+#form-errors {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 10px;
+    background-color: Sienna;
+}
+
+#form-errors ul {
+    list-style-type: none;
+    margin-left: -20px;
+}
+
 /** nav **/
 
 .navbar-brand {
