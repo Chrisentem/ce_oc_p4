@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraint;
  */
 class NotSunday extends Constraint {
 
-    public $message = "Le musée est fermé les dimanches, veuillez choisir une autre date !";
+    public $message = "Les dimanches ne sont pas éligibles à la réservation en ligne , veuillez choisir une autre date !";
 
     /**
      * @return array|string

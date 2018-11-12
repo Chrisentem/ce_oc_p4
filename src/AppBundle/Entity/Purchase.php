@@ -15,6 +15,7 @@ use AppBundle\Validator\Constraints as AppAssert;
  * @AppAssert\NotAvailableTicketType(groups={"step1"})
  * @AppAssert\NotAvailableTicketNum(groups={"step1"})
  * @AppAssert\NotSunday(groups={"step1"})
+ * @AppAssert\NotTuesday(groups={"step1"})
  * @AppAssert\NotPastDate(groups={"step1"})
  * @AppAssert\NotHoliday(groups={"step1"})
  */
