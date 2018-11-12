@@ -27,6 +27,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <span class="nav-link">Language <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a> | <a href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></span>
+                        </li>
                     </ul>
                 </div>
             </nav>

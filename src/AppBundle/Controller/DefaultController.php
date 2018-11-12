@@ -19,6 +19,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class DefaultController
  * @package AppBundle\Controller
+ * @Route("/{_locale}")
  */
 class DefaultController extends Controller
 {
