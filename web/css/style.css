@@ -67,10 +67,11 @@ h4 {
 
 #form-errors {
     color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding-top: 10px;
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    padding-right: 10px;
     background-color: Sienna;
+    border-radius: 5px;
 }
 
 #form-errors ul {
