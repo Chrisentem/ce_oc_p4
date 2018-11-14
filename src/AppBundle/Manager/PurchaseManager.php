@@ -69,6 +69,8 @@ class PurchaseManager
             $purchase =  $this->session->get(self::SESSION_PURCHASE_KEY);
         } else {
             $purchase = new Purchase();
+            // setting current date as visit date for better display
+            $purchase->setDateOfVisit(new \DateTime("now"));
             $this->session->set(self::SESSION_PURCHASE_KEY, $purchase);
         }
         return $purchase;
