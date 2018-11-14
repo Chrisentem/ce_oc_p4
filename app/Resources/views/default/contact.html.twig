@@ -67,6 +67,7 @@
     </div>
 {% endblock %}
 {% block javascripts %}
+    {{ parent() }}
 {# Add reCAPTCHA api provided by website #}
 <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}
