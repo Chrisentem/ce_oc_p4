@@ -1,0 +1,30 @@
+### Purchase global ###
+purchase.button.submit.nextstep: étape suivante
+
+### Homepage ###
+page.title.home: Accueil
+infos.title: Infos
+infos.p1: >
+  Le musée du Louvre est ouvert tous les jours, sauf les mardi et les jours fériés, de 9h à 18h,
+  jusqu'à 21h45 les mercredis et vendredis, à l’exception des jours fériés. La fermeture des salles
+  débute à 17h30 et à 21h30 les mercredis et vendredis.
+infos.p2: Il n'est toutefois pas possible de réserver vos billets en ligne pour la journée du dimanche.
+infos.p3: >
+  Le billet acheté en ligne est horodaté et nominatif, un document d’identité peut être demandé.
+  Il est valable exclusivement pour la prestation, la date et à compter de l'heure mentionnée.
+  Il ne constitue pas un coupe file mais permet un accès à la pyramide du Louvre dans la demi-heure
+  de l'horaire indiqué. En cas de non-respect de ce créneau horaire, le porteur du billet print@home
+  est soumis aux mêmes conditions d'accès et d'attente que les visiteurs sans billet.
+purchase.title: Acheter des billets
+rates.title: Les tarifs
+rates: tarifs
+rates.conditions: conditions
+rates.prices: prix
+rate.regular.title: normal
+rate.regular.desc: à partir de 12 ans
+rate.kid.title: enfant
+rate.kid.desc: de 4 à 12 ans (gratuit pour les moins de 4 ans)
+rate.senior.title: senior
+rate.senior.desc: à partir de 60 ans
+rate.discounted.title: réduit
+rate.discounted.desc: sur présentation d'un justificatif (étudiant, employé du musée ou du Ministère de la Culture, militaire)

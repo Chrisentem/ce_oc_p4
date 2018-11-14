@@ -16,7 +16,7 @@
     {% endspaceless %}
 {% endblock form_errors %}
 {% block title %}
-    Accueil - {{ parent() }}
+    {{ 'page.title.home'|trans }} - {{ parent() }}
 {% endblock %}
         {% block breadcrumb %}
             {% include 'default/_breadcrumb.html.twig' %}
@@ -24,56 +24,56 @@
 {% block body %}
         <div class="row">
             <div id="content" class="col-lg-6">
-                <h3>Acheter des billets</h3>
+                <h3>{{ 'purchase.title'|trans }}</h3>
                 <div class="well">
                     {{ form_start(form) }}
                     {{ form_row(form.dateOfVisit) }}
                     {{ form_row(form.ticketType) }}
                     {{ form_row(form.numberOfTickets) }}
                     <div id="form-nav" class="form-button">
-                        <button type="submit" class="btn btn-primary">étape suivante <i class="fas fa-angle-double-right"></i></button>
+                        <button type="submit" class="btn btn-primary">{{ 'purchase.button.submit.nextstep'|trans }} <i class="fas fa-angle-double-right"></i></button>
                     </div>
                     {{ form_end(form)}}
                 </div>
             </div>
             <div id="infos" class="col-lg-6">
-                <h3>Infos</h3>
-                <p>Le musée du Louvre est ouvert tous les jours, sauf les mardi et les jours fériés, de 9h à 18h, jusqu'à 21h45 les mercredis et vendredis, à l’exception des jours fériés. La fermeture des salles débute à 17h30 et à 21h30 les mercredis et vendredis. </p>
-                <p>Il n'est toutefois pas possible de réserver vos billets en ligne pour la journée du dimanche.</p>
-                <p>Le billet acheté en ligne est horodaté et nominatif, un document d’identité peut être demandé. Il est valable exclusivement pour la prestation, la date et à compter de l'heure mentionnée. Il ne constitue pas un coupe file mais permet un accès à la pyramide du Louvre dans la demi-heure de l'horaire indiqué. En cas de non-respect de ce créneau horaire, le porteur du billet print@home est soumis aux mêmes conditions d'accès et d'attente que les visiteurs sans billet.</p>
+                <h3>{{ 'infos.title'|trans }}</h3>
+                <p>{{ 'infos.p1'|trans }}</p>
+                <p>{{ 'infos.p2'|trans }}</p>
+                <p>{{ 'infos.p3'|trans }}</p>
             </div>
         </div>
         <hr>
         <div class="row">
             <div id="infos" class="col-lg-12">
-                <h3>Les tarifs</h3>
+                <h3>{{ 'rates.title'|trans }}</h3>
                 <table class="table table-striped table-dark">
                     <thead class="thead-gold">
                     <tr>
-                        <th scope="col">Tarifs</th>
-                        <th scope="col">Conditions</th>
-                        <th scope="col">Prix</th>
+                        <th scope="col">{{ 'rates'|trans }}</th>
+                        <th scope="col">{{ 'rates.conditions'|trans }}</th>
+                        <th scope="col">{{ 'rates.prices'|trans }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">"normal"</th>
-                        <td>à partir de 12 ans</td>
+                        <th scope="row">"{{ 'rate.regular.title'|trans }}"</th>
+                        <td>{{ 'rate.regular.desc'|trans }}</td>
                         <td>16 €</td>
                     </tr>
                     <tr>
-                        <th scope="row">"enfant"</th>
-                        <td>de 4 à 12 ans (gratuit pour les moins de 4 ans)</td>
+                        <th scope="row">"{{ 'rate.kid.title'|trans }}"</th>
+                        <td>{{ 'rate.kid.desc'|trans }}</td>
                         <td>8 €</td>
                     </tr>
                     <tr>
-                        <th scope="row">"senior"</th>
-                        <td>à partir de 60 ans</td>
+                        <th scope="row">"{{ 'rate.senior.title'|trans }}"</th>
+                        <td>{{ 'rate.senior.desc'|trans }}</td>
                         <td>12 €</td>
                     </tr>
                     <tr>
-                        <th scope="row">"réduit"</th>
-                        <td>sur présentation d'un justificatif (étudiant, employé du musée ou du Ministère de la Culture, militaire)</td>
+                        <th scope="row">"{{ 'rate.discounted.title'|trans }}"</th>
+                        <td>{{ 'rate.discounted.desc'|trans }}</td>
                         <td>10 €</td>
                     </tr>
                     </tbody>
