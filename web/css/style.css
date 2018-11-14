@@ -80,6 +80,11 @@ h4 {
 
 /** nav **/
 
+.menu-lang a {
+    color: Sienna;
+    text-decoration: none;
+}
+
 .navbar-brand {
     max-width: 50%;
 }
