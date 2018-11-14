@@ -3,3 +3,10 @@ app:
     type: annotation
     requirements:
         _locale: fr|en
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: homepage
+        permanent: false
