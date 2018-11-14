@@ -1,0 +1,18 @@
+label.lastname: Nom
+label.firstname: Prénom
+label.email: Votre adresse e-mail
+label.email.repeat: Répétez votre adresse e-mail
+label.country: Pays de résidence
+label.qty: Nombre de billets
+label.date.visit: Date de la visite
+label.date.birth: Date de naissance
+label.ticket.type: Type de billet
+ticket.type.fullday: Journée
+ticket.type.halfday: Demi-journée
+label.price.reduced: Tarif réduit*
+label.tickets: Liste des billets
+label.agreement: J'ai lu et j'accèpte les conditions générales de vente
+label.name: Nom
+label.content: Votre message
+label.phone: Votre numéro de téléphone
+label.subject: Objet

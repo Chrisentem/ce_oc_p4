@@ -1,0 +1,18 @@
+label.lastname: Lastname
+label.firstname: Firstname
+label.email: Enter your e-mail address
+label.email.repeat: Repeat your e-mail address
+label.country: Your country
+label.qty: Number tickets
+label.date.visit: Date of visit
+label.date.birth: Date of birth
+label.ticket.type: Type of ticket
+ticket.type.fullday: Fullday
+ticket.type.halfday: Half-day
+label.price.reduced: Reduced price*
+label.tickets: List of tickets
+label.agreement: I agree to the terms and conditions
+label.name: Name
+label.content: Your message
+label.phone: Your phone number
+label.subject: Subject

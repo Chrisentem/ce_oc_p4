@@ -18,20 +18,23 @@ class PurchaseType extends AbstractType
     {
         $builder
             ->add('dateOfVisit', DateType::class, array(
-                    'label' => 'Date of visit',
+                    'translation_domain' => 'forms',
+                    'label' => 'label.date.visit',
                     'widget' => 'choice',
                     'years' => range(date('Y'), date('Y')+1),
                 )
             )
             ->add('ticketType', ChoiceType::class, array(
-                    'label' => 'Ticket Type',
+                    'translation_domain' => 'forms',
+                    'label' => 'label.ticket.type',
                     'choices'  => array(
-                        'full-day' => 0,
-                        'half-day' => 1,
+                        'ticket.type.fullday' => 0,
+                        'ticket.type.halfday' => 1,
                     ))
             )
             ->add('numberOfTickets', ChoiceType::class, array(
-                    'label' => 'Qty',
+                    'translation_domain' => 'forms',
+                    'label' => 'label.qty',
                     'required' => true,
                     'choices' => array_combine(range(1,Purchase::MAX_PURCHASE_TICKETS),range(1,Purchase::MAX_PURCHASE_TICKETS)),
                 )

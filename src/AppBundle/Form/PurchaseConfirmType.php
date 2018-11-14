@@ -20,15 +20,18 @@ class PurchaseConfirmType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('email', RepeatedType::class, array(
+            'translation_domain' => 'forms',
+            'label' => 'label.email',
             'type' => EmailType::class,
-            'invalid_message' => 'The email fields must match.',
+            'invalid_message' => 'invalid.email',
             'options' => array('attr' => array('class' => 'email-field')),
             'required' => true,
-            'first_options'  => array('label' => 'Email address'),
-            'second_options' => array('label' => 'Repeat Email address'),
+            'first_options'  => array('label' => 'label.email'),
+            'second_options' => array('label' => 'label.email.repeat'),
             ))
             ->add('agree', CheckboxType::class, array(
-                'label'    => 'I agree to the terms and conditions',
+                'translation_domain' => 'forms',
+                'label'    => 'label.agreement',
                 'required' => true,
             ));
     }

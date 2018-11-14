@@ -18,19 +18,34 @@ class ContactEmailType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('subject', TextType::class)
-            ->add('content', TextareaType::class)
+        $builder->add('subject', TextType::class, array(
+                'translation_domain' => 'forms',
+                'label' => 'label.subject',)
+        )
+            ->add('content', TextareaType::class, array(
+                    'translation_domain' => 'forms',
+                    'label' => 'label.content',)
+            )
             ->add('email', RepeatedType::class, array(
+                'translation_domain' => 'forms',
+                'label' => 'label.email',
                 'type' => EmailType::class,
-                'invalid_message' => 'The email fields must match.',
+                'invalid_message' => 'invalid.email',
                 'options' => array('attr' => array('class' => 'email-field')),
                 'required' => true,
-                'first_options'  => array('label' => 'Email address'),
-                'second_options' => array('label' => 'Repeat Email address'),
+                'first_options'  => array('label' => 'label.email'),
+                'second_options' => array('label' => 'label.email.repeat'),
             ))
-            ->add('name', TextType::class, array('required' => false))
-            ->add('phone', TelType::class, array('required' => false));
-    }/**
+            ->add('name', TextType::class, array(
+                'translation_domain' => 'forms',
+                'label' => 'label.name',
+                'required' => false))
+            ->add('phone', TelType::class, array(
+                'translation_domain' => 'forms',
+                'label' => 'label.phone',
+                'required' => false));
+    }
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

@@ -19,6 +19,8 @@ class MultiTicketType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('Tickets', CollectionType::class, array(
+            'translation_domain' => 'forms',
+            'label' => 'label.tickets',
             'entry_type' => EntryTicketType::class,
             'entry_options' => array('label' => false),
         ));

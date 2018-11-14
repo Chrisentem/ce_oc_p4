@@ -18,14 +18,27 @@ class EntryTicketType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('firstname', TextType::class)
-        ->add('lastname', TextType::class)
-        ->add('country', CountryType::class)
-        ->add('birthdate', BirthdayType::class)
-        ->add('discounted', CheckboxType::class, array(
-            'label'    => 'reduced price',
-            'required' => false,
-        ));
+            ->add('firstname', TextType::class, array(
+                    'translation_domain' => 'forms',
+                    'label' => 'label.firstname',)
+            )
+            ->add('lastname', TextType::class, array(
+                    'translation_domain' => 'forms',
+                    'label' => 'label.lastname',)
+            )
+            ->add('country', CountryType::class, array(
+                    'translation_domain' => 'forms',
+                    'label' => 'label.country',)
+            )
+            ->add('birthdate', BirthdayType::class, array(
+                    'translation_domain' => 'forms',
+                    'label' => 'label.date.birth',)
+            )
+            ->add('discounted', CheckboxType::class, array(
+                'translation_domain' => 'forms',
+                'label'    => 'label.price.reduced',
+                'required' => false,
+            ));
     }
     
     /**
