@@ -2,6 +2,14 @@
 purchase.button.submit.nextstep: étape suivante
 purchase.button.backstep: retour
 rate.discounted.notice: Si vous bénéficiez du tarif réduit, merci de bien vouloir vous munir de votre justificatif le jour de la visite.
+identification.notice: >
+  N'oubliez pas votre carte d'identité ou votre passeport le jour de la visite, en cas de contrôle éventuel.
+purchase.button.confirm: confirmer la commande
+summary.firstname: prénom
+summary.lastname: nom
+summary.birthdate: date de naissance
+summary.price: prix
+summary.discounted: tarif réduit
 
 ### Homepage ###
 page.title.home: Accueil
@@ -44,3 +52,9 @@ copyright: Musée du Louvre
 ### Order-step-2 ###
 step_2.title: enregistrement des visiteurs
 page.title.step_2: Achat de billets - Étape 2
+
+### Order-step-3 ###
+step_3.title.summary: récapitulatif de commande
+step_3.title.sending_infos: Envoi des billets électronique
+sending_infos.desc: Veuillez nous indiquer à quelle adresse e-mail envoyer les billets électroniques.
+page.title.step_3: Achat de billets - Étape 3

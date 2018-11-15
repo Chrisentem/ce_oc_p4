@@ -2,6 +2,14 @@
 purchase.button.submit.nextstep: next step
 purchase.button.backstep: previous step
 rate.discounted.notice: If you select the reduced rate, thank you to bring your document of proof the day of the visit.
+identification.notice: >
+  Do not forget your identity card or your passport on the day of the visit, in case of control.
+purchase.button.confirm: confirm order
+summary.firstname: firstname
+summary.lastname: lastname
+summary.birthdate: birthdate
+summary.price: price
+summary.discounted: reduced rate
 
 ### Homepage ###
 page.title.home: Home
@@ -44,3 +52,9 @@ copyright: Musée du Louvre
 ### Order-step-2 ###
 step_2.title: visitors registration
 page.title.step_2: Tickets purchase - Step 2
+
+### Order-step-3 ###
+step_3.title.summary: Order summary
+step_3.title.sending_infos: E-Tickets sending address
+sending_infos.desc: Please enter the email address to send the e-tickets to.
+page.title.step_3: Tickets purchase - Step 3
