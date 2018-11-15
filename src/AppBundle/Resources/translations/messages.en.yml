@@ -1,15 +1,18 @@
 ### Purchase global ###
 purchase.button.submit.nextstep: next step
 purchase.button.backstep: previous step
+purchase.button.confirm: confirm order
+purchase.button.pay: I buy
 rate.discounted.notice: If you select the reduced rate, thank you to bring your document of proof the day of the visit.
 identification.notice: >
   Do not forget your identity card or your passport on the day of the visit, in case of control.
-purchase.button.confirm: confirm order
 summary.firstname: firstname
 summary.lastname: lastname
 summary.birthdate: birthdate
 summary.price: price
 summary.discounted: reduced rate
+summary.total_amount : Total amount to be paid
+stripe.data_name: Online Ticketing Louvre
 
 ### Homepage ###
 page.title.home: Home
@@ -58,3 +61,7 @@ step_3.title.summary: Order summary
 step_3.title.sending_infos: E-Tickets sending address
 sending_infos.desc: Please enter the email address to send the e-tickets to.
 page.title.step_3: Tickets purchase - Step 3
+
+### Order-step-4 ###
+step_4.title: payment
+page.title.step_4: Tickets purchase - Step 4
