@@ -1,5 +1,7 @@
 ### Purchase global ###
 purchase.button.submit.nextstep: next step
+purchase.button.backstep: previous step
+rate.discounted.notice: If you select the reduced rate, thank you to bring your document of proof the day of the visit.
 
 ### Homepage ###
 page.title.home: Home
@@ -38,3 +40,7 @@ link.terms: GTC
 link.legal_notice: legal notice
 banner.top.alt: the pyramid of Louvre
 copyright: Musée du Louvre
+
+### Order-step-2 ###
+step_2.title: visitors registration
+page.title.step_2: Tickets purchase - Step 2

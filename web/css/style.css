@@ -34,6 +34,21 @@ h4 {
     text-transform: uppercase;
 }
 
+.info-notice {
+    position: relative;
+    padding: 0.2rem 0.2rem;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: sienna;
+    border-radius: 5px;
+}
+
+.info-notice ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
+
 /** Table **/
 
 .thead-gold {

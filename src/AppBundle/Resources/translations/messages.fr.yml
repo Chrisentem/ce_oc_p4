@@ -1,5 +1,7 @@
 ### Purchase global ###
 purchase.button.submit.nextstep: étape suivante
+purchase.button.backstep: retour
+rate.discounted.notice: Si vous bénéficiez du tarif réduit, merci de bien vouloir vous munir de votre justificatif le jour de la visite.
 
 ### Homepage ###
 page.title.home: Accueil
@@ -38,3 +40,7 @@ link.terms: CGV
 link.legal_notice: mentions légales
 banner.top.alt: pyramide du Louvre
 copyright: Musée du Louvre
+
+### Order-step-2 ###
+step_2.title: enregistrement des visiteurs
+page.title.step_2: Achat de billets - Étape 2

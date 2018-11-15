@@ -16,29 +16,33 @@
     {% endspaceless %}
 {% endblock form_errors %}
 {% block title %}
-    Achat étape 2 - {{ parent() }}
+    {{ 'page.title.step_2'|trans }} - {{ parent() }}
 {% endblock %}
         {% block breadcrumb %}
             {% include 'default/_breadcrumb.html.twig' %}
         {% endblock %}
 {% block body %}
-        <div class="row">
-            <div id="content" class="col-lg-12">
-                <h3>Enregistrement des visiteurs</h3>
-                    <div class="well">
-                    {{ form_start(form) }}
-                    {{ form_rest(form)}}
-                        <div id="form-nav" class="form-button">
-                            <a href="{{ path('homepage') }}" class="btn btn-primary"><i class="fas fa-angle-double-left"></i> Retour</a>
-                            <button type="submit" class="btn btn-primary">étape suivante <i class="fas fa-angle-double-right"></i></button>
-                        </div>
-                    {{ form_end(form)}}
-                    </div>
+    <div class="row">
+        <div id="content" class="col-lg-12">
+            <h3>{{ 'step_2.title'|trans }}</h3>
+            <div class="well">
+                {{ form_start(form) }}
+                {{ form_rest(form)}}
+                <div id="form-nav" class="form-button">
+                    <a href="{{ path('homepage') }}" class="btn btn-primary"><i class="fas fa-angle-double-left"></i> {{ 'purchase.button.backstep'|trans }}</a>
+                    <button type="submit" class="btn btn-primary">{{ 'purchase.button.submit.nextstep'|trans }} <i class="fas fa-angle-double-right"></i></button>
+                </div>
+                {{ form_end(form)}}
             </div>
         </div>
-{% endblock %}
-
-{% block stylesheets %}
-<style>
-</style>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="info-notice" role="alert">
+                <ul>
+                    <li><i class="fas fa-info-circle"></i> *{{ 'rate.discounted.notice'|trans }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
