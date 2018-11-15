@@ -3,7 +3,7 @@
     <head>
         <!-- Required meta tags -->
         <meta charset="utf-8">
-        <title>{% block title %}Billetterie en ligne - Musée du Louvre{% endblock %}</title>
+        <title>{% block title %}{{ 'page.title.base'|trans }}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,20 +15,20 @@
     <body>
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="{{ path('homepage') }}"><img id="logo-home" src="{{ asset('img/logo-louvre-2018.jpg') }}" alt="Accueil"></a>
+                <a class="navbar-brand" href="{{ path('homepage') }}"><img id="logo-home" src="{{ asset('img/logo-louvre-2018.jpg') }}" alt="{{ 'link.home'|trans }}"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('homepage') }}">Accueil <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ path('homepage') }}">{{ 'link.home'|trans }}<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                            <a class="nav-link" href="{{ path('contact') }}">{{ 'link.contact'|trans }}</a>
                         </li>
                         <li class="nav-item">
-                            <span class="nav-link menu-lang">Language  <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a> | <a href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></span>
+                            <span class="nav-link menu-lang">{{ 'link.language'|trans }}  <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a> | <a href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></span>
                         </li>
                     </ul>
                 </div>
@@ -41,8 +41,8 @@
                 {% endfor %}
             {% endfor %}
             <div class="row">
-                <div id="top-banner" class="col-lg-12">
-                    <img id="banner-home" src="{{ asset('img/banner_louvre_190px.jpg') }}" alt="Image Louvre">
+                <div class="col-lg-12">
+                    <img id="top-banner" src="{{ asset('img/banner_louvre_190px.jpg') }}" alt="{{ 'banner.top.alt'|trans }}">
                 </div>
             </div>
         </div>
@@ -60,10 +60,10 @@
                         <div id="navbar-footer">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="{{ path('cgv') }}">CGV</a>
+                                    <a class="nav-link" href="{{ path('gtc') }}">{{ 'link.terms'|trans }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('legal_notice') }}">Mentions légales</a>
+                                    <a class="nav-link" href="{{ path('legal_notice') }}">{{ 'link.legal_notice'|trans }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="row">
                     <div id="copyright" class="col-md-12">
-                        <p>Musée du Louvre © {{ 'now'|date('Y') }} - Web design - {{ webmaster }}</p>
+                        <p>{{ 'copyright'|trans }} © {{ 'now'|date('Y') }} - Web design - {{ webmaster }}</p>
                     </div>
                 </div>
             </div>

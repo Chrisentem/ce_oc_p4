@@ -130,11 +130,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/cgv", name="cgv")
+     * @Route("/general-terms-and-conditions", name="gtc")
      */
-    public function cgvAction()
+    public function gtcAction()
     {
-        return $this->render('default/cgv.html.twig');
+        return $this->render('default/general-terms.html.twig');
     }
 
     /**

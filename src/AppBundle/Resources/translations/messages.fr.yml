@@ -28,3 +28,13 @@ rate.senior.title: senior
 rate.senior.desc: à partir de 60 ans
 rate.discounted.title: réduit
 rate.discounted.desc: sur présentation d'un justificatif (étudiant, employé du musée ou du Ministère de la Culture, militaire)
+
+### Base view ###
+page.title.base: Billetterie en ligne - Musée du Louvre
+link.home: accueil
+link.contact: contact
+link.language: langue
+link.terms: CGV
+link.legal_notice: mentions légales
+banner.top.alt: pyramide du Louvre
+copyright: Musée du Louvre

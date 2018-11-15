@@ -28,3 +28,13 @@ rate.senior.title: senior
 rate.senior.desc: from 60 years old
 rate.discounted.title: special
 rate.discounted.desc: upon presentation of proof (student, museum employee or Ministry of Culture, military)
+
+### Base view ###
+page.title.base: Online Ticketing - Musée du Louvre
+link.home: home
+link.contact: contact
+link.language: language
+link.terms: GTC
+link.legal_notice: legal notice
+banner.top.alt: the pyramid of Louvre
+copyright: Musée du Louvre
