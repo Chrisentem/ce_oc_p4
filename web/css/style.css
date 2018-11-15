@@ -95,7 +95,7 @@ h4 {
 }
 
 .navbar-expand-lg .navbar-collapse {
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .navbar-nav.mr-auto {
@@ -104,7 +104,7 @@ h4 {
 
 .navbar {
     padding: 0rem !important;
-    justify-content: right;
+    justify-content: flex-end;
 }
 
 .jumbotron {
