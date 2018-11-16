@@ -50,7 +50,6 @@ class MailSender
      */
     public function sendMail($emailTo, $emailFrom, $subject)
     {
-        dump($this->getMailBody());
         if ($this->isHtml($this->mailBody)) {
             $textContent = DataConverter::stripHTML($this->mailBody);
         }else{
