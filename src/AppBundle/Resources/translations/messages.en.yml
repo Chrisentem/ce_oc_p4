@@ -83,3 +83,41 @@ breadcrumb.step_1: Ticket(s) choice
 breadcrumb.step_2: Visitor(s) registration
 breadcrumb.step_3: Order summary
 breadcrumb.step_4: Payment
+
+### contact page ###
+contact.title.contact_form: Contact form
+page.title.contact: Contact
+contact.button.submit.contact_form: Send message
+contact.title.infos: Practical information
+contact.title.infos.address: Musée du Louvre
+contact.infos.address.p1: |
+  75058 Paris CEDEX 01
+  France
+contact.infos.address.p2: |
+  Phone :
+  +33 (0)1 40 20 50 50
+contact.infos.address.p3: |
+  Opening hours :
+  Open daily from 9 am to 6 pm except Tuesdays
+  Nocturnes until 9:45 pm on Wednesdays and Fridays
+contact.infos.address.p4: |
+  Closing days :
+  January 1st, May 1st and December 25th
+contact.title.infos.general: General informations
+contact.infos.general.p1: >
+  For information on the museum, the services at your disposal and our news,
+  the reception service team is at your disposal:
+contact.infos.general.p2: |
+  Museum Information Bank :
+  Phone : +33 (0)1 40 20 53 17
+  Every day, except Tuesday, from 9h to 18h45 (21h45 on Wednesdays and Fridays).
+  Do not hesitate to use the contact form.
+contact.title.infos.accessibility: Personnes handicapées
+contact.infos.accessibility.p1: |
+  Standard : +33 (0)1 40 20 50 50
+  Information Bank : +33 (0)1 40 20 53 17
+  Disabled visitors phone line : +33 (0)1 40 20 59 90
+  Do not hesitate to use the contact form.
+contact.title.infos.jobs: Jobs
+contact.infos.jobs.p1: Further infos
+contact.link.jobs: Job offers

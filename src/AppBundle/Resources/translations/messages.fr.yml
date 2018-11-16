@@ -83,3 +83,41 @@ breadcrumb.step_1: Sélection billet(s)
 breadcrumb.step_2: Infos visiteur(s)
 breadcrumb.step_3: Récapitulatif
 breadcrumb.step_4: Paiement
+
+### contact page ###
+contact.title.contact_form: Formulaire de contact
+page.title.contact: Contact
+contact.button.submit.contact_form: Envoyer
+contact.title.infos: Infos pratiques
+contact.title.infos.address: Musée du Louvre
+contact.infos.address.p1: |
+  75058 Paris CEDEX 01
+  France
+contact.infos.address.p2: |
+  Téléphone :
+  +33 (0)1 40 20 50 50
+contact.infos.address.p3: |
+  Horaires :
+  Ouvert tous les jours de 9 h à 18 h sauf le mardi
+  Nocturnes jusqu’à 21h45 h le mercredi et le vendredi
+contact.infos.address.p4: |
+  Fermetures :
+  Les 1er janvier, 1er mai et 25 décembre
+contact.title.infos.general: Informations générales
+contact.infos.general.p1: >
+  Pour obtenir des informations sur le musée, les services à votre disposition et notre actualité,
+  l’équipe du service de l’accueil est à votre disposition :
+contact.infos.general.p2: |
+  Banque d'information du musée :
+  Tél. : +33 (0)1 40 20 53 17
+  Tous les jours, sauf le mardi, de 9h à 18h45 (21h45 les mercredis et vendredis).
+  N'hésitez pas à utiliser le formulaire de contact ci-contre
+contact.title.infos.accessibility: Personnes handicapées
+contact.infos.accessibility.p1: |
+  Standard : +33 (0)1 40 20 50 50
+  Banque d'information : +33 (0)1 40 20 53 17
+  Ligne visiteurs handicapés : +33 (0)1 40 20 59 90
+  N'hésitez pas à utiliser le formulaire de contact ci-contre
+contact.title.infos.jobs: Emploi
+contact.infos.jobs.p1: Pour en savoir plus
+contact.link.jobs: Offres d'emploi
