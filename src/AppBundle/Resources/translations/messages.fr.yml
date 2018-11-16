@@ -13,7 +13,11 @@ summary.price: prix
 summary.discounted: tarif réduit
 summary.total_amount : Montant total à régler
 stripe.data_name: Billetterie Louvre
-
+order.booking_number: N° de réservation
+order.total_paid: Montant réglé
+flash.message.payment_failed: >
+  Une erreur est survenue lors du paiement, veuillez recommencer cette étape
+  ou contacter notre service technique via la page de contact.
 
 ### Homepage ###
 page.title.home: Accueil
@@ -66,3 +70,10 @@ page.title.step_3: Achat de billets - Étape 3
 ### Order-step-4 ###
 step_4.title: paiement
 page.title.step_4: Achat de billets - Étape 4
+
+### Confirmation page ###
+confirmation.title: Merci pour votre réservation
+page.title.confirmation: Confirmation d'achat
+confirmation.p1: Un courriel de confirmation avec votre billet à été envoyé à
+button.back_home: retour à l'accueil
+flash.message.order_success: La commande à bien été validée

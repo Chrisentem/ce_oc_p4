@@ -13,6 +13,11 @@ summary.price: price
 summary.discounted: reduced rate
 summary.total_amount : Total amount to be paid
 stripe.data_name: Online Ticketing Louvre
+order.booking_number: Booking number
+order.total_paid: Total amount paid
+flash.message.payment_failed: >
+  An error occurred during the payment process, please repeat this step
+  or contact our technical service via the contact page.
 
 ### Homepage ###
 page.title.home: Home
@@ -65,3 +70,10 @@ page.title.step_3: Tickets purchase - Step 3
 ### Order-step-4 ###
 step_4.title: payment
 page.title.step_4: Tickets purchase - Step 4
+
+### Confirmation page ###
+confirmation.title: We thank you for your booking
+page.title.confirmation: Order confirmation
+confirmation.p1: A confirmation email with your ticket has been sent to
+button.back_home: back to homepage
+flash.message.order_success: Congratulations, order successful.

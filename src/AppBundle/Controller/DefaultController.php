@@ -116,12 +116,14 @@ class DefaultController extends Controller
         if ($request->isMethod('POST')) {
             try {
                 $purchaseManager->doPayment($purchase);
-                $this->addFlash('success', 'Order Complete !');
+                $this->addFlash('success',
+                    $this->get('translator')->trans('flash.message.order_success'));
                 return $this->render('default/confirmation.html.twig', [
                     'purchase' => $purchase,
                 ]);
             } catch (\Exception $e) {
-                $this->addFlash('warning', 'Payment failed !');
+                $this->addFlash('warning',
+                    $this->get('translator')->trans('flash.message.payment_failed'));
             }
         }
         return $this->render('default/order-step-4.html.twig', [
