@@ -21,13 +21,13 @@ flash.message.payment_failed: >
 
 ### Homepage ###
 page.title.home: Home
-infos.title: General informations
-infos.p1: >
+home.infos.title: General informations
+home.infos.p1: >
   The Louvre Museum is open every day, except Tuesdays and holidays, from 9am to 18pm,
   until 9:45 pm on Wednesdays and Fridays, except holidays. The closing of the rooms
   starts at 5:30 pm and 9:30 pm on Wednesdays and Fridays.
-infos.p2: However, it is not possible to book your tickets online for Sunday.
-infos.p3: >
+home.infos.p2: However, it is not possible to book your tickets online for Sunday.
+home.infos.p3: >
   The ticket purchased online is time stamped and nominative, an identity document can be requested.
   It is valid exclusively for the purpose, the date and from the time mentioned.
   It does not constitute a cut queue but allows access to the pyramid of the Louvre in half an hour
