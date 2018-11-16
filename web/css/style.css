@@ -49,6 +49,17 @@ h4 {
     list-style-type: none;
 }
 
+/** flash alert **/
+
+.alert {
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.alert-heading {
+    margin: unset;
+}
+
 /** Table **/
 
 .thead-gold {
