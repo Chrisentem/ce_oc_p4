@@ -77,3 +77,9 @@ page.title.confirmation: Order confirmation
 confirmation.p1: A confirmation email with your ticket has been sent to
 button.back_home: back to homepage
 flash.message.order_success: Congratulations, order successful.
+
+### breadcrumb ###
+breadcrumb.step_1: Ticket(s) choice
+breadcrumb.step_2: Visitor(s) registration
+breadcrumb.step_3: Order summary
+breadcrumb.step_4: Payment

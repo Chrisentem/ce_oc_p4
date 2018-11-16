@@ -77,3 +77,9 @@ page.title.confirmation: Confirmation d'achat
 confirmation.p1: Un courriel de confirmation avec votre billet à été envoyé à
 button.back_home: retour à l'accueil
 flash.message.order_success: La commande à bien été validée
+
+### breadcrumb ###
+breadcrumb.step_1: Sélection billet(s)
+breadcrumb.step_2: Infos visiteur(s)
+breadcrumb.step_3: Récapitulatif
+breadcrumb.step_4: Paiement

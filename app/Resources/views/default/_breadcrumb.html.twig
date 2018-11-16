@@ -8,73 +8,73 @@
                 {% if purchase.status == 2 %}
                     <ul class="bcrumb-flex-container bcrumb-wrap">
                         {% if currentPath == path('homepage') %}
-                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% else %}
-                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_2') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% endif %}
                         <i class="bcrumb-arrow-right bcrumb-step-undone"></i>
-                        <li class="bcrumb-flex-item bcrumb-step-undone">Récapitulatif</li>
+                        <li class="bcrumb-flex-item bcrumb-step-undone">{{ 'breadcrumb.step_3'|trans }}</li>
                         <i class="bcrumb-arrow-right bcrumb-step-undone"></i>
-                        <li class="bcrumb-flex-item bcrumb-step-undone">Paiement</li>
+                        <li class="bcrumb-flex-item bcrumb-step-undone">{{ 'breadcrumb.step_4'|trans }}</li>
                     </ul>
                 {% elseif purchase.status == 3 %}
                     <ul class="bcrumb-flex-container bcrumb-wrap">
                         {% if currentPath == path('homepage') %}
-                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% else %}
-                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_2') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_3') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Récapitulatif</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_3'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Récapitulatif</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_3'|trans }}</li>
                         {% endif %}
                         <i class="bcrumb-arrow-right bcrumb-step-undone"></i>
-                        <li class="bcrumb-flex-item bcrumb-step-undone">Paiement</li>
+                        <li class="bcrumb-flex-item bcrumb-step-undone">{{ 'breadcrumb.step_4'|trans }}</li>
                     </ul>
                 {% elseif purchase.status == 4 %}
                     <ul class="bcrumb-flex-container bcrumb-wrap">
                         {% if currentPath == path('homepage') %}
-                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% else %}
-                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> Achat de billets</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done"><i class="fa fa-home"></i> {{ 'breadcrumb.step_1'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_2') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Infos Visiteurs</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_2'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_3') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Récapitulatif</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_3'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Récapitulatif</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_3'|trans }}</li>
                         {% endif %}
                         {% if currentPath == path('order_step_4') %}
                             <i class="bcrumb-arrow-right bcrumb-step-active"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-active">Paiement</li>
+                            <li class="bcrumb-flex-item bcrumb-step-active">{{ 'breadcrumb.step_4'|trans }}</li>
                         {% else %}
                             <i class="bcrumb-arrow-right bcrumb-step-done"></i>
-                            <li class="bcrumb-flex-item bcrumb-step-done">Paiement</li>
+                            <li class="bcrumb-flex-item bcrumb-step-done">{{ 'breadcrumb.step_4'|trans }}</li>
                         {% endif %}
                     </ul>
                 {% endif %}
