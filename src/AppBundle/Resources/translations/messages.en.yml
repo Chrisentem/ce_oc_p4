@@ -132,6 +132,7 @@ eTicket.title.thanx: We thank you for your online booking
 eTicket.booking_number: Booking number
 eTicket.infos.p1: This is your e-ticket to use during your visit to the Louvre Museum on
 eTicket.infos.p2: We wish you a pleasant visit to the Louvre Museum
+eTicket.booking_date: Date of purchase
 
 ### Legal notice ###
 page.title.legal_notice: Legal notice & GTU

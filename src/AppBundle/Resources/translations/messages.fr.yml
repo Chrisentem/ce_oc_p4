@@ -132,6 +132,7 @@ eTicket.title.thanx: Merci pour votre réservation
 eTicket.booking_number: N° de réservation
 eTicket.infos.p1: Ceci est votre billet électronique à utiliser lors de votre visite au Musée du Louvre le
 eTicket.infos.p2: Nous vous souhaitons une agréable visite au Musée du Louvre
+eTicket.booking_date: Date d'achat du billet
 
 ### Legal notice ###
 page.title.legal_notice: Mentions légales & CGU
