@@ -132,3 +132,131 @@ eTicket.title.thanx: Merci pour votre réservation
 eTicket.booking_number: N° de réservation
 eTicket.infos.p1: Ceci est votre billet électronique à utiliser lors de votre visite au Musée du Louvre le
 eTicket.infos.p2: Nous vous souhaitons une agréable visite au Musée du Louvre
+
+### Legal notice ###
+page.title.legal_notice: Mentions légales & CGU
+legal_notice.main_title: Mentions légales et conditions générales d'utilisation
+legal_notice.article_1:
+  title: Informations éditeur
+  title2: Musée du Louvre
+  p1: |
+    Musée du Louvre, Pavillon Mollien,
+    75058 PARIS CEDEX 01
+    Siret 180 046 237 00012 APE 9103Z
+    Tel : 01 40 20 50 50
+  p2: >
+    Directeur de Publication : Jean-Luc MARTINEZ, Président-Directeur
+legal_notice.article_2:
+  title: Informations hébergeur
+  p1: |
+    Société CLARANET SAS
+    18-20 rue du Faubourg du Temple
+    75011 PARIS
+    FRANCE
+    Siret : 41963228600029
+    Tél. : +33 (0)1 70 13 70 00
+legal_notice.article_3:
+  title: Rédaction du site Internet
+  p1: |
+    Musée du Louvre
+    Service des Productions numériques et audiovisuelles
+    Direction de la Médiation et de la Programmation culturelle
+    75058 Paris cedex 01
+    France
+    webmaster@onlineticketlouvre.fr
+legal_notice.article_4:
+  title: Données à caractère personnel
+  p1:
+    "Vos données personnelles peuvent être collectées lors de la navigation sur ce site Internet.\n
+    De même, les messages électroniques envoyés au Louvre et les adresses électroniques utilisées pour l'envoi
+    d'informations complémentaires sont susceptibles d'être conservées.\n
+    En application des articles 38, 39 et 40 de la loi n° 78-17 du 6 janvier 1978 relative à l’informatique, aux
+    fichiers et aux libertés, vous disposez, gratuitement, d’un droit d’accès, de rectification, de modification et
+    d’opposition aux données qui vous concernent ou concernent les personnes décédées dont vous êtes les ayants-cause.
+    Si vous souhaitez exercer ce droit vous pouvez vous adresser à la rédaction du site par courrier à l'adresse
+    ci-dessus."
+legal_notice.article_5:
+  title: Contenus protégés par des droits de propriété intellectuelle
+  p1: >
+    1) La structure générale du site Internet, ainsi que les logiciels et les bases de données sont la propriété
+    exclusive du musée du Louvre. Toute reproduction, toute représentation totale ou partielle, toute utilisation,
+    toute adaptation, toute mise à disposition ou modification de ces éléments par quelque procédé que ce soit, par
+    quelque personne que ce soit et par quelque moyen que ce soit (notamment la vente, la commercialisation,
+    la location, etc.) sans l’autorisation expresse du musée, des éventuels auteurs ou de leurs ayant droits est
+    strictement interdite et constitue un délit de contrefaçon au sens du code de la propriété intellectuelle.
+  p2:
+    "2) Les contenus scientifiques, culturels et pédagogiques (textes, documents sonores, audiovisuels et multimédia,
+    sans que cette énumération soit limitative) ainsi que les reproductions iconographiques et photographiques des
+    œuvres présentés dans ce site avec une signature ou un  ©  sont protégés au titre du droit de la propriété
+    intellectuelle.\n
+    Parmi ces contenus, les photographies et textes peuvent être réutilisées aux conditions suivantes :\n
+    - Photographies:\n
+    Les photographies créditées © Musée du Louvre / [ …] sont la propriété exclusive du musée du Louvre et sont
+    utilisées par le musée du Louvre avec l’autorisation de leurs auteurs ou ayants-droits. Les photographies créditées
+    © RMN / [ …] sont la propriété de la RMN. Toute réutilisation non commerciale est autorisée sous condition de la
+    mention de la source et de l’auteur. Pour toute réutilisation  commerciale et/ou éditoriale d’image des collections
+    du Musée du Louvre, du Palais, du domaine Louvre Tuileries, du Musée Delacroix ou encore de la scénographie des
+    expositions et autres manifestations culturelles organisées par le Musée du Louvre, veuillez contacter l’Agence
+    photographique de la Réunion des Musées nationaux et du Grand Palais des Champs-Elysées (Rmn-Gp).\n
+    - Ecrits:\n
+    Le musée du Louvre est cessionnaire des textes des parcours de visites et de notices d’œuvres. Toute réutilisation
+    de ces écrits est libre, à la condition que ces derniers ne soient pas altérés, que leur sens ne soit pas dénaturé,
+    et que leurs sources et la date de leur dernière mise à jour soient mentionnées. Toute réutilisation commerciale est
+    soumise à l'accord préalable et exprès du musée du Louvre. Pour toute demande entrant dans ce cadre, merci de
+    contacter le Service Multimédia du musée du Louvre."
+  p3:
+    "3) Les marques du musée du Louvre et de ses partenaires, ainsi que les logos figurant sur le site sont des marques
+    déposées et enregistrées auprès de l'INPI et sont, à ce titre, protégés par un droit de propriété industrielle.\n
+    Toute reproduction totale ou partielle de ces marques et/ou de ces logos effectués à partir des éléments du site
+    sans l’autorisation expresse de leurs propriétaires est strictement interdite et constitue un délit de contrefaçon
+    au sens du code de la propriété."
+legal_notice.article_6:
+  title: Informations publiques
+  p1: >
+    Conformément aux articles L 321-1 et L322-1 du code des relations entre le public et l’administration, les
+    contenus informatifs et de programmation de ce site sont des informations publiques dont la réutilisation est libre,
+    à la condition que ces dernières ne soient pas altérées, que leur sens ne soit pas dénaturé, et que leurs sources et
+    la date de leur dernière mise à jour soient mentionnées.
+  p2: >
+    Aucun transfert de propriété des informations publiques n'est opéré au profit du réutilisateur. Ce dernier bénéficie
+    d'un droit personnel et non exclusif de réutilisation de ces informations publiques. Toute personne réutilisant des
+    informations publiques en violation des prescriptions susmentionnées est passible d'une amende prononcée par la
+    commission d'accès aux documents administratifs.
+legal_notice.article_7:
+  title: Cookies
+  p1: >
+    L’utilisateur est informé que lors de ses visites sur le site un cookie peut s’installer automatiquement sur son
+    logiciel de navigation. Le cookie est un bloc de données qui ne permet pas d’identifier les utilisateurs mais sert à
+    enregistrer les informations relatives à la navigation de celui-ci sur le site. Le paramétrage du logiciel de
+    navigation permet d’informer de la présence de cookie et éventuellement, de la refuser de la manière décrite à
+    l’adresse suivante : www.cnil.fr. L’utilisateur dispose de l’ensemble des droits susvisés s’agissant des données à
+    caractère personnel communiquées par le biais des cookies dans les conditions indiquées ci-dessus.
+legal_notice.article_8:
+  title: Liens hypertextes
+  p1:
+    "Le site du musée du Louvre autorise la mise en place d'un lien hypertexte pointant vers son contenu dès lors qu'il
+    ne crée pas de confusion sur la source des services et/ou contenus produits et/ou détenus par le musée du Louvre et
+    sous réserve de :\n
+    ne pas utiliser la technique du lien profond (deep linking), c'est-à-dire que les pages du site
+    www.onlineticketlouvre.fr ne doivent pas être imbriquées à l'intérieur des pages d'un autre site, mais accessibles
+    par l'ouverture d'une fenêtre.\n
+    mentionner la source qui pointera grâce à un lien hypertexte directement sur le contenu visé."
+  p2:
+    "Les informations utilisées ne doivent l'être qu'à des fins personnelles, associatives ou professionnelles; toute
+    utilisation à des fins commerciales ou publicitaires est exclue. Attention ! Cette autorisation ne s'applique pas
+    aux sites internet diffusant des informations à caractère polémique, pornographique, xénophobe ou pouvant, dans une
+    plus large mesure porter atteinte à la sensibilité du plus grand nombre; et aux sites internet portant atteinte aux
+    intérêts matériels ou moraux du musée du Louvre.\n
+    Pour d'autres utilisations, veuillez nous consulter par courrier à l’adresse mentionnée ci-dessus ou par mail à
+    question-internet@onlineticketlouvre.fr."
+legal_notice.article_9:
+  title: Responsabilité
+  p1: >
+    Le site www.onlineticketlouvre.fr propose de nombreux liens vers d'autres sites, essentiellement des sites officiels
+    (institutions, organismes publics, etc.) mais aussi vers quelques sites d'associations ou d'entreprises partenaires.
+    Ces pages web dont les adresses sont régulièrement vérifiées, ne font pas partie du site public et officiel
+    www.onlineticketlouvre.fr.
+  p2: >
+    Le musée du Louvre n'est pas responsable de la teneur desdits autres sites, et ne sera tenu responsable d'aucun
+    dommage ou préjudice en découlant. Les liens vers d'autres sites sont fournis aux utilisateurs uniquement par pure
+    commodité.

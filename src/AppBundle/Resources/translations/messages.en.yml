@@ -132,3 +132,122 @@ eTicket.title.thanx: We thank you for your online booking
 eTicket.booking_number: Booking number
 eTicket.infos.p1: This is your e-ticket to use during your visit to the Louvre Museum on
 eTicket.infos.p2: We wish you a pleasant visit to the Louvre Museum
+
+### Legal notice ###
+page.title.legal_notice: Legal notice & GTU
+legal_notice.main_title: Legal notice & General terms & conditions of use
+legal_notice.article_1:
+  title: Publisher Information
+  title2: Louvre Museum
+  p1: |
+    Musée du Louvre, Pavillon Mollien,
+    75058 PARIS CEDEX 01
+    Siret 180 046 237 00012 APE 9103Z
+    Tel : 01 40 20 50 50
+  p2: >
+    Publication director : Jean-Luc MARTINEZ, Président-Directeur
+legal_notice.article_2:
+  title: Hosting information
+  p1: |
+    Société CLARANET SAS
+    18-20 rue du Faubourg du Temple
+    75011 PARIS
+    FRANCE
+    Siret : 41963228600029
+    Tél. : +33 (0)1 70 13 70 00
+legal_notice.article_3:
+  title: Website writing
+  p1: |
+    Musée du Louvre
+    Service des Productions numériques et audiovisuelles
+    Direction de la Médiation et de la Programmation culturelle
+    75058 Paris cedex 01
+    France
+    webmaster@onlineticketlouvre.fr
+legal_notice.article_4:
+  title: Personal data
+  p1:
+    "Your personal data may be collected while browsing this website.\n
+    Likewise, e-mails sent to the Louvre and the e-mail addresses used for sending additional information may be
+    retained.\n
+    In application of articles 38, 39 and 40 of the law n ° 78-17 of January 6th, 1978 relating to files and freedoms,
+    you have, free of charge, a right of access, rectification, modification and opposition to the data which concern
+    you or concern the deceased persons of which you are the assignees.\n
+    If you wish to exercise this right you can contact the editorial office by mail to the address above."
+legal_notice.article_5:
+  title: Contents protected by intellectual property rights
+  p1: >
+    1) The general structure of the website, as well as the software and databases are the property exclusive of the
+    Louvre Museum. Any reproduction, any total or partial representation, any use, any adaptation, provision or
+    modification of these elements by any means whatsoever, by any person and by any means whatsoever (including the
+    sale, marketing, rental, etc.) without the express permission of the museum, any authors or their assigns is
+    strictly prohibited and constitutes a forgery offense within the meaning of the Intellectual Property Code.
+  p2:
+    "2) Scientific, cultural and educational content (texts, sound, audiovisual and multimedia documents, this list is
+    not exhaustive) as well as the iconographic and photographic reproductions of works presented in this site with a
+    signature or © are protected under the law of the property intellectual.\n
+    Among these contents, photographs and texts can be reused under the following conditions:\n
+    - Photographs:\n
+    The credited photographs © Musée du Louvre / [...] are the exclusive property of the Louvre Museum and are
+    used by the Louvre Museum with the permission of their authors or assigns. The credited photographs
+    © RMN / [...] are the property of NMR. Any non-commercial reuse is permitted subject to the condition of mention of
+    the source and the author. For any commercial and / or editorial re-use of the collections' image the Louvre Museum,
+    the Palais, the Louvre Tuileries estate, the Delacroix Museum or the scenography of the exhibitions and other
+    cultural events organized by the Louvre Museum, please contact the Agency photograph of the Réunion des Musées
+    Nationaux and the Grand Palais des Champs-Elysées (Rmn-Gp).\n
+    - Writings:\n
+    The Louvre Museum is the assignee of the texts of the tours and works of art. Any reuse of these writings is free,
+    provided that they are not altered, that their meaning is not distorted, and that their sources and the date of
+    their last update be mentioned. Any commercial reuse is subject to prior and express agreement of the Louvre Museum.
+    For any request within this framework, thank you for contact the Multimedia Department of the Louvre Museum."
+  p3:
+    "3) The trademarks of the Louvre Museum and its partners, as well as the logos appearing on the site are trademarks
+    registered and registered with the INPI and are, as such, protected by an industrial property right.\n
+    Any total or partial reproduction of these marks and / or logos made from the elements of the site without the
+    express permission of their owners is strictly prohibited and constitutes a counterfeit offense in the sense of the
+    property code."
+legal_notice.article_6:
+  title: Public information
+  p1: >
+    In accordance with Articles L 321-1 and L322-1 of the Code of relations between the public and the administration,
+    the informative content and programming of this site are public information whose reuse is free, provided that the
+    latter are not altered, that their meaning is not distorted, and that their sources and the date of their last
+    update is mentioned.
+  p2: >
+    No transfer of ownership of public information is made to the benefit of the reuse. The latter benefits a personal
+    and non-exclusive right to reuse this public information. Anyone who reuses information in breach of the
+    above-mentioned requirements is punishable by a fine imposed by the access commission to administrative documents.
+legal_notice.article_7:
+  title: Cookies
+  p1: >
+    The user is informed that during his visits to the site a cookie can be automatically installed on his
+    navigation software. The cookie is a block of data that does not identify users but is used to
+    save the information relating to the navigation of it on the site. The setting of the software of
+    navigation allows to inform of the presence of cookie and possibly, to refuse it in the way described with
+    the following address: www.cnil.fr. The user has all the aforementioned rights with regard to the data at
+    personal nature communicated through cookies under the conditions indicated above.
+legal_notice.article_8:
+  title: Hypertext links
+  p1:
+    "The site of the Louvre Museum authorizes the establishment of a hypertext link pointing to its content as soon as
+    it does not create confusion as to the source of the services and / or contents produced and / or held by the Louvre
+    Museum and subject to:\n
+    do not use the deep linking technique, that is to say that the pages of the site www.onlineticketlouvre.fr must not
+    be nested inside the pages of another site, but accessible by opening a window.\n
+    mention the source that will point through a hypertext link directly to the intended content."
+  p2:
+    "The information used should only be for personal, associative or professional purposes; use for commercial or
+    advertising purposes is excluded. Warning ! This authorization does not apply websites which disseminate information
+    of a controversial, pornographic, xenophobic or potentially wider extent to affect the sensitivity of the greatest
+    number; and websites infringing material or moral interests of the Louvre Museum.\n
+    For other uses, please consult us by mail at the address mentioned above or by mail at
+    question-internet@onlineticketlouvre.fr."
+legal_notice.article_9:
+  title: Responsibility
+  p1: >
+    The site www.onlineticketlouvre.fr offers many links to other sites, mainly official sites (institutions, public
+    bodies, etc.) but also to some sites of associations or partner companies. These web pages whose addresses are
+    regularly checked, are not part of the public and official website www.onlineticketlouvre.fr.
+  p2: >
+    The Louvre Museum is not responsible for the content of these other sites, and will not be held responsible for any
+    resulting damage or injury. Links to other sites are provided to users only by pure convenience.
