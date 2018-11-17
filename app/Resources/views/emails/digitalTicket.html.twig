@@ -55,33 +55,33 @@
 <body class="container">
 <div class="row" id="header">
     <div class="col-lg-4 col-xs-12">
-        <img src="{{ logo }}" alt="logo Musée du Louvre 2018" width="250" />
+        <img src="{{ logo }}" alt="{{ 'eTicket.logo.alt'|trans }}" width="250" />
     </div>
     <div class="col-lg-8 col-xs-12">
-        <h1>Billet électronique</h1>
+        <h1>{{ 'eTicket.header.title'|trans }}</h1>
     </div>
 </div>
 <div class="row" id="top-banner">
     <div class="col-md-12">
-        <img id="banner-home" src="{{ banner }}" alt="Image Louvre">
+        <img id="banner-home" src="{{ banner }}" alt="{{ 'eTicket.banner.top.alt'|trans }}">
     </div>
 </div>
 <div class="jumbotron">
-    <h3>Merci pour votre réservation</h3>
-    <p>N° de réservation : {{ purchase.bookingCode }}</p>
+    <h3>{{ 'eTicket.title.thanx'|trans }}</h3>
+    <p>{{ 'eTicket.booking_number'|trans }} : {{ purchase.bookingCode }}</p>
 </div>
 <div class="row">
     <div class="col-md-12">
-        <p>Ceci est votre billet digital à utiliser lors de votre visite au Musée du Louvre le {{ purchase.dateOfVisit|date('d/m/Y') }}</p>
+        <p>{{ 'eTicket.infos.p1'|trans }} {{ purchase.dateOfVisit|date('d/m/Y') }}</p>
         <div style="overflow-x:auto;">
             <table class="table table-dark">
                 <thead>
                 <tr>
-                    <th scope="col">Firstname</th>
-                    <th scope="col">Lastname</th>
-                    <th scope="col">Birthday</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Reduced*</th>
+                    <th scope="col">{{ 'summary.firstname'|trans }}</th>
+                    <th scope="col">{{ 'summary.lastname'|trans }}</th>
+                    <th scope="col">{{ 'summary.birthdate'|trans }}</th>
+                    <th scope="col">{{ 'summary.price'|trans }}</th>
+                    <th scope="col">{{ 'summary.discounted'|trans }}*</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,9 +92,9 @@
                         <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
                         <td>{{ ticket.price }} €</td>
                         <td>{% if ticket.discounted == true and ticket.price > 0 %}
-                                Oui
+                                {{ 'summary.discounted.yes'|trans }}
                             {% elseif ticket.price > 0 %}
-                                Non
+                                {{ 'summary.discounted.no'|trans }}
                             {% else %}
                                 --
                             {% endif %}
@@ -105,7 +105,7 @@
                 <tfoot>
                 <tr class="bg-info">
                     <th colspan="3"></th>
-                    <th scope="col">TOTAL</th>
+                    <th scope="col">{{ 'summary.total_amount'|trans }}</th>
                     <th scope="col">{{ purchase.total }} €</th>
                 </tr>
                 </tfoot>
@@ -116,11 +116,11 @@
 </div>
 <div class="alert alert-warning" role="alert">
     <ul>
-        <li> N'oubliez pas votre carte d'identité ou votre passport le jour de la visite, afin de vérifier les informations fournies sur le présent billet. </li>
-        <li> *Si vous bénéficiez du tarif réduit, merci d'apporter votre justificatif. </li>
+        <li><i class="fas fa-info-circle"></i> {{ 'identification.notice'|trans }}</li>
+        <li><i class="fas fa-info-circle"></i> *{{ 'rate.discounted.notice'|trans }}</li>
     </ul>
 </div>
-<p>Nous vous souhaitons une agréable visite au Musée du Louvre</p>
+<p>{{ 'eTicket.infos.p2'|trans }}</p>
 <div class="row">
     <div id="copyright" class="col-md-12">
         <p>Musée du Louvre © {{ 'now'|date('Y') }}</p>

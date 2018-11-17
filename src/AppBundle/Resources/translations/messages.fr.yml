@@ -18,6 +18,8 @@ order.total_paid: Montant réglé
 flash.message.payment_failed: >
   Une erreur est survenue lors du paiement, veuillez recommencer cette étape
   ou contacter notre service technique via la page de contact.
+summary.discounted.yes: Oui
+summary.discounted.no: Non
 
 ### Homepage ###
 page.title.home: Accueil
@@ -121,3 +123,12 @@ contact.infos.accessibility.p1: |
 contact.title.infos.jobs: Emploi
 contact.infos.jobs.p1: Pour en savoir plus
 contact.link.jobs: Offres d'emploi
+
+### Digital Ticket ###
+eTicket.logo.alt: logo Musée du Louvre 2018
+eTicket.header.title: Billet électronique
+eTicket.banner.top.alt: Pyramide du Louvre
+eTicket.title.thanx: Merci pour votre réservation
+eTicket.booking_number: N° de réservation
+eTicket.infos.p1: Ceci est votre billet électronique à utiliser lors de votre visite au Musée du Louvre le
+eTicket.infos.p2: Nous vous souhaitons une agréable visite au Musée du Louvre
