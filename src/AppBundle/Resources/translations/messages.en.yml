@@ -252,3 +252,244 @@ legal_notice.article_9:
   p2: >
     The Louvre Museum is not responsible for the content of these other sites, and will not be held responsible for any
     resulting damage or injury. Links to other sites are provided to users only by pure convenience.
+
+### General Sales Terms ###
+page.title.sales_terms: Sales Terms
+sales_terms.main.title: General Sales Terms & Conditions
+sales_terms.main.p1: Online Ticketing – Single Tickets
+sales_terms.index.section: Section
+sales_terms.title:
+  section_1: Object
+  section_2: Scope of these general conditions of sale
+  section_3: Presentation of the tickets
+  section_4: Terms of use
+  section_5: Terms of order
+  section_6: Rates
+  section_7: Terms of payment
+  section_8: Securing Payments
+  section_9: Treatment of personal data
+  section_10: Cookies
+  section_11: Claims Processing
+  section_12: Dispute of a bank debit
+  section_13: Responsibility
+  section_14: Governing Law - Dispute Resolution
+sales_terms.index.p1: These terms and conditions are applicable from January 16, 2017
+sales_terms.section_1:
+  p1:
+    "These general conditions of sale are intended to define the contractual provisions between Public Establishment of
+    the Louvre Museum (hereinafter referred to as the EPML):\n
+    Public institution of an administrative nature grouping the Louvre National Museum and the Eugène Delacroix National
+    Museum, in accordance with the provisions of the decree n ° 92-1338 of the modified December 22, 1992 on the
+    creation of the Public Establishment of the Louvre Museum.\n
+    Siret n° 180 046 237 000 12 - APE n° APE 9103Z.\n
+    Domiciled Musée du Louvre - 75058 Paris Cedex 01 – France.\n
+    Merchant contract: 2333280 EPML DE INTERNET\n\n
+    and any natural or legal person (hereinafter referred to as the buyer) purchasing individual tickets on the online
+    ticket sales site "
+  p2: >
+    The buyer acknowledges having read these general conditions of sale prior to the validation of his order. The fact
+    of placing order is worth acceptance by the buyer of these general conditions of sale.
+  p3: >
+    EPML reserves the right to adapt or modify at any time these terms and conditions of sale.
+    In case of modification, the conditions applicable to a purchase are those in force on the day of the order.
+sales_terms.section_2:
+  p1.1: Is proposed on the site
+  p1.2:
+    "on the site of online sale tickets for the following performance:\n
+    - Musée du Louvre - allowing access to the permanent collections and temporary exhibitions of the Louvre Museum,
+    also giving access to the collections and temporary exhibitions of the Eugène Delacroix museum and to the Musée du
+    quai Branly at the Louvre."
+  p2: The website informs the buyer of the availability of the service at the time of placing the order.
+  p3: "The number of tickets sold online per order and per person is limited to 6."
+sales_terms.section_3:
+  p1:
+    "The ticket is printable upon validation of the payment. It is emailed to the address provided during the purchase."
+  p2:
+    "The ticket must have been printed by the buyer prior to the visit, without changing the print size, full page, on
+    white A4 paper, blank front and back. Partially or improperly printed, damaged or illegible banknotes are invalid.\n
+    In the event of a forgotten, damaged, badly printed or mispronounced ticket, the EPML reserves the right to reprint
+    it in order to facilitate the visitor's efforts."
+  p3:
+    "The ticket issued by the EPML includes:\n
+    - the name and logo of the Louvre\n
+    - the name of the bearer\n
+    - the name of the buyer\n
+    - the name of the service sold\n
+    - the dates and times of the service\n
+    - the type of tariff applied\n
+    - the sale price of the service, in euros\n
+    - ticket number assigned by the ticketing system\n
+    - the date of purchase of the ticket\n"
+sales_terms.section_4:
+  p1: The tickets
+  p1.1: >
+    Tickets purchased online are time stamped and valid only for the delivery, on the date and from the time mentioned.
+  p1.2: >
+    Tickets purchased online allow access to the Louvre Pyramid within half an hour of the indicated schedule.
+    In case of delay beyond this access time slot, print @ home ticket holders are subject to the same access and
+    waiting conditions as other visitors.
+  p1.3: >
+    Each ticket purchased online is personal, nominative and non-transferable. It contains the name of its bearer,
+    informed by the buyer at the time of online purchase. A valid identity document with photograph can be requested.
+    In case of non presentation of such a document, access to the service may be refused.
+  p1.4: >
+    Access to the service is subject to verification of the validity of the ticket. It is controlled by the screening
+    officers at the entries of the collections.
+  p1.5: >
+    The first person to present the ticket is presumed to be the legitimate bearer. It will be denied access to the
+    benefit to any other person coming later with a copy of the ticket.
+  p1.6: >
+    The visitor must keep his ticket by him throughout the duration of the service.
+  p1.7: >
+    Any exit from the Napoleon Hall or a wing of the museum is final. The same entrance ticket gives unique access to
+    permanent collections and temporary exhibitions.
+  p1.8: >
+    Anyone who illegally reproduces a ticket and / or uses a counterfeit ticket may be subject to criminal prosecution.
+  p1.9: >
+    The EPML declines any responsibility in case of loss or theft or use of copies without the knowledge of the buyer,
+    including within the walls of the museum.
+  p1.10: >
+    In the event of non-compliance with one of the conditions set out in this article, the EPML reserves the right to
+    refuse access to the service concerned.
+  p2: Security measures
+  p2.1: >
+    To ensure the safety of visitors, the Louvre Museum applies the preventive measures decided by the government for
+    the public administrations. All persons must be ready for security checks.
+  p2.2: >
+    Suitcases and large bags are prohibited. Only luggage not exceeding the maximum sizes of 55cm x 35cm x 20cm are
+    allowed in the reception areas. They are not allowed in the collections and must imperatively be deposited in the
+    locker room after being checked.
+sales_terms.section_5:
+  p1: "The buyer makes his ticket purchase online as follows:"
+  p1.step_1: "Go to the page:"
+  p1.step_2: "Select the date of visit."
+  p1.step_3: "Choose your ticket type: Day / half day."
+  p1.step_4: >
+    Choose the number of tickets you want. If the number of tickets available for the selected date is no longer
+    sufficient a notification appears. Take the next step.
+  p1.step_5: >
+    Enter the requested information for the visitor (s), the prices will be calculated automatically. Take the next
+    step.
+  p1.step_6: >
+    An order summary is displayed before the purchase validation. On this page enter the e-mail address that will be
+    used to send the ticket (s) and accept the general conditions of sale then go to the payment page.
+  p1.step_7: >
+    Click on "Pay by credit card". Set the order by credit card identifying, if necessary, according to the 3D-Secure
+    standard by entering the code transmitted by his bank.
+  p2: >
+    As long as the payment has not been saved, the contents of the order can be changed by going back to the previous
+    steps.
+  p3: >
+    If payment is accepted by the Merchant Processing Center (CTC), the order confirmation is displayed. The buyer
+    receives an email with the ticket(s) to print. This e-ticket acts as an order confirmation and payment.
+  p4: >
+    The EPML reserves the right to refuse any order from a customer who does not observe its general conditions of sale.
+sales_terms.section_6:
+  p1: "The applicable rates are those in effect at the time of the order."
+  p2: "Rates and exemptions are available on the EPML's online sales website."
+  p3: "EPML reserves the right to change prices at any time."
+  p4: >
+    The visitor likely to benefit from an exemption will have to present to the controls of the titles of access to the
+    services, the relevant supporting document valid, nominative and with photograph. In case of non-presentation or
+    non-conformity of the proof, access to the service will be refused.
+sales_terms.section_7:
+  p1.start: >
+    Payment of the tickets by the customer is made by credit card. Payment cards accepted on the site
+  p1.end: "are: Carte Bleue, Visa, Mastercard, American Express, Discover, JCB, Diners Club et UnionPay"
+  p2: >
+    The payment is validated according to the 3D-secure Standard and after acceptance of the transaction by the Merchant
+    Processing Center (CTC) in charge of controlling the authorization threshold for the purchase of the payment card
+    and checking the list of stolen or lost credit cards. In case of refusal by the CTC, the order is canceled.
+  p3: >
+    Upon acceptance of payment, the buyer receives an email summarizing his order and constituting the ticket CB
+    customer (to be kept and produce in case of dispute).
+  p4: >
+    In accordance with the banking regulations in force, the archiving of bank data is fifteen (15) months from the date
+    of transaction. After this time, the data is destroyed.
+payment.stripe: Stripe
+payment.3dSecure: 3D-Secure
+sales_terms.section_8:
+  p1.start: The payment site of the EPML uses the cashing platform
+  p1.mid: which meets the standard
+  p2: >
+    is a security protocol offered by VISA, MasterCard, GIE Cartes Bancaires to increase the level of security of remote
+    payments, by adding an authentication step provided by the bearer's bank.
+sales_terms.section_9:
+  p1: >
+    Only the buyer is required to provide the information and data necessary to manage his order, finalize his
+    transaction, inform him and liaise with the EPML. These data are stored in the EPML database.
+  p2: >
+    Automated processing of buyer information has been declared to the CNIL by the EPML.
+  p3: >
+    In application of articles 38, 39 and 40 of the law n ° 78-17 of January 6th, 1978 modified in 2004 and relating to
+    data processing, files and freedoms, the purchaser has a right of access, of rectification, modification and
+    opposition to the data concerning him or the deceased persons of which he is the cause. If the buyer wishes to
+    exercise this right, he can apply to the EPML by mail to the address below: Louvre Museum, DRE "The Louvre and You",
+    75058, Paris cedex 01.
+sales_terms.section_10:
+  p1: >
+    The EPML website uses "session" cookies, which are necessary to order online and destroyed as soon as the site is
+    removed.
+  p2: >
+    The use of cookies may be disabled by the selection by the buyer of the appropriate settings of his Internet
+    browser. Such disabling may preclude the use of certain features of the EPML Online Ticketing Website. By purchasing
+    online, the buyer therefore expressly consents to the processing of his personal data under the conditions and for
+    the purposes described above.
+sales_terms.section_11:
+  p1: >
+    The sale of entrance tickets for a museum or services related to it is considered a sale of leisure services and, in
+    accordance with Article L 121-21-8-12 ° of the Consumer Code, opens no right to the withdrawal period.
+  p2: "Tickets are non-transferable, non-exchangeable and can not be resold."
+  p3.start: >
+    The date, time and name of the ticket holder can be changed until the scheduled date and time of the visit. Changes
+    can be made remotely, by email addressed to
+  p3.end: or on the spot at the ticket counter.
+  p4: >
+    In the event of a bona fide error in a ticket purchase for a visitor enjoying an exemption, a refund entitlement
+    will be opened.
+  p5.start: Requests should be addressed to
+  p5.end: >
+    or by mail addressed to: Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01, and include the number of the
+    corresponding order and, for refunds, bank details (Bank Identification Statement).
+  p6.start:
+    "In case of cancellation or modification of the corresponding service by the EPML or error of processing of the
+    request by the EPML, a right to refund is opened after the execution time of the service.\n
+    The buyer must make the request within a period of three (3) months from the date of cancellation or modification of
+    the service, upon presentation of the ticket not invalidated and its bank details (Bank Statement of Identity) , to
+    the exclusion of any other compensation or compensation by email on"
+  p6.end: "or by mail addressed to : Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01."
+sales_terms.section_12:
+  p1: >
+    In case of dispute due to the theft or loss of the payment card, the buyer must immediately oppose by calling the
+    number indicated by the bank issuing the payment card. In case of theft, he must file a complaint with the competent
+    authorities.
+  p2: >
+    In case of dispute due to anomalies noted by the buyer on his statement of account, while he is still in possession
+    of his payment card, the buyer must file a claim with the bank issuing the bank. payment card, as soon as possible
+    and within the deadlines set by law, of thirteen (13) months from the debit date on the disputed transaction. The
+    complaint is transmitted via the banking network to the EPML. In the case of a justified claim, the order is given
+    to the EPML account holder to make the refund by crediting the buyer's bank account.
+sales_terms.section_13:
+  p1: >
+    Neither the EPML nor the buyer can be held responsible for any non-performance resulting from a case of force
+    majeure. The following are considered as force majeure: wars, riots, insurrections, governmental or legal
+    restrictions, fires, earthquakes, storms and floods.
+  p2.start: "Except dysfunction of the site"
+  p2.end: >
+    attributable to it, the EPML can not be held responsible for any anomalies that may occur during the ordering,
+    processing, download or printing of the ticket, either because of the buyer, or the unpredictable and insurmountable
+    a third party foreign to the service, either because of computer failures, server, the blocking of
+    telecommunications including networks and especially the Internet.
+  p3: >
+    The EPML can not be held responsible for the use of tickets purchased, the buyer being solely responsible for their
+    use by himself or by a third party.
+sales_terms.section_14:
+  p1: "These general conditions of sale are governed by French law."
+  p2:
+    "In the event of litigation, the courts of Paris are only competent, after exhaustion of the amiable means of
+    appeal."
+sales_terms.link.back2top: Back to top
+sales_terms.signature.p: |
+  In Paris,
+  Jean-Luc MARTINEZ
+  President and Director of the Public Establishment of the Louvre Museum

@@ -261,3 +261,256 @@ legal_notice.article_9:
     Le musée du Louvre n'est pas responsable de la teneur desdits autres sites, et ne sera tenu responsable d'aucun
     dommage ou préjudice en découlant. Les liens vers d'autres sites sont fournis aux utilisateurs uniquement par pure
     commodité.
+
+### General Sales Terms ###
+page.title.sales_terms: CGV
+sales_terms.main.title: Conditions Générales de Vente
+sales_terms.main.p1: Vente en ligne – Billets individuels
+sales_terms.index.section: Article
+sales_terms.title:
+  section_1: Objet
+  section_2: Champ d’application des présentes conditions générales de vente
+  section_3: Présentation des billets
+  section_4: Conditions d’utilisation
+  section_5: Modalités de commande
+  section_6: Tarifs
+  section_7: Modalités de paiement
+  section_8: Sécurisation des paiements
+  section_9: Traitement des données personnelles
+  section_10: Cookies
+  section_11: Traitement des demandes de remboursement
+  section_12: Contestation d’un débit bancaire
+  section_13: Responsabilité
+  section_14: Droit applicable - règlement des litiges
+sales_terms.index.p1: Les présentes conditions sont applicables à compter du 16 janvier 2017
+sales_terms.section_1:
+  p1:
+    "Les présentes conditions générales de vente ont pour objet de définir les dispositions contractuelles entre
+    l'Etablissement Public du Musée du Louvre (ci-après dénommé l'EPML) :\n
+    Etablissement public à caractère administratif regroupant le musée national du Louvre et le musée national Eugène
+    Delacroix, conformément aux dispositions du décret n° 92-1338 du 22 décembre 1992 modifié portant création de
+    l'Etablissement Public du Musée du Louvre.\n
+    Siret n° 180 046 237 000 12 - APE n° APE 9103Z.\n
+    Domicilié Musée du Louvre - 75058 Paris Cedex 01 – France.\n
+    Contrat commerçant: 2333280 EPML DE INTERNET\n\n
+    et toute personne physique ou morale (ci-après dénommée l'acheteur) achetant des billets individuels sur le site de
+    vente en ligne de billets"
+  p2: >
+    L’acheteur reconnaît avoir pris connaissance des présentes conditions générales de vente préalablement à la
+    validation de sa commande. Le fait de passer commande vaut acceptation par l’acheteur des présentes conditions
+    générales de vente.
+  p3: >
+    L’EPML se réserve la possibilité d'adapter ou de modifier à tout moment les présentes conditions générales de vente.
+    En cas de modification, les conditions applicables à un achat sont celles en vigueur au jour de la commande.
+sales_terms.section_2:
+  p1.1: Est proposé sur le site
+  p1.2:
+    "de vente en ligne des billets pour la prestation suivante :\n
+    - Musée du Louvre - permettant l’accès aux collections permanentes et expositions temporaires du musée
+    du Louvre, donnant également accès aux collections et expositions temporaires du musée Eugène Delacroix et à
+    l'antenne du musée du quai Branly au Louvre."
+  p2: Le site Internet informe l’acheteur de la disponibilité de la prestation au moment de la passation de la commande.
+  p3: "Le nombre de billets vendus en ligne par commande et par personne est limité au nombre de 6."
+sales_terms.section_3:
+  p1:
+    "Le billet est imprimable à la validation du règlement. Il est envoyé par courriel à l'adresse fournie lors de
+    l'achat."
+  p2:
+    "Le billet doit avoir été imprimé par l’acheteur préalablement à la visite, sans modification de la taille
+    d’impression, pleine page, sur du papier A4 blanc, vierge recto et verso. Les billets partiellement ou mal imprimés,
+    endommagés ou illisibles ne sont pas valides.\n
+    En cas de billet oublié, abimé, mal imprimé, ou comportant une erreur de nom du porteur, l’EPML se réserve la
+    possibilité de le réimprimer afin de faciliter les démarches du visiteur."
+  p3:
+    "Le billet délivré par l’EPML comporte notamment:\n
+    - le nom et le logo du Louvre\n
+    - le nom du porteur\n
+    - le nom de l’acheteur\n
+    - la dénomination de la prestation vendue\n
+    - les dates et horaires de la prestation\n
+    - le type de tarif appliqué\n
+    - le prix de vente de la prestation, en euros\n
+    - le numéro du billet attribué par le système de billetterie\n
+    - la date d’achat du billet\n"
+sales_terms.section_4:
+  p1: Les billets
+  p1.1: >
+    Les billets achetés en ligne sont horodatés et valables exclusivement pour la prestation, à la date et à compter de
+    l’heure mentionnées.
+  p1.2: >
+    Les billets achetés en ligne permettent un accès à la pyramide du Louvre dans la demi-heure de l’horaire indiqué.
+    En cas de retard au-delà de ce créneau horaire d’accès, les porteurs de billets print@home sont soumis aux mêmes
+    conditions d’accès et d’attente que les autres visiteurs.
+  p1.3: >
+    Chaque billet acheté en ligne est personnel, nominatif et incessible. Il comporte le nom de son porteur, renseigné
+    par l’acheteur au moment de l’achat en ligne. Un document d’identité en cours de validité avec photographie peut
+    être demandé. En cas de non présentation d’un tel document, l’accès à la prestation peut être refusé.
+  p1.4: >
+    L’accès à la prestation est soumis au contrôle de la validité du billet. Il est contrôlé par les agents de contrôle
+    aux entrées des collections.
+  p1.5: >
+    La première personne à présenter le billet est présumée en être le porteur légitime. Il sera refusé l’accès à la
+    prestation à toute autre personne se présentant ultérieurement avec une copie du billet.
+  p1.6: >
+    Le visiteur doit conserver son billet par devers lui durant toute la durée de la prestation.
+  p1.7: >
+    Toute sortie du hall Napoléon ou d’une aile du musée est définitive. Un même billet d’entrée donne un accès unique
+    aux collections permanentes et aux expositions temporaires.
+  p1.8: >
+    Toute personne qui reproduirait illégalement un billet et/ou utiliserait un billet contrefait s’exposerait à des
+    poursuites pénales.
+  p1.9: >
+    L’EPML décline toute responsabilité en cas de perte ou de vol ou d’utilisation de copies à l’insu de l’acheteur, y
+    compris dans l’enceinte du musée.
+  p1.10: >
+    En cas de non-respect d’une des conditions énoncées au présent article, l’EPML se réserve le droit de refuser
+    l’accès à la prestation concernée.
+  p2: Mesures de sécurité
+  p2.1: >
+    Afin d’assurer la sécurité des visiteurs, le musée du Louvre applique les mesures préventives décidées par le
+    gouvernement pour les administrations publiques. Toutes les personnes doivent se prêter aux contrôles de sécurité.
+  p2.2: >
+    Les valises et sacs de grande contenance sont interdits. Seuls les bagages n’excédant pas les tailles maximales de
+    55cm x 35cm x 20cm sont autorisés dans les espaces d’accueil. Ils ne sont pas admis dans les collections et doivent
+    impérativement être déposés aux vestiaires après avoir été contrôlés.
+sales_terms.section_5:
+  p1: "L’acheteur effectue son achat de billet en ligne comme suit :"
+  p1.step_1: "Se rendre sur la page :"
+  p1.step_2: "Sélectionner la date de visite."
+  p1.step_3: "Choisir son type de billets : Journée / demi-journée."
+  p1.step_4: >
+    Choisir le nombre de billets désirés. Si le nombre de billets disponibles pour la date choisie n'est plus suffisant
+    une notification apparait. Passer à l'étape suivante.
+  p1.step_5: >
+    Entrer les informations demandées pour le ou les visiteurs, les prix seront calculés automatiquement. Passer à
+    l'étape suivante.
+  p1.step_6: >
+    Un récapitulatif de commande s’affiche avant la validation de l’achat. Sur cette page entrer l'adresse e-mail qui
+    sera utilisée pour l'envoi du/des billet(s) et accepter les conditions générales de vente puis passer à la page de
+    paiement.
+  p1.step_7: >
+    Cliquer sur "Payer par carte bancaire". Régler la commande par carte bancaire en s’identifiant, le cas échéant,
+    selon la norme 3D-Secure par la saisie du code transmis par sa banque.
+  p2: >
+    Tant que le paiement n'a pas été enregistré, le contenu de la commande peut être modifié en revenant aux étapes
+    précédantes.
+  p3: >
+    Si le paiement est accepté par le Centre de Traitement Commerçant (CTC), la confirmation de commande s’affiche.
+    L’acheteur reçoit un courriel avec le ou les billets à imprimer. Ce billet électronique fait office de confirmation
+    de commande et de paiement.
+  p4: >
+    L’EPML se réserve le droit de refuser toute commande d'un client qui n’observerait pas ses conditions générales de
+    vente.
+sales_terms.section_6:
+  p1: Les tarifs applicables sont ceux en vigueur au moment de la commande.
+  p2: Les tarifs et les cas d’exonération sont consultables sur le site de vente en ligne de l’EPML.
+  p3: L’EPML se réserve le droit de modifier les prix à tout moment.
+  p4: >
+    Le visiteur susceptible de bénéficier d'une exonération devra présenter aux contrôles des titres d’accès aux
+    prestations, le justificatif afférent en cours de validité, nominatif et avec photographie. En cas de non
+    présentation ou de non-conformité du justificatif, l’accès à la prestation sera refusé.
+sales_terms.section_7:
+  p1.start: >
+    Le paiement des billets par le client s'effectue par carte bancaire. Les cartes de paiement acceptées sur le site
+  p1.end: "sont : Carte Bleue, Visa, Mastercard, American Express, Discover, JCB, Diners Club et UnionPay"
+  p2: >
+    Le paiement est validé selon la Norme 3D-secure et après acceptation de la transaction par le Centre de Traitement
+    Commerçant (CTC) en charge du contrôle du seuil d’autorisation d’achat de la carte de paiement et de la vérification
+    de la liste des cartes de paiement volées ou perdues. En cas de refus par le CTC, la commande est annulée.
+  p3: >
+    Dès l’acceptation du paiement, l’acheteur reçoit un courriel récapitulant sa commande et constituant le ticket CB
+    client (à conserver et à produire en cas de contestation).
+  p4: >
+    Conformément à la réglementation bancaire en vigueur, l’archivage des données bancaires est de quinze (15) mois à
+    compter de la date de transaction. A la suite de ce délai, les données sont détruites.
+payment.stripe: Stripe
+payment.3dSecure: 3D-Secure
+sales_terms.section_8:
+  p1.start: Le site de paiement de l'EPML utilise la plate de forme d'encaissement
+  p1.mid: qui répond à la norme
+  p2: >
+    est un protocole de sécurité proposé par VISA, MasterCard, le GIE Cartes Bancaires afin d'augmenter le niveau de
+    sécurité des paiements à distance, par l'ajout d'une étape d'authentification assurée par la banque du porteur.
+sales_terms.section_9:
+  p1: >
+    Seules sont demandées à l’acheteur les informations et données nécessaires à la gestion de sa commande, à la
+    finalisation de sa transaction, à son information et à ses relations avec l’EPML. Ces données sont conservées dans
+    la base de l’EPML.
+  p2: >
+    Le traitement automatisé des informations concernant les acheteurs a fait l’objet d’une déclaration à la CNIL par
+    l’EPML.
+  p3: >
+    En application des articles 38, 39 et 40 de la loi n° 78-17 du 6 janvier 1978 modifiée en 2004 et relative à
+    l’informatique, aux fichiers et aux libertés, l’acheteur dispose d’un droit d’accès, de rectification, de
+    modification et d’opposition aux données qui le concernent ou qui concernent les personnes décédées dont il est
+    l’ayant cause. Si l’acheteur souhaite exercer ce droit, il peut s’adresser à l’EPML par courrier à l'adresse
+    ci-après : musée du Louvre, DRE « Le Louvre et Vous », 75058, Paris cedex 01.
+sales_terms.section_10:
+  p1:
+    "Le site de l'EPML utilise des cookies : « de session », nécessaires à la commande en ligne et détruits dès retrait
+    du site."
+  p2: >
+    L’utilisation des cookies peut être désactivée par la sélection par l’acheteur des paramètres appropriés de son
+    navigateur Internet. Une telle désactivation peut empêcher l’utilisation de certaines fonctionnalités du site de
+    vente en ligne de billetterie de l’EPML. En achetant en ligne, l’acheteur consent donc expressément au traitement
+    de ses données nominatives dans les conditions et pour les finalités décrites ci-dessus.
+sales_terms.section_11:
+  p1: >
+    La vente de billets d’entrée pour un musée ou de prestations liées à celui-ci est assimilée à une vente de services
+    de loisirs et, conformément à l’article L 121-21-8-12° du Code de la consommation, n’ouvre aucun droit au délai de
+    rétractation.
+  p2: "Les billets sont incessibles, non échangeables et ne peuvent être revendus."
+  p3.start: >
+    Les date, heure et nom du porteur du billet sont modifiables jusqu’à la date et l’heure programmées de la visite.
+    Les modifications peuvent être effectuées à distance, par courriel adressé à
+  p3.end: ou sur place au comptoir d’assistance billetterie.
+  p4: >
+    En cas d’erreur de bonne foi d’un achat de billet pour un visiteur bénéficiant d’une exonération un droit à
+    remboursement est ouvert.
+  p5.start: Les demandes doivent être adressées à
+  p5.end: >
+    ou par courrier adressé à : Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01, et s’accompagner du
+    numéro de la commande correspondante et, pour les remboursements, des coordonnées bancaires (Relevé d’Identité
+    Bancaire).
+  p6.start:
+    "En cas d’annulation ou de modification de la prestation correspondante par l’EPML ou d'erreur de traitement de la
+    demande par l’EPML, un droit à remboursement est ouvert après l’heure d’exécution de la prestation.\n
+    L’acheteur doit en faire la demande dans un délai de trois (3) mois à compter de la date d’annulation ou de
+    modification de la prestation, sur présentation du billet non invalidé et de ses coordonnées bancaires (Relevé
+    d’Identité Bancaire), à l’exclusion de tout autre dédommagement ou indemnité quelconque par courriel sur"
+  p6.end: "ou par courrier adressé à : Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01."
+sales_terms.section_12:
+  p1: >
+    En cas de contestation en raison du vol ou de la perte de la carte de paiement, l’acheteur doit faire immédiatement
+    opposition en appelant le numéro indiqué par l’établissement bancaire émetteur de la carte de paiement. En cas de
+    vol, il doit faire un dépôt de plainte auprès des autorités compétentes.
+  p2: >
+    En cas de contestation en raison d’anomalies constatées par l’acheteur sur son relevé de compte, alors qu‘il est
+    toujours en possession de sa carte de paiement, l’acheteur doit déposer une réclamation auprès de l’établissement
+    bancaire émetteur de la carte de paiement, dès que possible et dans les délais fixés par la loi, de treize (13) mois
+    à compter de la date de débit sur l’opération contestée. La réclamation est transmise via le réseau bancaire à
+    l’EPML. Dans le cas d’une réclamation justifiée, l’ordre est donné au teneur de compte de l’EPML d’effectuer le
+    remboursement par un crédit sur le compte bancaire de l’acheteur.
+sales_terms.section_13:
+  p1: >
+    Ni l’EPML, ni l’acheteur ne sauraient être tenus responsables de toute inexécution qui aurait pour origine un cas de
+    force majeure. Sont notamment considérés comme des cas de force majeure : les guerres, les émeutes, les
+    insurrections, les restrictions gouvernementales ou légales, les incendies, les tremblements de terre, les tempêtes
+    et inondations.
+  p2.start: "Sauf dysfonctionnement du site"
+  p2.end: >
+    qui lui serait imputable, l’EPML ne pourra être tenu responsable des anomalies pouvant survenir en cours de
+    commande, de traitement, de téléchargement ou d'impression du billet, soit du fait de l’acheteur, soit du fait
+    imprévisible et insurmontable d'un tiers étranger à la prestation, soit du fait de pannes d'ordinateur, de serveur,
+    le blocage des télécommunications y compris des réseaux et notamment d'Internet.
+  p3: >
+    L’EPML ne pourrait être tenu responsable de l'usage des billets achetés, l’acheteur étant seul responsable de leur
+    utilisation par lui-même ou par un tiers.
+sales_terms.section_14:
+  p1: "Les présentes conditions générales de vente sont régies par la loi française."
+  p2: "En cas de litige, les tribunaux de Paris sont seuls compétents, après épuisement des voies de recours amiables."
+sales_terms.link.back2top: Haut de page
+sales_terms.signature.p: |
+  A Paris,
+  Jean-Luc MARTINEZ
+  Président-directeur de l'Etablissement Public du Musée du Louvre
