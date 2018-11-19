@@ -17,11 +17,11 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand" href="{{ path('homepage') }}"><img id="logo-home" src="{{ asset('img/logo-louvre-2018.jpg') }}" alt="{{ 'link.home'|trans }}"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar">menu</span><span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor03">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ path('homepage') }}">{{ 'link.home'|trans }}<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -54,22 +54,19 @@
         </div>
         <footer>
             <div class="container">
-                <div class="row">
-                    <div id="menu-footer" class="col-md-12">
-                    <nav class="navbar navbar-expand navbar-light bg-light">
-                        <div id="navbar-footer">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{{ path('sales_terms') }}">{{ 'link.sales_terms'|trans }}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ path('legal_notice') }}">{{ 'link.legal_notice'|trans }}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                <nav class="navbar navbar-light bg-light">
+                    <a id="logo-secure" href="{{ path('sales_terms') }}#7"><img src="{{ asset('img/secured-payment-long.png') }}" alt="{{ 'link.sales_terms'|trans }}"></a>
+                    <div class="navbar-expand">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('sales_terms') }}">{{ 'link.sales_terms'|trans }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('legal_notice') }}">{{ 'link.legal_notice'|trans }}</a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
+                </nav>
                 <div class="row">
                     <div id="copyright" class="col-md-12">
                         <p>{{ 'copyright'|trans }} © {{ 'now'|date('Y') }} - Web design - {{ webmaster }}</p>
