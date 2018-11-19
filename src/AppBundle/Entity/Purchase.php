@@ -12,12 +12,12 @@ use AppBundle\Validator\Constraints as AppAssert;
  *
  * @ORM\Table(name="purchase")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PurchaseRepository")
- * @AppAssert\NotAvailableTicketType(groups={"step1"})
- * @AppAssert\NotAvailableTicketNum(groups={"step1"})
- * @AppAssert\NotSunday(groups={"step1"})
- * @AppAssert\NotTuesday(groups={"step1"})
- * @AppAssert\NotPastDate(groups={"step1"})
- * @AppAssert\NotHoliday(groups={"step1"})
+ * @AppAssert\NotAvailableTicketType(groups={"step1"}, message="invalid.ticket_type")
+ * @AppAssert\NotAvailableTicketNum(groups={"step1"}, message="invalid.ticket_number")
+ * @AppAssert\NotSunday(groups={"step1"}, message="invalid.sunday")
+ * @AppAssert\NotTuesday(groups={"step1"}, message="invalid.tuesday")
+ * @AppAssert\NotPastDate(groups={"step1"}, message="invalid.past_date")
+ * @AppAssert\NotHoliday(groups={"step1"}, message="invalid.holidays")
  */
 class Purchase
 {

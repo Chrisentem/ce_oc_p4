@@ -1,1 +1,7 @@
 invalid.email: Les adresses e-mail doivent être identiques
+invalid.ticket_number: Il n'y a plus assez de billets disponibles pour cette date.
+invalid.ticket_type: Ce type de billet n'est plus disponible après 14h, veuillez choisir demi-journée.
+invalid.holidays: Le musée est fermé les jours fériés, veuillez choisir une autre date !
+invalid.past_date: La date choisie est dépassée, veuillez sélectionner une autre date !
+invalid.sunday: Les dimanches ne sont pas éligibles à la réservation en ligne , veuillez choisir une autre date !
+invalid.tuesday: Le musée est fermé les mardis, veuillez choisir une autre date !

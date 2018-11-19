@@ -1,1 +1,7 @@
 invalid.email: E-mail fields must match
+invalid.ticket_number: There are not enough tickets available for this date.
+invalid.ticket_type: This type of ticket is not available after 14h, please choose half day.
+invalid.holidays: The museum is closed on public holidays, please choose another date!
+invalid.past_date: The chosen date is outdated, please select another date!
+invalid.sunday: Sundays are not eligible for online booking, please choose another date!
+invalid.tuesday: The museum is closed on Tuesdays, please choose another date!
