@@ -1,0 +1,715 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    CGV - {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>{{ 'sales_terms.main.title'|trans }}</h2>
+                <p>{{ 'sales_terms.main.p1'|trans }}</p>
+            </div>
+        </div>
+        <div class="row" id="content">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div id="cgv">
+                    <div class="row contentTable">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <ul id="index">
+                                <li><a href="#1">{{ 'sales_terms.index.section'|trans }} 1 :
+                                        {{ 'sales_terms.title.section_1'|trans }}</a></li>
+                                <li><a href="#2">{{ 'sales_terms.index.section'|trans }} 2 :
+                                        {{ 'sales_terms.title.section_2'|trans }}</a></li>
+                                <li><a href="#3">{{ 'sales_terms.index.section'|trans }} 3 :
+                                        {{ 'sales_terms.title.section_3'|trans }}</a></li>
+                                <li><a href="#4">{{ 'sales_terms.index.section'|trans }} 4 :
+                                        {{ 'sales_terms.title.section_4'|trans }}</a></li>
+                                <li><a href="#5">{{ 'sales_terms.index.section'|trans }} 5 :
+                                        {{ 'sales_terms.title.section_5'|trans }}</a></li>
+                                <li><a href="#6">{{ 'sales_terms.index.section'|trans }} 6 :
+                                        {{ 'sales_terms.title.section_6'|trans }}</a></li>
+                                <li><a href="#7">{{ 'sales_terms.index.section'|trans }} 7 :
+                                        {{ 'sales_terms.title.section_7'|trans }}</a></li>
+                                <li><a href="#8">{{ 'sales_terms.index.section'|trans }} 8 :
+                                        {{ 'sales_terms.title.section_8'|trans }}</a></li>
+                                <li><a href="#9">{{ 'sales_terms.index.section'|trans }} 9 :
+                                        {{ 'sales_terms.title.section_9'|trans }}</a></li>
+                                <li><a href="#10">{{ 'sales_terms.index.section'|trans }} 10 :
+                                        {{ 'sales_terms.title.section_10'|trans }}</a></li>
+                                <li><a href="#11">{{ 'sales_terms.index.section'|trans }} 11 :
+                                        {{ 'sales_terms.title.section_11'|trans }}</a></li>
+                                <li><a href="#12">{{ 'sales_terms.index.section'|trans }} 12 :
+                                        {{ 'sales_terms.title.section_12'|trans }}</a></li>
+                                <li><a href="#13">{{ 'sales_terms.index.section'|trans }} 13 :
+                                        {{ 'sales_terms.title.section_13'|trans }}</a></li>
+                                <li><a href="#14">{{ 'sales_terms.index.section'|trans }} 14 :
+                                        {{ 'sales_terms.title.section_14'|trans }}</a></li>
+                            </ul>
+                            <p>{{ 'sales_terms.index.p1'|trans }}</p>
+                        </div>
+                    </div>
+                    <div class="row body">
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="1">
+                            <h4>
+                                1 - <span>{{ 'sales_terms.title.section_1'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">1.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_1.p1'|trans|nl2br }}
+                                        « <a href="{{ path('homepage') }}" target="_blank">www.onlineticketlouvre.fr</a> ».
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_1.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">1.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_1.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="2">
+                            <h4>
+                                2 - <span>{{ 'sales_terms.title.section_2'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">2.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_2.p1.1'|trans|nl2br }}
+                                        « <a href="{{ path('homepage') }}" target="_blank">www.onlineticketlouvre.fr</a> »
+                                        {{ 'sales_terms.section_2.p1.2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">2.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_2.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">2.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_2.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="3">
+                            <h4>
+                                3 - <span>{{ 'sales_terms.title.section_3'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">3.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_3.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">3.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_3.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">3.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_3.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="4">
+                            <h4>
+                                4 - <span>{{ 'sales_terms.title.section_4'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">4.1</td>
+                                    <td>
+                                        <strong>{{ 'sales_terms.section_4.p1'|trans|nl2br }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.4</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.4'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.5</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.5'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.6</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.6'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.7</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.7'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.8</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.8'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.9</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.9'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.1.10</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p1.9'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.2</td>
+                                    <td>
+                                        <strong>{{ 'sales_terms.section_4.p2'|trans|nl2br }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.2.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p2.1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">4.2.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_4.p2.2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="5">
+                            <h4>
+                                5 - <span>{{ 'sales_terms.title.section_5'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">5.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_5.p1'|trans|nl2br }}<br>
+                                        <ol>
+                                            <li>{{ 'sales_terms.section_5.p1.step_1'|trans|nl2br }} <a href="./home" rel="nofollow" target="_blank">www.onlineticketlouvre.fr</a></li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_2'|trans|nl2br }}</li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_3'|trans|nl2br }}</li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_4'|trans|nl2br }}</li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_5'|trans|nl2br }}</li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_6'|trans|nl2br }}</li>
+                                            <li>{{ 'sales_terms.section_5.p1.step_7'|trans|nl2br }}</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">5.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_5.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">5.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_5.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">5.4</td>
+                                    <td>
+                                        <strong>{{ 'sales_terms.section_5.p4'|trans|nl2br }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="6">
+                            <h4>
+                                6 - <span>{{ 'sales_terms.title.section_6'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">6.1</td>
+                                    <td>
+                                        <strong>{{ 'sales_terms.section_6.p1'|trans|nl2br }}</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">6.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_6.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">6.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_6.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">6.4</td>
+                                    <td>
+                                        {{ 'sales_terms.section_6.p4'|trans|nl2br }}
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="7">
+                            <h4>
+                                7 - <span>{{ 'sales_terms.title.section_7'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">7.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_7.p1.start'|trans|nl2br }}
+                                        «<a href="{{ path('homepage') }}" target="_blank">www.onlineticketlouvre.fr</a>»
+                                        {{ 'sales_terms.section_7.p1.end'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">7.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_7.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">7.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_7.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">7.4</td>
+                                    <td>
+                                        {{ 'sales_terms.section_7.p4'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="8">
+                            <h4>
+                                8 - <span>{{ 'sales_terms.title.section_8'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">8.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_8.p1.start'|trans|nl2br }}
+                                        <strong>{{ 'payment.stripe'|trans }}</strong> {{ 'sales_terms.section_8.p1.mid'|trans|nl2br }}
+                                        <strong><u>{{ 'payment.3dSecure'|trans }}</u></strong>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">8.2</td>
+                                    <td>
+                                        <strong>{{ 'payment.3dSecure'|trans }}</strong> {{ 'sales_terms.section_8.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="9">
+                            <h4>
+                                9 - <span>{{ 'sales_terms.title.section_9'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">9.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_9.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">9.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_9.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">9.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_9.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="10">
+                            <h4>
+                                10 - <span>{{ 'sales_terms.title.section_10'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">10.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_10.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">10.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_10.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="11">
+                            <h4>
+                                11 - <span>{{ 'sales_terms.title.section_11'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">11.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">11.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">11.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p3.start'|trans }}
+                                        <a href="{{ path('contact') }}" target="_blank" rel="nofollow">assistance@onlineticketlouvre.fr</a>,
+                                        {{ 'sales_terms.section_11.p3.end'|trans }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">11.4</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p4'|trans }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">11.5</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p5.start'|trans }}
+                                        <a href="{{ path('contact') }}" target="_blank" rel="nofollow">assistance@onlineticketlouvre.fr</a>
+                                        {{ 'sales_terms.section_11.p5.end'|trans }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">11.6</td>
+                                    <td>
+                                        {{ 'sales_terms.section_11.p6.start'|trans|nl2br }}
+                                        <a href="{{ path('contact') }}" target="_blank" rel="nofollow">assistance@onlineticketlouvre.fr</a>
+                                        {{ 'sales_terms.section_11.p6.end'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="12">
+                            <h4>
+                                12 - <span>{{ 'sales_terms.title.section_12'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">12.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_12.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">12.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_12.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="13">
+                            <h4>
+                                13 - <span>{{ 'sales_terms.title.section_13'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="num">13.1</td>
+                                    <td>
+                                        {{ 'sales_terms.section_13.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">13.2</td>
+                                    <td>
+                                        {{ 'sales_terms.section_13.p2.start'|trans|nl2br }}
+                                        «<a href="{{ path('homepage') }}" target="_blank" style="color: rgb(0, 120, 160);">www.onlineticketlouvre.fr</a>&nbsp;»
+                                        {{ 'sales_terms.section_13.p2.end'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="num">13.3</td>
+                                    <td>
+                                        {{ 'sales_terms.section_13.p3'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 article" id="14">
+                            <h4>
+                                14 - <span>{{ 'sales_terms.title.section_14'|trans }}</span>
+                            </h4>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        {{ 'sales_terms.section_14.p1'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="spacer">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        {{ 'sales_terms.section_14.p2'|trans|nl2br }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="backtop"><a href="#index">{{ 'sales_terms.link.back2top'|trans }}</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row signature">
+                        <div class="col-lg-12 col-md-12 col-sm-12" >
+                            <p>{{ 'sales_terms.signature.p'|trans|nl2br }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

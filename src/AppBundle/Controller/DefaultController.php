@@ -132,11 +132,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/general-terms-and-conditions", name="gtc")
+     * @Route("/general-sales-terms-and-conditions", name="sales_terms")
      */
     public function gtcAction()
     {
-        return $this->render('default/general-terms.html.twig');
+        return $this->render('default/general-sales-terms.html.twig');
     }
 
     /**
