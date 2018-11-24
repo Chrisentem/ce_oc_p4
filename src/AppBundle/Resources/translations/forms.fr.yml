@@ -9,10 +9,11 @@ label.date.birth: Date de naissance
 label.ticket.type: Type de billet
 ticket.type.fullday: Journée
 ticket.type.halfday: Demi-journée
-label.price.reduced: Tarif réduit*
+label.price.reduced: Tarif réduit
 label.tickets: Liste des billets
 label.agreement: J'ai lu et j'accèpte les conditions générales de vente
 label.name: Nom
 label.content: Votre message
 label.phone: Votre numéro de téléphone
 label.subject: Objet
+label.required.field: champ requis

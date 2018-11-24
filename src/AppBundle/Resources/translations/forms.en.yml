@@ -9,10 +9,11 @@ label.date.birth: Date of birth
 label.ticket.type: Type of ticket
 ticket.type.fullday: Fullday
 ticket.type.halfday: Half-day
-label.price.reduced: Reduced price*
+label.price.reduced: Reduced price
 label.tickets: List of tickets
-label.agreement: I agree to the terms and conditions
+label.agreement: I agree to the sales terms and conditions
 label.name: Name
 label.content: Your message
 label.phone: Your phone number
 label.subject: Subject
+label.required.field: required field

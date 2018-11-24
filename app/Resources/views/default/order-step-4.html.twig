@@ -18,7 +18,7 @@
                             <th scope="col">{{ 'summary.lastname'|trans }}</th>
                             <th scope="col">{{ 'summary.birthdate'|trans }}</th>
                             <th scope="col">{{ 'summary.price'|trans }}</th>
-                            <th scope="col">{{ 'summary.discounted'|trans }}*</th>
+                            <th class="discounted-check-info" scope="col">{{ 'summary.discounted'|trans }}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -52,7 +52,7 @@
                 <div class="info-notice" role="alert">
                     <ul>
                         <li><i class="fas fa-info-circle"></i> {{ 'identification.notice'|trans }}</li>
-                        <li><i class="fas fa-info-circle"></i> *{{ 'rate.discounted.notice'|trans }}</li>
+                        <li><i class="fas fa-info-circle"></i><sup>(1)</sup>{{ 'rate.discounted.notice'|trans }}</li>
                     </ul>
                 </div>
             </div>
