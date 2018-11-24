@@ -20,8 +20,13 @@ class PurchaseType extends AbstractType
             ->add('dateOfVisit', DateType::class, array(
                     'translation_domain' => 'forms',
                     'label' => 'label.date.visit',
-                    'widget' => 'choice',
-                    'years' => range(date('Y'), date('Y')+1),
+//                    'widget' => 'choice',
+//                    'years' => range(date('Y'), date('Y')+1),
+                    'widget' => 'single_text',
+                    // prevents rendering it as type="date", to avoid HTML5 date pickers
+                    'html5' => false,
+                    // adds a class that can be selected in JavaScript
+                    'attr' => ['class' => 'js-datepicker'],
                 )
             )
             ->add('ticketType', ChoiceType::class, array(
