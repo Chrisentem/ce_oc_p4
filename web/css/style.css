@@ -150,6 +150,7 @@ label[for=appbundle_contactemail_email_second]::after {
 #form-errors ul {
     list-style-type: none;
     margin-left: -20px;
+    margin-bottom: 0.5rem !important;
 }
 
 /** nav **/

@@ -63,7 +63,7 @@ class Purchase
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
-     * 
+     * @Assert\NotBlank(groups={"step3"}, message="invalid.blank")
      * @Assert\Email(groups={"step3"})
      */
     private $email;
@@ -82,7 +82,7 @@ class Purchase
 
     /**
      * @var bool
-     * @Assert\IsTrue(groups={"step3"})
+     * @Assert\IsTrue(groups={"step3"}, message="invalid.agree")
      */
     private $agree;
 

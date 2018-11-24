@@ -73,7 +73,7 @@
                 <h3>{{ 'step_3.title.sending_infos'|trans }}</h3>
                 <p>{{ 'sending_infos.desc'|trans }}</p>
                 <div class="well">
-                    {{ form_start(form) }}
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                     {# label_attr doesn't work on repeatedType #}
                     {#{{ form_row(form.email, {'label_attr': {'class': 'required-field'}}) }}#}
                     {{ form_row(form.email) }}

@@ -5,4 +5,7 @@ invalid.holidays: Le musée est fermé les jours fériés, veuillez choisir une 
 invalid.past_date: La date choisie est dépassée, veuillez sélectionner une autre date !
 invalid.sunday: Les dimanches ne sont pas éligibles à la réservation en ligne , veuillez choisir une autre date !
 invalid.tuesday: Le musée est fermé les mardis, veuillez choisir une autre date !
+invalid.agree: Veuillez cocher cette case si vous désirez poursuivre.
+invalid.blank: Ce champ est requis, veuillez le remplir si vous désirez poursuivre.
+invalid.contact.blank: Ce champ est requis !
 invalid.too_late_closing: Trop tard pour aujourd'hui, le musée a fermé ses portes !

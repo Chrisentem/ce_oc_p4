@@ -3,8 +3,6 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Purchase;
-use AppBundle\Entity\EntryTicket;
-use AppBundle\Form\EntryTicketType;
 use Symfony\Component\Form\AbstractType;
 
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,9 +16,10 @@ class MultiTicketType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('Tickets', CollectionType::class, array(
+        $builder->add('tickets', CollectionType::class, array(
             'translation_domain' => 'forms',
             'label' => 'label.tickets',
+            'error_bubbling' => false,
             'entry_type' => EntryTicketType::class,
             'entry_options' => array('label' => false),
         ));

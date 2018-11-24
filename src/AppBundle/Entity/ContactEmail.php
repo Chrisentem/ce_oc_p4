@@ -34,7 +34,7 @@ class ContactEmail
      * @var string
      *
      * @ORM\Column(name="subject", type="string", length=255)
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="invalid.contact.blank")
      */
     private $subject;
 
@@ -49,7 +49,7 @@ class ContactEmail
      * @var string
      *
      * @ORM\Column(name="content", type="text")
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="invalid.contact.blank")
      */
     private $content;
 
@@ -66,6 +66,7 @@ class ContactEmail
      *
      * @ORM\Column(name="email", type="string", length=255)
      * @Assert\Email()
+     * @Assert\NotBlank(message="invalid.contact.blank")
      */
     private $email;
 

@@ -25,7 +25,7 @@
         <div id="content" class="col-lg-12">
             <h3>{{ 'step_2.title'|trans }}</h3>
             <div class="well">
-                {{ form_start(form) }}
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                 {#{{ form_row(form) }}#}
                 {% for ticket in form.tickets %}
                     {{ form_row(ticket.firstname, {'label_attr': {'class': 'required-field'}}) }}

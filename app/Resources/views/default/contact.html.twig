@@ -24,7 +24,7 @@
         <div id="content" class="col-lg-6 col-md-12">
             <h3>{{ 'contact.title.contact_form'|trans }}</h3>
             <div class="well">
-                {{ form_start(contactForm) }}
+                {{ form_start(contactForm, {'attr': {'novalidate': 'novalidate'}}) }}
                 {{ form_row(contactForm.subject, {'label_attr': {'class': 'required-field'}}) }}
                 {{ form_row(contactForm.content, {'label_attr': {'class': 'required-field'}}) }}
                 {# label_attr doesn't work on repeatedType #}
