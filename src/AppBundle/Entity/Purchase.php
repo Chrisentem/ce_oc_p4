@@ -18,6 +18,7 @@ use AppBundle\Validator\Constraints as AppAssert;
  * @AppAssert\NotTuesday(groups={"step1"}, message="invalid.tuesday")
  * @AppAssert\NotPastDate(groups={"step1"}, message="invalid.past_date")
  * @AppAssert\NotHoliday(groups={"step1"}, message="invalid.holidays")
+ * @AppAssert\NotInTimeForCurrentDay(groups={"step1"}, message="invalid.too_late_closing")
  */
 class Purchase
 {
