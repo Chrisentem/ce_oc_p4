@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% form_theme form _self %}
 {# form_errors.html.twig #}
 {% block form_errors %}
@@ -33,7 +32,7 @@
                     <div id="form-nav" class="form-button">
                         <button type="submit" class="btn btn-primary">{{ 'purchase.button.submit.nextstep'|trans }} <i class="fas fa-angle-double-right"></i></button>
                     </div>
-                    {{ form_end(form)}}
+                    {{ form_end(form) }}
                 </div>
             </div>
             <div id="infos" class="col-lg-6">

@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {% form_theme form _self %}
-{# form_errors.html.twig #}
+ {#form_errors.html.twig #}
 {% block form_errors %}
     {% spaceless %}
         {% if errors|length > 0 %}
