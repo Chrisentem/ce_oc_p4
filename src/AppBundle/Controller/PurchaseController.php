@@ -1,14 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Chris
+ */
 
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Purchase;
-use AppBundle\Form\ContactEmailType;
 use AppBundle\Form\PurchaseType;
 use AppBundle\Form\MultiTicketType;
 use AppBundle\Form\PurchaseConfirmType;
-use AppBundle\Manager\ContactEmailManager;
-use AppBundle\Service\ReCaptchaVerify;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,11 +18,11 @@ use AppBundle\Manager\PurchaseManager;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class DefaultController
+ * Class PurchaseController
  * @package AppBundle\Controller
  * @Route("/{_locale}")
  */
-class DefaultController extends Controller
+class PurchaseController extends Controller
 {
     /**
      * @Route("/", name="homepage")
@@ -130,57 +131,4 @@ class DefaultController extends Controller
             'purchase' => $purchase,
         ]);
     }
-
-    /**
-     * @Route("/general-sales-terms-and-conditions", name="sales_terms")
-     */
-    public function gtcAction()
-    {
-        return $this->render('default/general-sales-terms.html.twig');
-    }
-
-    /**
-     * @Route("/contact", name="contact")
-     * @param Request $request
-     * @param ContactEmailManager $contactEmailManager
-     * @param ReCaptchaVerify $reCaptchaVerify
-     * @return Response
-     */
-    public function contactAction(Request $request, ContactEmailManager $contactEmailManager, ReCaptchaVerify $reCaptchaVerify)
-    {
-        $email = $contactEmailManager->initContactEmail();
-
-        $form = $this->createform(ContactEmailType::class, $email);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $res = $reCaptchaVerify->verify($request->get('g-recaptcha-response'));
-            if(!$res) {
-                $this->addFlash(
-                    'error',
-                    'Captcha required'
-                );
-            }else {
-                try {
-                    $contactEmailManager->send($email);
-                    $this->addFlash('success', 'sending successful !');
-                    return $this->render('default/contact-confirmation.html.twig', [
-                        'contactEmail' => $email,
-                    ]);
-                } catch (\Exception $e) {
-                    $this->addFlash('warning', 'sending failed !');
-                }
-            }
-        }
-        return $this->render('default/contact.html.twig', ['contactForm' => $form->createView(),]);
-    }
-
-    /**
-     * @Route("/legal-notice", name="legal_notice")
-     */
-    public function legalNoticeAction()
-    {
-        return $this->render('default/legal-notice.html.twig');
-    }
-
 }
