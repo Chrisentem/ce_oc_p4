@@ -44,6 +44,7 @@ class PriceManager {
 
     /**
      * @param EntryTicket $ticket
+     * @return float|int
      */
     public function computeTicketPrice(EntryTicket $ticket)
     {
@@ -66,7 +67,7 @@ class PriceManager {
         }
 
         $ticket->setPrice($price);
-        // return $price;
+        return $price;
     }
 
     /**
