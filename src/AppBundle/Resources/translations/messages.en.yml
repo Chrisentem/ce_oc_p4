@@ -73,12 +73,18 @@ page.title.step_3: Tickets purchase - Step 3
 step_4.title: payment
 page.title.step_4: Tickets purchase - Step 4
 
-### Confirmation page ###
+### Purchase confirmation page ###
 confirmation.title: We thank you for your booking
 page.title.confirmation: Order confirmation
 confirmation.p1: A confirmation email with your ticket has been sent to
 button.back_home: back to homepage
 flash.message.order_success: Congratulations, order successful.
+
+### Contact confirmation page ###
+page.title.contact_confirmation: Contact confirmation
+contact_confirmation.p1: >
+  Your message has been sent.
+  Our team will answer you as soon as possible.
 
 ### breadcrumb ###
 breadcrumb.step_1: Ticket(s) choice

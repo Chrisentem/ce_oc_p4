@@ -73,12 +73,18 @@ page.title.step_3: Achat de billets - Étape 3
 step_4.title: paiement
 page.title.step_4: Achat de billets - Étape 4
 
-### Confirmation page ###
+### Purchase confirmation page ###
 confirmation.title: Merci pour votre réservation
 page.title.confirmation: Confirmation d'achat
 confirmation.p1: Un courriel de confirmation avec votre billet à été envoyé à
 button.back_home: retour à l'accueil
 flash.message.order_success: La commande à bien été validée
+
+### Contact confirmation page ###
+page.title.contact_confirmation: Contact confirmation
+contact_confirmation.p1: >
+  Votre message à bien été envoyé.
+  Notre équipe vous répondra dans les meilleurs délais.
 
 ### breadcrumb ###
 breadcrumb.step_1: Sélection billet(s)
