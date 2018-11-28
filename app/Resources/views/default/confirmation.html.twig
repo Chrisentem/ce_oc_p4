@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ 'page.title.confirmation'|trans }} - {{ parent() }}
+{% endblock %}
+{% block breadcrumb %}
+{% endblock %}
+{% block body %}
+<div class="row">
+    <div id="content" class="col-lg-12">
+        <h3>{{ 'confirmation.title'|trans }} !</h3>
+        <p>{{ 'confirmation.p1'|trans }} : {{ purchase.email }}</p>
+        <div class="jumbotron" role="alert">
+            <p>{{ 'order.booking_number'|trans }} : {{ purchase.bookingCode }}</p>
+            <p>{{ 'order.total_paid'|trans }} : {{ purchase.total }} €</p>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        <a href="{{ path('homepage') }}" class="btn btn-primary">{{ 'button.back_home'|trans }}</a>
+    </div>
+</div>
+{% endblock %}

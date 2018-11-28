@@ -30,6 +30,22 @@ services:
         tags: ['controller.service_arguments']
 
     # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    AppBundle\Service\Payment:
+        arguments:
+            $stripePrivateKey: '%stripe_secret_key%'
+
+    AppBundle\Manager\PurchaseManager:
+        arguments:
+            $em: "@doctrine.orm.entity_manager"
+
+    AppBundle\Manager\ContactEmailManager:
+        arguments:
+            $em: "@doctrine.orm.entity_manager"
+
+    Stripe\Stripe: ~
+
+    Stripe\Charge: ~
+
+    AppBundle\Service\ReCaptchaVerify:
+        arguments:
+            $reCaptchaSecretKey: '%recaptcha_secret_key%'

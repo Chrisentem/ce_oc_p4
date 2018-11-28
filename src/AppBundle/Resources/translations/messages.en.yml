@@ -1,0 +1,501 @@
+### Purchase global ###
+purchase.button.submit.nextstep: next step
+purchase.button.backstep: previous step
+purchase.button.confirm: confirm order
+purchase.button.pay: I buy
+rate.discounted.notice: If you select the reduced rate, thank you to bring your document of proof the day of the visit.
+identification.notice: >
+  Do not forget your identity card or your passport on the day of the visit, in case of control.
+summary.firstname: firstname
+summary.lastname: lastname
+summary.birthdate: birthdate
+summary.price: price
+summary.discounted: reduced rate
+summary.total_amount : Total amount to be paid
+stripe.data_name: Online Ticketing Louvre
+order.booking_number: Booking number
+order.total_paid: Total amount paid
+flash.message.payment_failed: >
+  An error occurred during the payment process, please repeat this step
+  or contact our technical service via the contact page.
+summary.discounted.yes: Yes
+summary.discounted.no: No
+
+### Homepage ###
+page.title.home: Home
+home.infos.title: General informations
+home.infos.p1: >
+  The Louvre Museum is open every day, except Tuesdays and holidays, from 9am to 18pm,
+  until 9:45 pm on Wednesdays and Fridays, except holidays. The closing of the rooms
+  starts at 5:30 pm and 9:30 pm on Wednesdays and Fridays.
+home.infos.p2: However, it is not possible to book your tickets online for Sunday.
+home.infos.p3: >
+  The ticket purchased online is time stamped and nominative, an identity document can be requested.
+  It is valid exclusively for the purpose, the date and from the time mentioned.
+  It does not constitute a cut queue but allows access to the pyramid of the Louvre in half an hour
+  of the schedule indicated. In case of non-compliance with this time slot, the bearer of the ticket print@home
+  is subject to the same conditions of access and waiting as visitors without a ticket.
+purchase.title: Buy your tickets
+rates.title: The rates
+rates: rates
+rates.conditions: conditions
+rates.prices: prices
+rate.regular.title: regular
+rate.regular.desc: from 12 years old
+rate.kid.title: kid
+rate.kid.desc: from 4 to 12 years old (free for kids under 4 years old)
+rate.senior.title: senior
+rate.senior.desc: from 60 years old
+rate.discounted.title: special
+rate.discounted.desc: upon presentation of proof (student, museum employee or Ministry of Culture, military)
+
+### Base view ###
+page.title.base: Online Ticketing - Musée du Louvre
+link.home: home
+link.contact: contact
+link.language: language
+link.sales_terms: Sales Terms
+link.legal_notice: legal notice
+banner.top.alt: the pyramid of Louvre
+copyright: Musée du Louvre
+
+### Order-step-2 ###
+step_2.title: visitors registration
+page.title.step_2: Tickets purchase - Step 2
+
+### Order-step-3 ###
+step_3.title.summary: Order summary
+step_3.title.sending_infos: E-Tickets sending address
+sending_infos.desc: Please enter the email address to send the e-tickets to.
+page.title.step_3: Tickets purchase - Step 3
+
+### Order-step-4 ###
+step_4.title: payment
+page.title.step_4: Tickets purchase - Step 4
+
+### Purchase confirmation page ###
+confirmation.title: We thank you for your booking
+page.title.confirmation: Order confirmation
+confirmation.p1: A confirmation email with your ticket has been sent to
+button.back_home: back to homepage
+flash.message.order_success: Congratulations, order successful.
+
+### Contact confirmation page ###
+page.title.contact_confirmation: Contact confirmation
+contact_confirmation.p1: >
+  Your message has been sent.
+  Our team will answer you as soon as possible.
+
+### breadcrumb ###
+breadcrumb.step_1: Ticket(s) choice
+breadcrumb.step_2: Visitor(s) registration
+breadcrumb.step_3: Order summary
+breadcrumb.step_4: Payment
+
+### contact page ###
+contact.title.contact_form: Contact form
+page.title.contact: Contact
+contact.button.submit.contact_form: Send message
+contact.title.infos: Practical information
+contact.title.infos.address: Musée du Louvre
+contact.infos.address.p1: |
+  75058 Paris CEDEX 01
+  France
+contact.infos.address.p2: |
+  Phone :
+  +33 (0)1 40 20 50 50
+contact.infos.address.p3: |
+  Opening hours :
+  Open daily from 9 am to 6 pm except Tuesdays
+  Nocturnes until 9:45 pm on Wednesdays and Fridays
+contact.infos.address.p4: |
+  Closing days :
+  January 1st, May 1st and December 25th
+contact.title.infos.general: General informations
+contact.infos.general.p1: >
+  For information on the museum, the services at your disposal and our news,
+  the reception service team is at your disposal:
+contact.infos.general.p2: |
+  Museum Information Bank :
+  Phone : +33 (0)1 40 20 53 17
+  Every day, except Tuesday, from 9h to 18h45 (21h45 on Wednesdays and Fridays).
+  Do not hesitate to use the contact form.
+contact.title.infos.accessibility: People with Disabilities
+contact.infos.accessibility.p1: |
+  Standard : +33 (0)1 40 20 50 50
+  Information Bank : +33 (0)1 40 20 53 17
+  Disabled visitors phone line : +33 (0)1 40 20 59 90
+  Do not hesitate to use the contact form.
+contact.title.infos.jobs: Jobs
+contact.infos.jobs.p1: Further infos
+contact.link.jobs: Job offers
+
+### Digital Ticket ###
+eTicket.logo.alt: logo Louvre Museum 2018
+eTicket.header.title: E-Ticket
+eTicket.banner.top.alt: the pyramid of Louvre
+eTicket.title.thanx: We thank you for your online booking
+eTicket.booking_number: Booking number
+eTicket.infos.p1: This is your e-ticket to use during your visit to the Louvre Museum on
+eTicket.infos.p2: We wish you a pleasant visit to the Louvre Museum
+eTicket.booking_date: Date of purchase
+
+### Legal notice ###
+page.title.legal_notice: Legal notice & GTU
+legal_notice.main_title: Legal notice & General terms & conditions of use
+legal_notice.article_1:
+  title: Publisher Information
+  title2: Louvre Museum
+  p1: |
+    Musée du Louvre, Pavillon Mollien,
+    75058 PARIS CEDEX 01
+    Siret 180 046 237 00012 APE 9103Z
+    Tel : 01 40 20 50 50
+  p2: >
+    Publication director : Jean-Luc MARTINEZ, Président-Directeur
+legal_notice.article_2:
+  title: Hosting information
+  p1: |
+    Société CLARANET SAS
+    18-20 rue du Faubourg du Temple
+    75011 PARIS
+    FRANCE
+    Siret : 41963228600029
+    Tél. : +33 (0)1 70 13 70 00
+legal_notice.article_3:
+  title: Website writing
+  p1: |
+    Musée du Louvre
+    Service des Productions numériques et audiovisuelles
+    Direction de la Médiation et de la Programmation culturelle
+    75058 Paris cedex 01
+    France
+    webmaster@onlineticketlouvre.fr
+legal_notice.article_4:
+  title: Personal data
+  p1:
+    "Your personal data may be collected while browsing this website.\n
+    Likewise, e-mails sent to the Louvre and the e-mail addresses used for sending additional information may be
+    retained.\n
+    In application of articles 38, 39 and 40 of the law n ° 78-17 of January 6th, 1978 relating to files and freedoms,
+    you have, free of charge, a right of access, rectification, modification and opposition to the data which concern
+    you or concern the deceased persons of which you are the assignees.\n
+    If you wish to exercise this right you can contact the editorial office by mail to the address above."
+legal_notice.article_5:
+  title: Contents protected by intellectual property rights
+  p1: >
+    1) The general structure of the website, as well as the software and databases are the property exclusive of the
+    Louvre Museum. Any reproduction, any total or partial representation, any use, any adaptation, provision or
+    modification of these elements by any means whatsoever, by any person and by any means whatsoever (including the
+    sale, marketing, rental, etc.) without the express permission of the museum, any authors or their assigns is
+    strictly prohibited and constitutes a forgery offense within the meaning of the Intellectual Property Code.
+  p2:
+    "2) Scientific, cultural and educational content (texts, sound, audiovisual and multimedia documents, this list is
+    not exhaustive) as well as the iconographic and photographic reproductions of works presented in this site with a
+    signature or © are protected under the law of the property intellectual.\n
+    Among these contents, photographs and texts can be reused under the following conditions:\n
+    - Photographs:\n
+    The credited photographs © Musée du Louvre / [...] are the exclusive property of the Louvre Museum and are
+    used by the Louvre Museum with the permission of their authors or assigns. The credited photographs
+    © RMN / [...] are the property of NMR. Any non-commercial reuse is permitted subject to the condition of mention of
+    the source and the author. For any commercial and / or editorial re-use of the collections' image the Louvre Museum,
+    the Palais, the Louvre Tuileries estate, the Delacroix Museum or the scenography of the exhibitions and other
+    cultural events organized by the Louvre Museum, please contact the Agency photograph of the Réunion des Musées
+    Nationaux and the Grand Palais des Champs-Elysées (Rmn-Gp).\n
+    - Writings:\n
+    The Louvre Museum is the assignee of the texts of the tours and works of art. Any reuse of these writings is free,
+    provided that they are not altered, that their meaning is not distorted, and that their sources and the date of
+    their last update be mentioned. Any commercial reuse is subject to prior and express agreement of the Louvre Museum.
+    For any request within this framework, thank you for contact the Multimedia Department of the Louvre Museum."
+  p3:
+    "3) The trademarks of the Louvre Museum and its partners, as well as the logos appearing on the site are trademarks
+    registered and registered with the INPI and are, as such, protected by an industrial property right.\n
+    Any total or partial reproduction of these marks and / or logos made from the elements of the site without the
+    express permission of their owners is strictly prohibited and constitutes a counterfeit offense in the sense of the
+    property code."
+legal_notice.article_6:
+  title: Public information
+  p1: >
+    In accordance with Articles L 321-1 and L322-1 of the Code of relations between the public and the administration,
+    the informative content and programming of this site are public information whose reuse is free, provided that the
+    latter are not altered, that their meaning is not distorted, and that their sources and the date of their last
+    update is mentioned.
+  p2: >
+    No transfer of ownership of public information is made to the benefit of the reuse. The latter benefits a personal
+    and non-exclusive right to reuse this public information. Anyone who reuses information in breach of the
+    above-mentioned requirements is punishable by a fine imposed by the access commission to administrative documents.
+legal_notice.article_7:
+  title: Cookies
+  p1: >
+    The user is informed that during his visits to the site a cookie can be automatically installed on his
+    navigation software. The cookie is a block of data that does not identify users but is used to
+    save the information relating to the navigation of it on the site. The setting of the software of
+    navigation allows to inform of the presence of cookie and possibly, to refuse it in the way described with
+    the following address: www.cnil.fr. The user has all the aforementioned rights with regard to the data at
+    personal nature communicated through cookies under the conditions indicated above.
+legal_notice.article_8:
+  title: Hypertext links
+  p1:
+    "The site of the Louvre Museum authorizes the establishment of a hypertext link pointing to its content as soon as
+    it does not create confusion as to the source of the services and / or contents produced and / or held by the Louvre
+    Museum and subject to:\n
+    do not use the deep linking technique, that is to say that the pages of the site www.onlineticketlouvre.fr must not
+    be nested inside the pages of another site, but accessible by opening a window.\n
+    mention the source that will point through a hypertext link directly to the intended content."
+  p2:
+    "The information used should only be for personal, associative or professional purposes; use for commercial or
+    advertising purposes is excluded. Warning ! This authorization does not apply websites which disseminate information
+    of a controversial, pornographic, xenophobic or potentially wider extent to affect the sensitivity of the greatest
+    number; and websites infringing material or moral interests of the Louvre Museum.\n
+    For other uses, please consult us by mail at the address mentioned above or by mail at
+    question-internet@onlineticketlouvre.fr."
+legal_notice.article_9:
+  title: Responsibility
+  p1: >
+    The site www.onlineticketlouvre.fr offers many links to other sites, mainly official sites (institutions, public
+    bodies, etc.) but also to some sites of associations or partner companies. These web pages whose addresses are
+    regularly checked, are not part of the public and official website www.onlineticketlouvre.fr.
+  p2: >
+    The Louvre Museum is not responsible for the content of these other sites, and will not be held responsible for any
+    resulting damage or injury. Links to other sites are provided to users only by pure convenience.
+
+### General Sales Terms ###
+page.title.sales_terms: Sales Terms
+sales_terms.main.title: General Sales Terms & Conditions
+sales_terms.main.p1: Online Ticketing – Single Tickets
+sales_terms.index.section: Section
+sales_terms.title:
+  section_1: Object
+  section_2: Scope of these general conditions of sale
+  section_3: Presentation of the tickets
+  section_4: Terms of use
+  section_5: Terms of order
+  section_6: Rates
+  section_7: Terms of payment
+  section_8: Securing Payments
+  section_9: Treatment of personal data
+  section_10: Cookies
+  section_11: Claims Processing
+  section_12: Dispute of a bank debit
+  section_13: Responsibility
+  section_14: Governing Law - Dispute Resolution
+sales_terms.index.p1: These terms and conditions are applicable from January 16, 2017
+sales_terms.section_1:
+  p1:
+    "These general conditions of sale are intended to define the contractual provisions between Public Establishment of
+    the Louvre Museum (hereinafter referred to as the EPML):\n
+    Public institution of an administrative nature grouping the Louvre National Museum and the Eugène Delacroix National
+    Museum, in accordance with the provisions of the decree n ° 92-1338 of the modified December 22, 1992 on the
+    creation of the Public Establishment of the Louvre Museum.\n
+    Siret n° 180 046 237 000 12 - APE n° APE 9103Z.\n
+    Domiciled Musée du Louvre - 75058 Paris Cedex 01 – France.\n
+    Merchant contract: 2333280 EPML DE INTERNET\n\n
+    and any natural or legal person (hereinafter referred to as the buyer) purchasing individual tickets on the online
+    ticket sales site "
+  p2: >
+    The buyer acknowledges having read these general conditions of sale prior to the validation of his order. The fact
+    of placing order is worth acceptance by the buyer of these general conditions of sale.
+  p3: >
+    EPML reserves the right to adapt or modify at any time these terms and conditions of sale.
+    In case of modification, the conditions applicable to a purchase are those in force on the day of the order.
+sales_terms.section_2:
+  p1.1: Is proposed on the site
+  p1.2:
+    "on the site of online sale tickets for the following performance:\n
+    - Musée du Louvre - allowing access to the permanent collections and temporary exhibitions of the Louvre Museum,
+    also giving access to the collections and temporary exhibitions of the Eugène Delacroix museum and to the Musée du
+    quai Branly at the Louvre."
+  p2: The website informs the buyer of the availability of the service at the time of placing the order.
+  p3: "The number of tickets sold online per order and per person is limited to 6."
+sales_terms.section_3:
+  p1:
+    "The ticket is printable upon validation of the payment. It is emailed to the address provided during the purchase."
+  p2:
+    "The ticket must have been printed by the buyer prior to the visit, without changing the print size, full page, on
+    white A4 paper, blank front and back. Partially or improperly printed, damaged or illegible banknotes are invalid.\n
+    In the event of a forgotten, damaged, badly printed or mispronounced ticket, the EPML reserves the right to reprint
+    it in order to facilitate the visitor's efforts."
+  p3:
+    "The ticket issued by the EPML includes:\n
+    - the name and logo of the Louvre\n
+    - the name of the bearer\n
+    - the name of the buyer\n
+    - the name of the service sold\n
+    - the dates and times of the service\n
+    - the type of tariff applied\n
+    - the sale price of the service, in euros\n
+    - ticket number assigned by the ticketing system\n
+    - the date of purchase of the ticket\n"
+sales_terms.section_4:
+  p1: The tickets
+  p1.1: >
+    Tickets purchased online are time stamped and valid only for the delivery, on the date and from the time mentioned.
+  p1.2: >
+    Tickets purchased online allow access to the Louvre Pyramid within half an hour of the indicated schedule.
+    In case of delay beyond this access time slot, print @ home ticket holders are subject to the same access and
+    waiting conditions as other visitors.
+  p1.3: >
+    Each ticket purchased online is personal, nominative and non-transferable. It contains the name of its bearer,
+    informed by the buyer at the time of online purchase. A valid identity document with photograph can be requested.
+    In case of non presentation of such a document, access to the service may be refused.
+  p1.4: >
+    Access to the service is subject to verification of the validity of the ticket. It is controlled by the screening
+    officers at the entries of the collections.
+  p1.5: >
+    The first person to present the ticket is presumed to be the legitimate bearer. It will be denied access to the
+    benefit to any other person coming later with a copy of the ticket.
+  p1.6: >
+    The visitor must keep his ticket by him throughout the duration of the service.
+  p1.7: >
+    Any exit from the Napoleon Hall or a wing of the museum is final. The same entrance ticket gives unique access to
+    permanent collections and temporary exhibitions.
+  p1.8: >
+    Anyone who illegally reproduces a ticket and / or uses a counterfeit ticket may be subject to criminal prosecution.
+  p1.9: >
+    The EPML declines any responsibility in case of loss or theft or use of copies without the knowledge of the buyer,
+    including within the walls of the museum.
+  p1.10: >
+    In the event of non-compliance with one of the conditions set out in this article, the EPML reserves the right to
+    refuse access to the service concerned.
+  p2: Security measures
+  p2.1: >
+    To ensure the safety of visitors, the Louvre Museum applies the preventive measures decided by the government for
+    the public administrations. All persons must be ready for security checks.
+  p2.2: >
+    Suitcases and large bags are prohibited. Only luggage not exceeding the maximum sizes of 55cm x 35cm x 20cm are
+    allowed in the reception areas. They are not allowed in the collections and must imperatively be deposited in the
+    locker room after being checked.
+sales_terms.section_5:
+  p1: "The buyer makes his ticket purchase online as follows:"
+  p1.step_1: "Go to the page:"
+  p1.step_2: "Select the date of visit."
+  p1.step_3: "Choose your ticket type: Day / half day."
+  p1.step_4: >
+    Choose the number of tickets you want. If the number of tickets available for the selected date is no longer
+    sufficient a notification appears. Take the next step.
+  p1.step_5: >
+    Enter the requested information for the visitor (s), the prices will be calculated automatically. Take the next
+    step.
+  p1.step_6: >
+    An order summary is displayed before the purchase validation. On this page enter the e-mail address that will be
+    used to send the ticket (s) and accept the general conditions of sale then go to the payment page.
+  p1.step_7: >
+    Click on "Pay by credit card". Set the order by credit card identifying, if necessary, according to the 3D-Secure
+    standard by entering the code transmitted by his bank.
+  p2: >
+    As long as the payment has not been saved, the contents of the order can be changed by going back to the previous
+    steps.
+  p3: >
+    If payment is accepted by the Merchant Processing Center (CTC), the order confirmation is displayed. The buyer
+    receives an email with the ticket(s) to print. This e-ticket acts as an order confirmation and payment.
+  p4: >
+    The EPML reserves the right to refuse any order from a customer who does not observe its general conditions of sale.
+sales_terms.section_6:
+  p1: "The applicable rates are those in effect at the time of the order."
+  p2: "Rates and exemptions are available on the EPML's online sales website."
+  p3: "EPML reserves the right to change prices at any time."
+  p4: >
+    The visitor likely to benefit from an exemption will have to present to the controls of the titles of access to the
+    services, the relevant supporting document valid, nominative and with photograph. In case of non-presentation or
+    non-conformity of the proof, access to the service will be refused.
+sales_terms.section_7:
+  p1.start: >
+    Payment of the tickets by the customer is made by credit card. Payment cards accepted on the site
+  p1.end: "are: Carte Bleue, Visa, Mastercard, American Express, Discover, JCB, Diners Club et UnionPay"
+  p2: >
+    The payment is validated according to the 3D-secure Standard and after acceptance of the transaction by the Merchant
+    Processing Center (CTC) in charge of controlling the authorization threshold for the purchase of the payment card
+    and checking the list of stolen or lost credit cards. In case of refusal by the CTC, the order is canceled.
+  p3: >
+    Upon acceptance of payment, the buyer receives an email summarizing his order and constituting the ticket CB
+    customer (to be kept and produce in case of dispute).
+  p4: >
+    In accordance with the banking regulations in force, the archiving of bank data is fifteen (15) months from the date
+    of transaction. After this time, the data is destroyed.
+payment.stripe: Stripe
+payment.3dSecure: 3D-Secure
+sales_terms.section_8:
+  p1.start: The payment site of the EPML uses the cashing platform
+  p1.mid: which meets the standard
+  p2: >
+    is a security protocol offered by VISA, MasterCard, GIE Cartes Bancaires to increase the level of security of remote
+    payments, by adding an authentication step provided by the bearer's bank.
+sales_terms.section_9:
+  p1: >
+    Only the buyer is required to provide the information and data necessary to manage his order, finalize his
+    transaction, inform him and liaise with the EPML. These data are stored in the EPML database.
+  p2: >
+    Automated processing of buyer information has been declared to the CNIL by the EPML.
+  p3: >
+    In application of articles 38, 39 and 40 of the law n ° 78-17 of January 6th, 1978 modified in 2004 and relating to
+    data processing, files and freedoms, the purchaser has a right of access, of rectification, modification and
+    opposition to the data concerning him or the deceased persons of which he is the cause. If the buyer wishes to
+    exercise this right, he can apply to the EPML by mail to the address below: Louvre Museum, DRE "The Louvre and You",
+    75058, Paris cedex 01.
+sales_terms.section_10:
+  p1: >
+    The EPML website uses "session" cookies, which are necessary to order online and destroyed as soon as the site is
+    removed.
+  p2: >
+    The use of cookies may be disabled by the selection by the buyer of the appropriate settings of his Internet
+    browser. Such disabling may preclude the use of certain features of the EPML Online Ticketing Website. By purchasing
+    online, the buyer therefore expressly consents to the processing of his personal data under the conditions and for
+    the purposes described above.
+sales_terms.section_11:
+  p1: >
+    The sale of entrance tickets for a museum or services related to it is considered a sale of leisure services and, in
+    accordance with Article L 121-21-8-12 ° of the Consumer Code, opens no right to the withdrawal period.
+  p2: "Tickets are non-transferable, non-exchangeable and can not be resold."
+  p3.start: >
+    The date, time and name of the ticket holder can be changed until the scheduled date and time of the visit. Changes
+    can be made remotely, by email addressed to
+  p3.end: or on the spot at the ticket counter.
+  p4: >
+    In the event of a bona fide error in a ticket purchase for a visitor enjoying an exemption, a refund entitlement
+    will be opened.
+  p5.start: Requests should be addressed to
+  p5.end: >
+    or by mail addressed to: Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01, and include the number of the
+    corresponding order and, for refunds, bank details (Bank Identification Statement).
+  p6.start:
+    "In case of cancellation or modification of the corresponding service by the EPML or error of processing of the
+    request by the EPML, a right to refund is opened after the execution time of the service.\n
+    The buyer must make the request within a period of three (3) months from the date of cancellation or modification of
+    the service, upon presentation of the ticket not invalidated and its bank details (Bank Statement of Identity) , to
+    the exclusion of any other compensation or compensation by email on"
+  p6.end: "or by mail addressed to : Musée du Louvre - Assistance Billetterie - 75058 Paris cedex 01."
+sales_terms.section_12:
+  p1: >
+    In case of dispute due to the theft or loss of the payment card, the buyer must immediately oppose by calling the
+    number indicated by the bank issuing the payment card. In case of theft, he must file a complaint with the competent
+    authorities.
+  p2: >
+    In case of dispute due to anomalies noted by the buyer on his statement of account, while he is still in possession
+    of his payment card, the buyer must file a claim with the bank issuing the bank. payment card, as soon as possible
+    and within the deadlines set by law, of thirteen (13) months from the debit date on the disputed transaction. The
+    complaint is transmitted via the banking network to the EPML. In the case of a justified claim, the order is given
+    to the EPML account holder to make the refund by crediting the buyer's bank account.
+sales_terms.section_13:
+  p1: >
+    Neither the EPML nor the buyer can be held responsible for any non-performance resulting from a case of force
+    majeure. The following are considered as force majeure: wars, riots, insurrections, governmental or legal
+    restrictions, fires, earthquakes, storms and floods.
+  p2.start: "Except dysfunction of the site"
+  p2.end: >
+    attributable to it, the EPML can not be held responsible for any anomalies that may occur during the ordering,
+    processing, download or printing of the ticket, either because of the buyer, or the unpredictable and insurmountable
+    a third party foreign to the service, either because of computer failures, server, the blocking of
+    telecommunications including networks and especially the Internet.
+  p3: >
+    The EPML can not be held responsible for the use of tickets purchased, the buyer being solely responsible for their
+    use by himself or by a third party.
+sales_terms.section_14:
+  p1: "These general conditions of sale are governed by French law."
+  p2:
+    "In the event of litigation, the courts of Paris are only competent, after exhaustion of the amiable means of
+    appeal."
+sales_terms.link.back2top: Back to top
+sales_terms.signature.p: |
+  In Paris,
+  Jean-Luc MARTINEZ
+  President and Director of the Public Establishment of the Louvre Museum

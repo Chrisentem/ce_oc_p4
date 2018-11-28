@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+{% form_theme contactForm _self %}
+{# form_errors.html.twig #}
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <div  id="form-errors">
+                <ul>
+                    {% for error in errors %}
+                        <li><i class="fas fa-exclamation-triangle"></i> {{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+{% block title %}
+    Contact - {{ parent() }}
+{% endblock %}
+{% block breadcrumb %}
+{% endblock %}
+{% block body %}
+    <div class="row">
+        <div id="content" class="col-lg-6 col-md-12">
+            <h3>{{ 'contact.title.contact_form'|trans }}</h3>
+            <div class="well">
+                {{ form_start(contactForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                {{ form_row(contactForm.subject, {'label_attr': {'class': 'required-field'}}) }}
+                {{ form_row(contactForm.content, {'label_attr': {'class': 'required-field'}}) }}
+                {# label_attr doesn't work on repeatedType #}
+                {#{{ form_row(contactForm.email, {'label_attr': {'class': 'required-field'}}) }}#}
+                {{ form_row(contactForm.email) }}
+                {{ form_row(contactForm.name) }}
+                {{ form_row(contactForm.phone) }}
+                {# Add the reCAPTCHA div to show in form #}
+                <div class="g-recaptcha" data-sitekey="{{ recaptcha_key }}"></div>
+                <div id="form-nav" class="form-button">
+                    <a href="{{ path('homepage') }}" class="btn btn-primary">{{ 'button.back_home'|trans }}</a>
+                    <button type="submit" class="btn btn-primary">{{ 'contact.button.submit.contact_form'|trans }}</button>
+                </div>
+                {{ form_end(contactForm)}}
+                <div class="form-required-field-info">
+                    (<sup>*</sup>{{ 'label.required.field'|trans({}, 'forms') }})
+                </div>
+            </div>
+        </div>
+        <div id="content" class="col-lg-6 col-md-12">
+            <h3>{{ 'contact.title.infos'|trans }}</h3>
+            <div class="well">
+                <h4>{{ 'contact.title.infos.address'|trans }}</h4>
+                <p>{{ 'contact.infos.address.p1'|trans|nl2br }}</p>
+                <p>{{ 'contact.infos.address.p2'|trans|nl2br }}</p>
+                <p>{{ 'contact.infos.address.p3'|trans|nl2br }}</p>
+                <p>{{ 'contact.infos.address.p4'|trans|nl2br }}</p>
+                <h4>{{ 'contact.title.infos.general'|trans }}</h4>
+                <p>{{ 'contact.infos.general.p1'|trans }}</p>
+                <p>{{ 'contact.infos.general.p2'|trans|nl2br }}</p>
+                <h4>{{ 'contact.title.infos.accessibility'|trans }}</h4>
+                <p>{{ 'contact.infos.accessibility.p1'|trans|nl2br }}</p>
+                <h4>{{ 'contact.title.infos.jobs'|trans }}</h4>
+                <p>{{ 'contact.infos.jobs.p1'|trans }} : <a href="#">{{ 'contact.link.jobs'|trans }}</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+{# Add reCAPTCHA api provided by website #}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+{% endblock %}

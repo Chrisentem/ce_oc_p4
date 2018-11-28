@@ -14,12 +14,16 @@
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.2.0",
+        "ext-calendar": "*",
+        "ext-curl": "*",
+        "ext-json": "^1.6",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/orm": "^2.5",
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
+        "stripe/stripe-php": "^6.19",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
@@ -27,8 +31,11 @@
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
+        "phpunit/phpunit": "^6.0",
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/css-selector": "^4.1",
+        "symfony/phpunit-bridge": "*",
+        "symfony/var-dumper": "^3.4"
     },
     "scripts": {
         "symfony-scripts": [
@@ -48,7 +55,7 @@
     },
     "config": {
         "platform": {
-            "php": "5.5.9"
+            "php": "7.2.0"
         },
         "sort-packages": true
     },

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    {{ 'page.title.legal_notice'|trans }} - {{ parent() }}
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>{{ 'legal_notice.main_title'|trans }}</h2>
+            </div>
+        </div>
+        <div class="row" id="content">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h3>{{ 'legal_notice.article_1.title'|trans }}</h3>
+                <h4>{{ 'legal_notice.article_1.title2'|trans }}</h4>
+                <p>{{ 'legal_notice.article_1.p1'|trans|nl2br }}</p>
+                <p>{{ 'legal_notice.article_1.p2'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_2.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_2.p1'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_3.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_3.p1'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_4.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_4.p1'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_5.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_5.p1'|trans }}</p>
+                <p>{{ 'legal_notice.article_5.p2'|trans|nl2br }}</p>
+                <p>{{ 'legal_notice.article_5.p3'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_6.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_6.p1'|trans }}</p>
+                <p>{{ 'legal_notice.article_6.p2'|trans }}</p>
+                <h3>{{ 'legal_notice.article_7.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_7.p1'|trans }}</p>
+                <h3>{{ 'legal_notice.article_8.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_8.p1'|trans|nl2br }}</p>
+                <p>{{ 'legal_notice.article_8.p2'|trans|nl2br }}</p>
+                <h3>{{ 'legal_notice.article_9.title'|trans }}</h3>
+                <p>{{ 'legal_notice.article_9.p1'|trans }}</p>
+                <p>{{ 'legal_notice.article_9.p2'|trans }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,13 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <title>{% block title %}{{ 'page.title.base'|trans }}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha256-unmO7Ii0ibwgpO1fZTJgpVl/KmWuue/QKQNXF3PeliM=" crossorigin="anonymous" />
     </head>
     <body>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="{{ path('homepage') }}"><img id="logo-home" src="{{ asset('img/logo-louvre-2018.jpg') }}" alt="{{ 'link.home'|trans }}"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar">menu</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor03">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('homepage') }}">{{ 'link.home'|trans }}<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('contact') }}">{{ 'link.contact'|trans }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link menu-lang">{{ 'link.language'|trans }}  <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr'})) }}">FR</a> | <a href="{{  path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'}))}}">EN</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }}">
+                        <h4 class="alert-heading">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <img id="top-banner" src="{{ asset('img/banner_louvre_190px.jpg') }}" alt="{{ 'banner.top.alt'|trans }}">
+                </div>
+            </div>
+        </div>
+        {% block breadcrumb %}
+        {% endblock %}
+        <div class="container">
+            <hr>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        </div>
+        <footer>
+            <div class="container">
+                <nav class="navbar navbar-light bg-light">
+                    <a id="logo-secure" href="{{ path('sales_terms') }}#7"><img src="{{ asset('img/secured-payment-long.png') }}" alt="{{ 'link.sales_terms'|trans }}"></a>
+                    <div class="navbar-expand">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('sales_terms') }}">{{ 'link.sales_terms'|trans }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('legal_notice') }}">{{ 'link.legal_notice'|trans }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="row">
+                    <div id="copyright" class="col-md-12">
+                        <p>{{ 'copyright'|trans }} © {{ 'now'|date('Y') }} - Web design - {{ webmaster }}</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% block javascripts %}
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            {#<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>#}
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js" integrity="sha256-tW5LzEC7QjhG0CiAvxlseMTs2qJS7u3DRPauDjFJ3zo=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.fr.min.js" integrity="sha256-IRibTuqtDv2uUUN/0iTrhnrvvygNczxRRAbPgCbs+LE=" crossorigin="anonymous"></script>
+            <script>
+                $(document).ready(function() {
+                    // you may need to change this code if you are not using Bootstrap Datepicker
+                    $('.js-datepicker').datepicker({
+                        format: 'yyyy-mm-dd',
+                        language: '{{ app.request.locale }}',
+                        daysOfWeekDisabled: [0,2]
+                    });
+                });
+            </script>
+        {% endblock %}
     </body>
 </html>

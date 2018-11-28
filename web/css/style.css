@@ -1,0 +1,348 @@
+/* Project CSS */
+
+/** Globals **/
+
+h4 {
+    color: Sienna;
+}
+
+.centered-col
+{
+    float: none;
+    margin: 0 auto;
+}
+
+#infos {
+    font-size: small;
+    text-align: justify;
+}
+
+#infos h3 {
+    margin-top: 10px;
+}
+
+#content h3 {
+    margin-top: 10px;
+}
+
+#content p {
+    text-align: justify;
+}
+
+#total-amount th {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.info-notice {
+    position: relative;
+    padding: 0.2rem 0.2rem;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: sienna;
+    border-radius: 5px;
+}
+
+.info-notice ul {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
+
+/** flash alert **/
+
+.alert {
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.alert-heading {
+    margin: unset;
+}
+
+/** Table **/
+
+.thead-gold {
+    background-color: Sienna;
+}
+
+/** datepicker **/
+.datepicker table tr td.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active:hover {
+    background-image: linear-gradient(to bottom,#a0522d,#1a1a1a) !important;
+}
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+    background: 0 0;
+    color: #a0522d !important;
+    cursor: default;
+}
+
+/** Forms **/
+.form-required-field-info {
+    color: sienna;
+    font-size: 0.8rem;
+    text-align: left;
+}
+.form-required-field-info sup {
+    font-size: small;
+    vertical-align: sub;
+}
+.required-field::after {
+    content: " *";
+    color: sienna;
+    vertical-align: super;
+    font-size: small;
+}
+.discounted-check-info::after {
+    content: " (1)";
+    color: sienna;
+    vertical-align: super;
+    font-size: smaller;
+}
+label[for=appbundle_purchase_email_first]::after {
+    content: " *";
+    color: sienna;
+}
+label[for=appbundle_purchase_email_second]::after {
+    content: " *";
+    color: sienna;
+}
+label[for=appbundle_contactemail_email_first]::after {
+    content: " *";
+    color: sienna;
+}
+label[for=appbundle_contactemail_email_second]::after {
+    content: " *";
+    color: sienna;
+}
+
+.form-control {
+    width: auto !important;
+}
+
+.form-button {
+    text-align: right;
+}
+
+#form-nav i {
+    font-weight: 900;
+    font-size: xx-large;
+    vertical-align: middle;
+    background-color: #1a1a1a;
+    color: white;
+    line-height: unset !important;
+    /*margin-left: 10px;*/
+}
+
+#form-nav .btn {
+    padding: 0.75rem 1rem 0.75rem 1.25rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#form-errors {
+    color: white;
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    padding-right: 10px;
+    background-color: Sienna;
+    border-radius: 5px;
+}
+
+#form-errors ul {
+    list-style-type: none;
+    margin-left: -20px;
+    margin-bottom: 0.5rem !important;
+}
+
+/** nav **/
+
+.menu-lang a {
+    color: Sienna;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    max-width: 50%;
+}
+
+#logo-home {
+    max-width: 40%;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-nav.mr-auto {
+    margin-right: 0 !important;
+}
+
+.navbar {
+    padding: 0rem !important;
+    /*justify-content: flex-end;*/
+}
+
+.jumbotron {
+    padding: 1rem 1rem !important;
+}
+
+/** top banner **/
+
+#top-banner {
+    max-width: 100%;
+}
+
+/** footer **/
+
+#logo-secure img {
+    max-width: 100%;
+}
+
+/** CGV **/
+
+#cgv td {
+    text-align: justify;
+}
+
+#cgv td.num {
+    padding: 0 0.500em 0 0;
+    vertical-align: baseline;
+    color: DimGray;
+}
+
+.signature {
+    color: Sienna;
+}
+
+#cgv table {
+    width: 100%;
+}
+#cgv td.spacer {
+    line-height: 0.5;
+}
+.backtop {
+    padding-top: 10px;
+    text-align: right !important;
+}
+
+/** Breadcrumb links **/
+.bcrumb-flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    background-color: dimgray;
+    /*justify-content: center;*/
+}
+.bcrumb-wrap    {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.bcrumb-flex-item {
+    background: DimGray;
+    padding: 10px;
+    width: auto;
+    height: 50px;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    flex-grow: 1;
+}
+.bcrumb-step-active {
+    background: LightSeaGreen;
+    font-weight: bold;
+}
+.bcrumb-step-done {
+    background: DimGray;
+}
+.bcrumb-step-undone {
+    background: DimGray;
+    opacity: 0.3;
+    color: darkgrey;
+}
+.bcrumb-arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 25px solid darkgrey;
+    display: inline-flex;
+}
+
+/* The responsive part */
+
+/* === For phones =================================== */
+@media (max-width: 320px) {
+    #copyright p {
+        font-size: 0.6rem;
+    }
+    #logo-home {
+        max-width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    #copyright p {
+        font-size: 0.78rem;
+    }
+    #logo-home {
+        max-width: 100%;
+    }
+    .table th, .table td {
+        padding: 0.75rem !important;
+    }
+    th {
+        font-size: 0.75rem;
+    }
+    .bcrumb-flex-item {
+        padding: 5px;
+        width: auto;
+        height: 30px;
+        color: white;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .bcrumb-arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid darkgrey;
+        display: inline-flex;
+    }
+}
+
+/* === For tablets ================================== */
+@media (min-width: 768px) and (max-width:991px) {
+    #logo-home {
+        max-width: 60%;
+    }
+    .bcrumb-flex-item {
+        padding: 8px;
+        width: auto;
+        height: 40px;
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+    }
+    .bcrumb-arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 20px solid darkgrey;
+        display: inline-flex;
+    }
+}
+
+/* === For desktops ================================== */
+@media (min-width: 992px) {
+    th, td {
+        font-size: 1rem;
+    }
+}

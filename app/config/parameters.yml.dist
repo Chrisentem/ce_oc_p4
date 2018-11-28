@@ -12,8 +12,15 @@ parameters:
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1
+    mailer_port: 2525
     mailer_user: ~
     mailer_password: ~
 
     # A secret key that's used to generate certain security-related tokens
     secret: ThisTokenIsNotSoSecretChangeIt
+
+    stripe_secret_key: XXX_PRIVATEKEY_XXX
+    stripe_public_key: YYY_PUBLISHABLE_KEY_YYY
+
+    recaptcha_secret_key: XXX_SECRETKEY_XXX
+    recaptcha_site_key: YYY_PUBLISHABLE_KEY_YYY

@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+{% form_theme form _self %}
+{# form_errors.html.twig #}
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <div  id="form-errors">
+                <ul>
+                    {% for error in errors %}
+                        <li><i class="fas fa-exclamation-triangle"></i> {{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+{% block title %}
+    {{ 'page.title.step_3'|trans }} - {{ parent() }}
+{% endblock %}
+        {% block breadcrumb %}
+            {% include 'default/_breadcrumb.html.twig' %}
+        {% endblock %}
+{% block body %}
+    <div id="content">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>{{ 'step_3.title.summary'|trans }}</h3>
+                <div style="overflow-x:auto;">
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{ 'summary.firstname'|trans }}</th>
+                        <th scope="col">{{ 'summary.lastname'|trans }}</th>
+                        <th scope="col">{{ 'summary.birthdate'|trans }}</th>
+                        <th scope="col">{{ 'summary.price'|trans }}</th>
+                        <th class="discounted-check-info" scope="col">{{ 'summary.discounted'|trans }}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for ticket in purchase.tickets %}
+                        <tr>
+                            <td>{{ ticket.firstname }}</td>
+                            <td>{{ ticket.lastname }}</td>
+                            <td>{{ ticket.birthdate|date("m/d/Y") }}</td>
+                            <td>{{ ticket.price }} &euro;</td>
+                            <td>{% if ticket.discounted == true and ticket.price > 0 %}
+                                    {{ 'summary.discounted.yes'|trans }}
+                                {% elseif ticket.price > 0 %}
+                                    {{ 'summary.discounted.no'|trans }}
+                                {% else %}
+                                    --
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="info-notice" role="alert">
+                    <ul>
+                        <li><i class="fas fa-info-circle"></i> {{ 'identification.notice'|trans }}</li>
+                        <li><i class="fas fa-info-circle"></i><sup>(1)</sup>{{ 'rate.discounted.notice'|trans }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="content" class="col-lg-12">
+                <h3>{{ 'step_3.title.sending_infos'|trans }}</h3>
+                <p>{{ 'sending_infos.desc'|trans }}</p>
+                <div class="well">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                    {# label_attr doesn't work on repeatedType #}
+                    {#{{ form_row(form.email, {'label_attr': {'class': 'required-field'}}) }}#}
+                    {{ form_row(form.email) }}
+                    {% autoescape false %}
+                        {{ form_row(form.agree) }}
+                    {% endautoescape %}
+                    <div id="form-nav" class="form-button">
+                        <a href="{{ path('order_step_2') }}" class="btn btn-primary"><i class="fas fa-angle-double-left"></i> {{ 'purchase.button.backstep'|trans }}</a>
+                        <button type="submit" class="btn btn-primary">{{ 'purchase.button.confirm'|trans }} <i class="fas fa-angle-double-right"></i></button>
+                    </div>
+                    {{ form_end(form) }}
+                    <div class="form-required-field-info">
+                        (<sup>*</sup>{{ 'label.required.field'|trans({}, 'forms') }})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
