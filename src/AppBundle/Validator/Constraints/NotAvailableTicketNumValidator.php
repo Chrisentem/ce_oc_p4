@@ -27,6 +27,7 @@ class NotAvailableTicketNumValidator extends ConstraintValidator {
     /**
      * @param mixed $value
      * @param Constraint $constraint
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function validate($value, Constraint $constraint)
     {
@@ -44,6 +45,7 @@ class NotAvailableTicketNumValidator extends ConstraintValidator {
     /**
      * @param Purchase $purchase
      * @return bool
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     private function isUnavailable(Purchase $purchase) {
         // As Purchase class constraint we have access to Purchase getters
@@ -52,10 +54,10 @@ class NotAvailableTicketNumValidator extends ConstraintValidator {
 
         $totalSoldTickets = $this->em->getRepository('AppBundle:Purchase')->ticketsSoldOnChosenDate($chosenDate);
 
-        if ($totalSoldTickets + $addedTickets > 1000 ) {
+        if ($totalSoldTickets + $addedTickets > 1000) {
             return true;
         }
         return false;
     }
-	
+
 }
