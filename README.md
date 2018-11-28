@@ -1,72 +1,44 @@
-Symfony Standard Edition
-========================
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b997c94e221a4e84a7b4dfbaed687d04)](https://www.codacy.com/app/Chrisentem/ce_oc_p4?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Chrisentem/ce_oc_p4&amp;utm_campaign=Badge_Grade)
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+# Online ticketing App for a museum
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+Project based on Symfony 3.4 and created on September 18, 2018.
 
-What's inside?
---------------
+This project was part of the OpenClassrooms Multimedia Project Manager Training Course.
 
-The Symfony Standard Edition is configured with the following defaults:
+---
+#### CONSISTS OF & FEATURES :
+    * 4 steps purchase tunnel with breadcrumb
+    * 1 contact form page
+    * 2 static pages - legal notice & Sales Terms
+    
+    * Stripe payment solution integrated
+    * Swiftmailer ticket generation and sending
+    * 99.99% FR/EN translated
+---
+#### REQUIREMENT :
 
-  * An AppBundle you can use to start coding;
+To install this application, the following are required :
+* A web server running Apache 
+* PHP 5.5.9 at minima (version 7.2 is **recommended**)
+* A MySQL database
+* composer should be installed on the machine you are going to use for this application. (see https://getcomposer.org/)
+---
+#### INSTALLATION :
 
-  * Twig as the only configured template engine;
+* Create a folder on your server to receive the application.
+* Download the all the files from Github into the folder on your server:
+you can clone the repo using 'https://github.com/Chrisentem/ce_oc_p4.git'
+* Once finished, run composer install to get all the dependencies of this application.
+* Open the file parameters.yml and fill the required key values: database, mailer, stripe, reCaptcha
+---
+#### DATABASE SETUP :
 
-  * Doctrine ORM/DBAL;
+On your root folder run the following commands :
+* php bin/console doctrine:database:create (this will create the
+database)
+* php bin/console doctrine:migrations:migrate Answer "y" at the 
+question (this will create your tables in the database)
 
-  * Swiftmailer;
-
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+Your web site is now ready to work.
+Enjoy !
