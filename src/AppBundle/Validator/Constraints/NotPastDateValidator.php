@@ -2,6 +2,7 @@
 
 namespace AppBundle\Validator\Constraints;
 
+use AppBundle\Service\Time;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use AppBundle\Entity\Purchase;
@@ -34,8 +35,10 @@ class NotPastDateValidator extends ConstraintValidator {
         // As Purchase class constraint we have access to Purchase getters
         $chosenDate = $purchase->getDateOfVisit();
 
-        $today = new \Datetime('now');
-        $todayYMD = $today->format('Y-m-d');
+        // We use the Time class to generate a current time usable with ClockMock for testing
+        // don't use new \Datetime('now') or time sensitive test will be complicated
+        $today = Time::currentDateTime()->format('U');
+        $todayYMD = date('Y-m-d', $today);
         $chosenDateYMD = $chosenDate->format('Y-m-d');
 
         // Past date constraint
@@ -44,4 +47,5 @@ class NotPastDateValidator extends ConstraintValidator {
         }
         return false;
     }
+
 }

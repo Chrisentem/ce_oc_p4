@@ -2,6 +2,7 @@
 
 namespace AppBundle\Validator\Constraints;
 
+use AppBundle\Service\Time;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use AppBundle\Entity\Purchase;
@@ -32,14 +33,15 @@ class NotInTimeForCurrentDayValidator extends ConstraintValidator
      */
     private function isUnavailable(Purchase $purchase)
     {
-
-        $today = new \Datetime('now');
-        $nowTime = $today->format('H:i');
-        $nowDay = $today->format('D');
+        // We use the Time class to generate a current time usable with ClockMock for testing
+        // don't use new \Datetime('now') or time sensitive test will be complicated
+        $today = Time::currentDateTime()->format('U');
+        $nowTime = date('H:i', $today);
+        $nowDay = date('D', $today);
         // As Purchase class constraint we have access to Purchase getters
         $chosenDate = $purchase->getDateOfVisit();
 
-        $todayDNY = $today->format('d-n-Y');
+        $todayDNY = date('d-n-Y', $today);
         $chosenDateDNY = $chosenDate->format('d-n-Y');
 
         // No booking for current day 1 hour before closing times

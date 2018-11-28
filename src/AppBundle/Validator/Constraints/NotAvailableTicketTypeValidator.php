@@ -2,6 +2,7 @@
 
 namespace AppBundle\Validator\Constraints;
 
+use AppBundle\Service\Time;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use AppBundle\Entity\Purchase;
@@ -31,18 +32,22 @@ class NotAvailableTicketTypeValidator extends ConstraintValidator {
      */
     private function isUnavailable(Purchase $purchase) {
 		
-        $today = new \Datetime('now');
-        $nowTime = $today->format('H');
+        // We use the Time class to generate a current time usable with ClockMock for testing
+        // don't use new \Datetime('now') or time sensitive test will be complicated
+        $today = Time::currentDateTime()->format('U');
+        // $nowTime = $today->format('H');
+        $nowTime = date('H', $today);
         // As Purchase class constraint we have access to Purchase getters
         $chosenDate = $purchase->getDateOfVisit();
         $type = $purchase->getTicketType();
         
-        $todayDNY = $today->format('d-n-Y');
+        // $todayDNY = $today->format('d-n-Y');
+        $todayDNY = date('d-n-Y', $today);
         $chosenDateDNY = $chosenDate->format('d-n-Y');
         
     	// No full-day ticket after 2pm
 		if ($todayDNY == $chosenDateDNY) {
-            if ($type == Purchase::FULL_DAY_TICKET_TYPE && $nowTime > 14) {
+            if ($type == Purchase::FULL_DAY_TICKET_TYPE && $nowTime >= 14) {
             return true;
             }
 		}
